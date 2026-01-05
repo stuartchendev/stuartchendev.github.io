@@ -1,4 +1,3 @@
-
 import {useState} from "react";
 
 function ProjectCard () {
@@ -13,9 +12,11 @@ function ProjectCard () {
 }
 
 function ProjectButton({isOpen, onToggle}) {
+    // derived state
+    const buttonText = isOpen ? 'Close' : 'Open'
     return (
         <button onClick={onToggle}>
-            {isOpen ? 'true': 'false' } button
+            {buttonText} button
         </button>
     )
 }
