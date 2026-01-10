@@ -1,12 +1,12 @@
 function ProjectModal({selectedProject, onClose}) {
     return (
         <>
-            <div className="modal content">
+            <div onClick={onClose} className="overlay"/>
+            <div className="modal__container">
                 <div className="modal">
                     <ModalClose onClose={onClose}/>
                     <ModalContent projectContent={selectedProject}/>
                 </div>
-                <div className="overlay content"/>
             </div>
         </>
     )
