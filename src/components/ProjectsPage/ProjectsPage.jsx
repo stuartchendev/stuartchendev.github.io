@@ -23,31 +23,27 @@ export const projectsFakeData = [
     },
 ];
 
-// id-driven open condition
+// activeProjectId models user selection
 function ProjectsPage() {
-    // init active ProjectId, design for single source of truth
-    const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
-    // store fake data as projects
-    const [projects] = useState(()=>projectsFakeData);
-    // find select Project by active project id
-    const selectedProject = projects.find((project) => project.id === activeProjectId);
-    // derive state if project id exist
-    const isOpen = Boolean(activeProjectId);
 
-    // store project id for reloading can keep state
+    // Single source of truth
+    const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
+
+    // Stored data (non-UI state)
+    const [projects] = useState(()=>projectsFakeData);
+
+    // Derived State
+    const selectedProject = projects.find((project) => project.id === activeProjectId);
+
     useEffect(() => {
         localStorage.setItem('projectId', String(activeProjectId));
     }, [activeProjectId]);
 
-    // if projects exist
-    // ProjectsList -> render All ProjectCard
-    // ProjectCard -> render project detail and return project id
-    // if selectedProject & isOpen exist
-    // ProjectModal -> render selectedProject and if close button click set id to null
+    // onClose purpose to clear activeProjectId
     return (
      <div className="ProjectsPage">
          {projects && <ProjectsList projects={projects} onSelect={setActiveProjectId} />}
-         {selectedProject && isOpen && <ProjectModal selectedProject={selectedProject} onClose={()=> setActiveProjectId(null)} />}
+         {selectedProject && <ProjectModal selectedProject={selectedProject} onClose={()=> setActiveProjectId(null)} />}
      </div>
     )
 }
