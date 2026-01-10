@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 function ProjectsList({projects, onSelect}) {
 
     return (
-        <li>
+        <li className="project__list">
             {projects.map((project) =>
                 <ProjectCard
                     key={project.id}

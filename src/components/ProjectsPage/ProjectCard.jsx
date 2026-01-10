@@ -4,7 +4,7 @@ function ProjectCard ({ project, onSelect}) {
     }
 
     return (
-        <div className="card" onClick={HandleSetActiveProjectId} style={{ border: "1px solid lightgray", margin:"0.5rem" }}>
+        <div className="project__card" onClick={HandleSetActiveProjectId}>
             <ProjectHead projectId={project.id} projectTitle={project.title}/>
             <ProjectShortDescription projectDescription={project.shortDescription}/>
             <ul>
