@@ -1,5 +1,5 @@
 import ProjectsList from "./ProjectsList.jsx";
-import ProjectModal from "./ProjectModal.jsx";
+import ProjectDetailView from "./ProjectDetailView";
 import {useEffect, useState} from "react";
 
 export const projectsFakeData = [
@@ -26,6 +26,10 @@ export const projectsFakeData = [
 // activeProjectId models user selection
 function ProjectsPage() {
 
+    // dev UI switch
+    const useDrawer = true;
+    const shellType = useDrawer ? "drawer" : "modal";
+
     // Single source of truth
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 
@@ -43,7 +47,12 @@ function ProjectsPage() {
     return (
      <div className="ProjectsPage">
          {projects && <ProjectsList projects={projects} onSelect={setActiveProjectId} />}
-         {selectedProject && <ProjectModal selectedProject={selectedProject} onClose={()=> setActiveProjectId(null)} />}
+         {selectedProject &&
+             <ProjectDetailView
+                 displayMode={shellType}
+                 selectedProject={selectedProject}
+                 onClose={() => setActiveProjectId(null)}/>
+         }
      </div>
     )
 }

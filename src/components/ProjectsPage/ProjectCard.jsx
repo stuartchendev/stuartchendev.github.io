@@ -4,7 +4,7 @@ function ProjectCard ({ project, onSelect}) {
     }
 
     return (
-        <div className="project__card" onClick={HandleSetActiveProjectId}>
+        <li className="project__card" onClick={HandleSetActiveProjectId}>
             <ProjectHead projectId={project.id} projectTitle={project.title}/>
             <ProjectShortDescription projectDescription={project.shortDescription}/>
             <ul>
@@ -12,7 +12,7 @@ function ProjectCard ({ project, onSelect}) {
                     <ProjectTags key={index} tag={tag}/>
                 )}
             </ul>
-        </div>
+        </li>
     );
 }
 
