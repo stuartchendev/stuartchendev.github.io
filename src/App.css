@@ -43,12 +43,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: min(420px, 90vw);
+    width: min(520px, 90vw);
     height: 100%;
-    background: #fff;
+    background: #ffffff;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
     pointer-events: auto; /* current event */
-    padding: 24px;
+    padding: 30px;
+    overflow-y: auto;
     transition: transform 0.25s ease-out;
     transform: translateX(0);
 }
