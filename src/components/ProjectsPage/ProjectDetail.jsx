@@ -1,3 +1,8 @@
+// If this component is migrated to TypeScript,
+// the props type would clearly define the contract between data and UI.
+// selectedProject: project | undefined
+// projectContent: selectedProject
+// projectContent = {id: string, title: string, shortDescription: string, tags: array[string, string, string, string]}
 function ProjectDetail({projectContent}) {
     return (
         <>

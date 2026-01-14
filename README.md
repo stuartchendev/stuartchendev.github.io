@@ -44,3 +44,9 @@ loading / error state can be colocated with modal content state.
 
 #### 🤫 DevNote
 - Project detail UI is implemented as a replaceable shell (modal / drawer) to keep state independent from layout choice.
+
+
+### Why not use a boolean state for the detail view?
+
+Because the core interaction is selecting a project entity.
+The UI (modal or drawer) is a presentation detail, not the state itself.
