@@ -1,0 +1,1 @@
+export const DEV_DISPLAY_VIEW_TYPE = 'drawer';
