@@ -37,7 +37,10 @@
 > This structural separation ensures that clicking inside the modal does not trigger the overlay’s close behavior, avoiding accidental modal dismissal without relying on event propagation hacks.
 
 
-
-
 👀 Future extension: 
 loading / error state can be colocated with modal content state.
+
+
+
+#### 🤫 DevNote
+- Project detail UI is implemented as a replaceable shell (modal / drawer) to keep state independent from layout choice.
