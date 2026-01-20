@@ -42,7 +42,7 @@ function ProjectsPage() {
 
     // onClose purpose to clear activeProjectId
     return (
-     <div className="ProjectsPage">
+     <section className="ProjectsPage">
          {projects && <ProjectsList projects={projects} onSelect={setActiveProjectId} />}
          {selectedProject &&
              <ProjectDetailView
@@ -50,7 +50,7 @@ function ProjectsPage() {
                  selectedProject={selectedProject}
                  onClose={() => setActiveProjectId(null)}/>
          }
-     </div>
+     </section>
     )
 }
 
