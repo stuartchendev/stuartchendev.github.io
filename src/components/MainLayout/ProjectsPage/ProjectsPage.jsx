@@ -25,8 +25,9 @@ export const projectsFakeData = [
 ];
 
 // activeProjectId models user selection
-function ProjectsPage() {
-
+function ProjectsPage({language}) {
+    // Test Language code correct enter
+    console.log('ProjectsPage:', language);
     // Single source of truth
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 

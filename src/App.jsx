@@ -10,6 +10,7 @@ import ContactSection from "./components/MainLayout/ContactSection";
 import Footer from "./components/Footer/Footer";
 import FooterTools from "./components/Footer/FooterTools";
 import FooterContent from "./components/Footer/FooterContent";
+import {useState} from "react";
 
 // Portfolio-Structure-NOTE:
 // main: root
@@ -26,25 +27,27 @@ import FooterContent from "./components/Footer/FooterContent";
 //         - <FooterContent />
 
 
-
 function App() {
-  return (
+    const [activeLanguageId, setActiveLanguageId] = useState(null);
+
+
+    return (
       <>
         <NavigationHeader>
-            <GuildLine/>
-            <LanguageOptions/>
+            <GuildLine language={activeLanguageId}/>
+            <LanguageOptions language={activeLanguageId} setLanguage={setActiveLanguageId}/>
         </NavigationHeader>
         <MainLayout>
-            <AboutSection />
-            <ProjectsPage />
-            <ContactSection />
+            <AboutSection language={activeLanguageId}/>
+            <ProjectsPage language={activeLanguageId}/>
+            <ContactSection language={activeLanguageId}/>
         </MainLayout>
         <Footer>
             <FooterTools/>
-            <FooterContent/>
+            <FooterContent language={activeLanguageId}/>
         </Footer>
       </>
-  )
+    )
 }
 
 export default App
