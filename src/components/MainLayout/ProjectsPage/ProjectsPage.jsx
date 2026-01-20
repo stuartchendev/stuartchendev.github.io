@@ -1,7 +1,7 @@
 import ProjectsList from "./ProjectsList.jsx";
 import ProjectDetailView from "./ProjectDetailView";
 import {useEffect, useState} from "react";
-import {DEV_DISPLAY_VIEW_TYPE} from "../../config";
+import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
 
 export const projectsFakeData = [
     {
