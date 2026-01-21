@@ -1,8 +1,6 @@
 function GuildLine({ language }) {
-    // Test Language code correct enter
-    console.log('GuildLine language:', language);
     return (
-        <div>GuildLine</div>
+        <div className="placeholder">GuildLine detail coming soon</div>
     )
 }
 export default GuildLine;

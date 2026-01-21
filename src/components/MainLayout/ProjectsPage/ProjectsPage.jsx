@@ -6,8 +6,6 @@ import projectsData from "../../../../test/projectsData.json"
 
 // activeProjectId models user selection
 function ProjectsPage({language}) {
-    // Test Language code correct enter
-    console.log('ProjectsPage:', language);
     // Single source of truth
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 

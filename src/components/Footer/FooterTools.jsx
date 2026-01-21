@@ -1,6 +1,6 @@
 function FooterTools() {
     return (
-        <div>FooterTools</div>
+        <div className="placeholder">FooterTools detail coming soon</div>
     )
 }
 

@@ -1,6 +1,6 @@
 function AboutSection({language}) {
     return (
-        <section id="about">{language.aboutTitle}</section>
+        <section className="placeholder" id="about">{language.aboutTitle} detail coming soon</section>
     )
 }
 

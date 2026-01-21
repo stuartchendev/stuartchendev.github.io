@@ -1,8 +1,6 @@
 function ContactSection({language}) {
-    // Test Language code correct enter
-    console.log('ContactSection:', language);
     return(
-        <section id="contact">Contact</section>
+        <section className="placeholder" id="contact">Contact detail coming soon</section>
     )
 }
 export default ContactSection;

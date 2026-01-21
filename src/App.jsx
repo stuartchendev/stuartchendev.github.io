@@ -30,7 +30,10 @@ import {useState} from "react";
 
 
 function App() {
+    // Single Source of truth
     const [activeLanguageId, setActiveLanguageId] = useState(DEFAULT_LANGUAGE);
+
+    // Derived State
     const currentLanguage = languageContent[activeLanguageId];
 
     return (

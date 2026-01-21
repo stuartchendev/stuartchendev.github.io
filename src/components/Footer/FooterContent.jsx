@@ -1,8 +1,6 @@
 function FooterContent({language}) {
-    // Test Language code correct enter
-    console.log('FooterContent:', language);
     return (
-        <div>FooterContent</div>
+        <div className="placeholder">FooterContent detail coming soon</div>
     )
 }
 

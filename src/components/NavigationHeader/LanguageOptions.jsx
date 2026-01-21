@@ -1,9 +1,7 @@
 function LanguageOptions({language, setLanguage}) {
-    // Test Language code correct enter
-    console.log('LanguageOptions:', language);
     return (
         <>
-            <div>LanguageOptions</div>
+            <div className="placeholder">LanguageOptions detail coming soon</div>
             <button onClick={() => setLanguage('en')}>
                 EN
             </button>
