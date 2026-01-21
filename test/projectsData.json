@@ -24,13 +24,33 @@
     ]
   },
   {
-    "id": "p1",
+    "id": "forkify",
     "title": "Forkify App",
     "shortDescription": "Recipe search app with MVC architecture",
     "tags": [
       "JavaScript",
       "MVC",
       "API"
+    ]
+  },
+  {
+    "id": "mapty",
+    "title": "Mapty App",
+    "shortDescription": "Workout tracking app using OOP and Maps",
+    "tags": [
+      "JavaScript",
+      "OOP",
+      "Geolocation"
+    ]
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio Website",
+    "shortDescription": "Personal portfolio with responsive layout and dark mode",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
     ]
   }
 ]
