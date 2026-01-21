@@ -36,17 +36,17 @@ function App() {
     return (
       <>
         <NavigationHeader>
-            <GuildLine language={activeLanguageId}/>
-            <LanguageOptions language={activeLanguageId} setLanguage={setActiveLanguageId}/>
+            <GuildLine language={currentLanguage}/>
+            <LanguageOptions language={currentLanguage} setLanguage={setActiveLanguageId}/>
         </NavigationHeader>
         <MainLayout>
             <AboutSection language={currentLanguage}/>
-            <ProjectsPage language={activeLanguageId}/>
-            <ContactSection language={activeLanguageId}/>
+            <ProjectsPage language={currentLanguage}/>
+            <ContactSection language={currentLanguage}/>
         </MainLayout>
         <Footer>
             <FooterTools/>
-            <FooterContent language={activeLanguageId}/>
+            <FooterContent language={currentLanguage}/>
         </Footer>
       </>
     )
