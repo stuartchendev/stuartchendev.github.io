@@ -10,6 +10,9 @@ function LanguageOptions({language, setLanguage}) {
             <button onClick={() => setLanguage('zh-Tw')}>
                 ZH
             </button>
+            <button onClick={() => setLanguage('jp')}>
+                JP
+            </button>
         </>
     )
 }

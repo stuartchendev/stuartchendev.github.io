@@ -10,6 +10,8 @@ import ContactSection from "./components/MainLayout/ContactSection";
 import Footer from "./components/Footer/Footer";
 import FooterTools from "./components/Footer/FooterTools";
 import FooterContent from "./components/Footer/FooterContent";
+import languageContent from "./Language/LanguageContent";
+import {DEFAULT_LANGUAGE} from "./config";
 import {useState} from "react";
 
 // Portfolio-Structure-NOTE:
@@ -28,8 +30,8 @@ import {useState} from "react";
 
 
 function App() {
-    const [activeLanguageId, setActiveLanguageId] = useState(null);
-
+    const [activeLanguageId, setActiveLanguageId] = useState(DEFAULT_LANGUAGE);
+    const currentLanguage = languageContent[activeLanguageId];
 
     return (
       <>
@@ -38,7 +40,7 @@ function App() {
             <LanguageOptions language={activeLanguageId} setLanguage={setActiveLanguageId}/>
         </NavigationHeader>
         <MainLayout>
-            <AboutSection language={activeLanguageId}/>
+            <AboutSection language={currentLanguage}/>
             <ProjectsPage language={activeLanguageId}/>
             <ContactSection language={activeLanguageId}/>
         </MainLayout>
