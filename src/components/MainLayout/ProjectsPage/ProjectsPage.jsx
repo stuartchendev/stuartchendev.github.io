@@ -2,27 +2,7 @@ import ProjectsList from "./ProjectsList.jsx";
 import ProjectDetailView from "./ProjectDetailView";
 import {useEffect, useState} from "react";
 import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
-
-export const projectsFakeData = [
-    {
-        id: 'p1',
-        title: 'Forkify App',
-        shortDescription: 'Recipe search app with MVC architecture',
-        tags: ['JavaScript', 'MVC', 'API'],
-    },
-    {
-        id: 'p2',
-        title: 'Mapty App',
-        shortDescription: 'Workout tracking app using OOP and Maps',
-        tags: ['JavaScript', 'OOP', 'Geolocation'],
-    },
-    {
-        id: 'p3',
-        title: 'Portfolio Website',
-        shortDescription: 'Personal portfolio with responsive layout and dark mode',
-        tags: ['HTML', 'CSS', 'JavaScript'],
-    },
-];
+import projectsData from "../../../../test/projectsData.json"
 
 // activeProjectId models user selection
 function ProjectsPage({language}) {
@@ -32,7 +12,7 @@ function ProjectsPage({language}) {
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 
     // Stored data (non-UI state)
-    const [projects] = useState(()=>projectsFakeData);
+    const [projects] = useState(()=>projectsData);
 
     // Derived State
     const selectedProject = projects.find((project) => project.id === activeProjectId);

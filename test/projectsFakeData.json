@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p1",
+    "title": "Forkify App",
+    "shortDescription": "Recipe search app with MVC architecture",
+    "tags": [
+      "JavaScript",
+      "MVC",
+      "API"
+    ]
+  },
+  {
+    "id": "p2",
+    "title": "Mapty App",
+    "shortDescription": "Workout tracking app using OOP and Maps",
+    "tags": [
+      "JavaScript",
+      "OOP",
+      "Geolocation"
+    ]
+  },
+  {
+    "id": "p3",
+    "title": "Portfolio Website",
+    "shortDescription": "Personal portfolio with responsive layout and dark mode",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  }
+]
