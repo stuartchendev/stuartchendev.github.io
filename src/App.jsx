@@ -30,26 +30,27 @@ import {useState} from "react";
 
 
 function App() {
-    // Single Source of truth
+    // Single source of truth that represents which language the user selects
     const [activeLanguageId, setActiveLanguageId] = useState(DEFAULT_LANGUAGE);
 
-    // Derived State
-    const currentLanguage = languageContent[activeLanguageId];
+    // Derived state
+    // languageContent is not stored in state because it has no independent lifecycle
+    const currentLanguageUI = languageContent[activeLanguageId];
 
     return (
       <>
         <NavigationHeader>
-            <GuildLine language={currentLanguage}/>
-            <LanguageOptions language={currentLanguage} setLanguage={setActiveLanguageId}/>
+            <GuildLine language={currentLanguageUI}/>
+            <LanguageOptions language={currentLanguageUI} setLanguage={setActiveLanguageId}/>
         </NavigationHeader>
         <MainLayout>
-            <AboutSection language={currentLanguage}/>
-            <ProjectsPage language={currentLanguage}/>
-            <ContactSection language={currentLanguage}/>
+            <AboutSection language={currentLanguageUI}/>
+            <ProjectsPage activeLanguageId={activeLanguageId}/>
+            <ContactSection language={currentLanguageUI}/>
         </MainLayout>
         <Footer>
             <FooterTools/>
-            <FooterContent language={currentLanguage}/>
+            <FooterContent language={currentLanguageUI}/>
         </Footer>
       </>
     )

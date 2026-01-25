@@ -5,14 +5,15 @@ import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
 import projectsData from "../../../../test/projectsData.json"
 
 // activeProjectId models user selection
-function ProjectsPage({language}) {
-    // Single source of truth
+function ProjectsPage({activeLanguageId}) {
+    // Single source of truth that represents which project the user selects
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 
-    // Stored data (non-UI state)
-    const [projects] = useState(()=>projectsData);
+    // Stored data (non-UI state) because it comes from external data
+    // and has its own lifecycle
+    const [projects] = useState(()=>projectsData[activeLanguageId]);
 
-    // Derived State
+    // This is derived because it can be calculated from activeProjectId
     const selectedProject = projects.find((project) => project.id === activeProjectId);
 
     useEffect(() => {
