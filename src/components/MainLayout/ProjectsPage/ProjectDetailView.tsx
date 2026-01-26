@@ -1,6 +1,12 @@
 import ProjectDetail from './ProjectDetail';
 
-function ProjectDetailView({displayMode, selectedProject, onClose}) {
+type ProjectDetailViewProps = {
+    displayMode: any;
+    selectedProject: any;
+    onClose: any;
+}
+
+function ProjectDetailView({displayMode, selectedProject, onClose}: ProjectDetailViewProps) {
     return (
         <>
             <div onClick={onClose} className={`overlay ${displayMode}--active`}/>

@@ -1,4 +1,11 @@
-function ProjectCard ({ project, onSelect}) {
+import type { Key } from "react";
+
+type ProjectCardProps = {
+    project: any;
+    onSelect: any;
+}
+
+function ProjectCard({project, onSelect}: ProjectCardProps) {
     const HandleSetActiveProjectId = () => {
         onSelect(project.id);
     }
@@ -8,7 +15,7 @@ function ProjectCard ({ project, onSelect}) {
             <ProjectHead projectId={project.id} projectTitle={project.title}/>
             <ProjectShortDescription projectDescription={project.shortDescription}/>
             <ul>
-                {project.tags.map((tag, index) =>
+                {project.tags.map((tag: unknown, index: Key) =>
                     <ProjectTags key={index} tag={tag}/>
                 )}
             </ul>

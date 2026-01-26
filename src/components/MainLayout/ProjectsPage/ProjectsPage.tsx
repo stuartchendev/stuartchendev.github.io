@@ -1,11 +1,15 @@
-import ProjectsList from "./ProjectsList.jsx";
+import ProjectsList from "./ProjectsList";
 import ProjectDetailView from "./ProjectDetailView";
 import {useEffect, useState} from "react";
 import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
 import projectsData from "../../../../test/projectsData.json"
 
+type ProjectsPageProps = {
+    activeLanguageId: any;
+}
+
 // activeProjectId models user selection
-function ProjectsPage({activeLanguageId}) {
+function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
     // Single source of truth that represents which project the user selects
     const [activeProjectId, setActiveProjectId] = useState(()=> localStorage.getItem("projectId"));
 

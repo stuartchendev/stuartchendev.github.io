@@ -10,7 +10,11 @@
 
 // selectedProject: Project | undefined
 // projectContent = selectedProject
-function ProjectDetail({projectContent}) {
+
+type ProjectDetailViewProps = {
+    projectContent: any;
+}
+function ProjectDetail({projectContent}:ProjectDetailViewProps) {
     return (
         <>
             <DetailTitle projectTitle={projectContent.title}/>
