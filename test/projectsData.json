@@ -1,56 +1,58 @@
-[
-  {
-    "id": "smart-garage-door-system",
-    "title": "Smart Garage Door System",
-    "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
-    "tags": [
-      "Android Studio",
-      "MQTT",
-      "Linux server",
-      "Java"
-    ],
-    "image": "images/GP.png",
-    "year": "2023 Q4",
-    "githubLink": "",
-    "challenges": [
-      "Ensure the system can accurately detect the user approaching the garage door.",
-      "Establish reliable MQTT communication between the Linux server and the door system.",
-      "Ensure the door system correctly processes and responds to MQTT signals."
-    ],
-    "features": [
-      "Hands-free automatic door unlocking using mobile device proximity detection.",
-      "Secure communication using MQTT protocol.",
-      "Remote access and control via a mobile app (if applicable)."
-    ]
-  },
-  {
-    "id": "forkify",
-    "title": "Forkify App",
-    "shortDescription": "Recipe search app with MVC architecture",
-    "tags": [
-      "JavaScript",
-      "MVC",
-      "API"
-    ]
-  },
-  {
-    "id": "mapty",
-    "title": "Mapty App",
-    "shortDescription": "Workout tracking app using OOP and Maps",
-    "tags": [
-      "JavaScript",
-      "OOP",
-      "Geolocation"
-    ]
-  },
-  {
-    "id": "portfolio",
-    "title": "Portfolio Website",
-    "shortDescription": "Personal portfolio with responsive layout and dark mode",
-    "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ]
-  }
-]
+{
+  "en": [
+    {
+      "id": "smart-garage-door-system",
+      "title": "Smart Garage Door System",
+      "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
+      "tags": [
+        "Android Studio",
+        "MQTT",
+        "Linux server",
+        "Java"
+      ],
+      "image": "images/GP.png",
+      "year": "2023 Q4",
+      "githubLink": "",
+      "challenges": [
+        "Ensure the system can accurately detect the user approaching the garage door.",
+        "Establish reliable MQTT communication between the Linux server and the door system.",
+        "Ensure the door system correctly processes and responds to MQTT signals."
+      ],
+      "features": [
+        "Hands-free automatic door unlocking using mobile device proximity detection.",
+        "Secure communication using MQTT protocol.",
+        "Remote access and control via a mobile app (if applicable)."
+      ]
+    },
+    {
+      "id": "forkify",
+      "title": "Forkify App",
+      "shortDescription": "Recipe search app with MVC architecture",
+      "tags": [
+        "JavaScript",
+        "MVC",
+        "API"
+      ]
+    },
+    {
+      "id": "mapty",
+      "title": "Mapty App",
+      "shortDescription": "Workout tracking app using OOP and Maps",
+      "tags": [
+        "JavaScript",
+        "OOP",
+        "Geolocation"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "title": "Portfolio Website",
+      "shortDescription": "Personal portfolio with responsive layout and dark mode",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  ]
+}
