@@ -4,13 +4,13 @@ import NavigationHeader from "./components/NavigationHeader/NavigationHeader";
 import GuildLine from "./components/NavigationHeader/GuildLine";
 import LanguageOptions from "./components/NavigationHeader/LanguageOptions";
 import MainLayout from "./components/MainLayout/MainLayout";
-import ProjectsPage from "./components/MainLayout/ProjectsPage/ProjectsPage.jsx";
+import ProjectsPage from "./components/MainLayout/ProjectsPage/ProjectsPage";
 import AboutSection from "./components/MainLayout/AboutSection";
 import ContactSection from "./components/MainLayout/ContactSection";
 import Footer from "./components/Footer/Footer";
 import FooterTools from "./components/Footer/FooterTools";
 import FooterContent from "./components/Footer/FooterContent";
-import languageContent from "./Language/LanguageContent";
+import languageContent from "./Language/LanguageContent.json";
 import {DEFAULT_LANGUAGE} from "./config";
 import {useState} from "react";
 
@@ -28,6 +28,8 @@ import {useState} from "react";
 //         - <FooterTools />
 //         - <FooterContent />
 
+// languageContent temp any types
+const languageData = languageContent as any;
 
 function App() {
     // Single source of truth that represents which language the user selects
@@ -35,7 +37,7 @@ function App() {
 
     // Derived state
     // languageContent is not stored in state because it has no independent lifecycle
-    const currentLanguageUI = languageContent[activeLanguageId];
+    const currentLanguageUI = languageData[activeLanguageId];
 
     return (
       <>
