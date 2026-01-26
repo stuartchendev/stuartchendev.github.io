@@ -1,4 +1,9 @@
-function LanguageOptions({language, setLanguage}) {
+type LanguageOptionsProps ={
+    language: any;
+    setLanguage: any;
+}
+
+function LanguageOptions({language, setLanguage}:LanguageOptionsProps) {
     return (
         <>
             <div className="placeholder">LanguageOptions detail coming soon</div>

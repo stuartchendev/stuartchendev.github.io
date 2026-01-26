@@ -1,4 +1,7 @@
-function GuildLine({ language }) {
+type GuildLineProps = {
+    language: any;
+}
+function GuildLine({ language }:GuildLineProps) {
     return (
         <div className="placeholder">GuildLine detail coming soon</div>
     )
