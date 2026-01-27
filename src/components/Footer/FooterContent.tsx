@@ -1,8 +1,10 @@
+import type {LanguageUi} from "../../types/i18n";
+
 type FooterContentProp = {
-    language: any;
+    languageUi: LanguageUi
 }
 
-function FooterContent({language}:FooterContentProp) {
+function FooterContent({languageUi}:FooterContentProp) {
     return (
         <div className="placeholder">FooterContent detail coming soon</div>
     )

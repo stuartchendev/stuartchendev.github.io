@@ -10,8 +10,9 @@ import ContactSection from "./components/MainLayout/ContactSection";
 import Footer from "./components/Footer/Footer";
 import FooterTools from "./components/Footer/FooterTools";
 import FooterContent from "./components/Footer/FooterContent";
-import languageContent from "./Language/LanguageContent.json";
 import {DEFAULT_LANGUAGE} from "./config";
+import type {LanguageId} from "./types/i18n";
+import {languageData} from "./data/language/languageData";
 import {useState} from "react";
 
 // Portfolio-Structure-NOTE:
@@ -28,12 +29,11 @@ import {useState} from "react";
 //         - <FooterTools />
 //         - <FooterContent />
 
-// languageContent temp any types
-const languageData = languageContent as any;
+
 
 function App() {
     // Single source of truth that represents which language the user selects
-    const [activeLanguageId, setActiveLanguageId] = useState(DEFAULT_LANGUAGE);
+    const [activeLanguageId, setActiveLanguageId] = useState<LanguageId>(DEFAULT_LANGUAGE);
 
     // Derived state
     // languageContent is not stored in state because it has no independent lifecycle
@@ -42,20 +42,19 @@ function App() {
     return (
       <>
         <NavigationHeader>
-            <GuildLine language={currentLanguageUI}/>
-            <LanguageOptions language={currentLanguageUI} setLanguage={setActiveLanguageId}/>
+            <GuildLine languageUi={currentLanguageUI}/>
+            <LanguageOptions languageUi={currentLanguageUI} onSelectLanguage={setActiveLanguageId}/>
         </NavigationHeader>
         <MainLayout>
-            <AboutSection language={currentLanguageUI}/>
+            <AboutSection languageUi={currentLanguageUI}/>
             <ProjectsPage activeLanguageId={activeLanguageId}/>
-            <ContactSection language={currentLanguageUI}/>
+            <ContactSection languageUi={currentLanguageUI}/>
         </MainLayout>
         <Footer>
             <FooterTools/>
-            <FooterContent language={currentLanguageUI}/>
+            <FooterContent languageUi={currentLanguageUI}/>
         </Footer>
       </>
     )
 }
-
 export default App

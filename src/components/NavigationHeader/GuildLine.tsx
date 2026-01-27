@@ -1,7 +1,9 @@
+import type {LanguageUi} from "../../types/i18n";
+
 type GuildLineProps = {
-    language: any;
+    languageUi: LanguageUi;
 }
-function GuildLine({ language }:GuildLineProps) {
+function GuildLine({ languageUi }:GuildLineProps) {
     return (
         <div className="placeholder">GuildLine detail coming soon</div>
     )

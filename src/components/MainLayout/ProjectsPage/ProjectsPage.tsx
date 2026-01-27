@@ -2,11 +2,12 @@ import ProjectsList from "./ProjectsList";
 import ProjectDetailView from "./ProjectDetailView";
 import {useEffect, useState} from "react";
 import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
-import projectsData from "../../../../test/projectsData.json";
+import {projectsData} from "../../../data/test/projectsData";
 import type {Project} from "../../../types/project.ts";
+import type {LanguageId} from "../../../types/i18n";
 
 type ProjectsPageProps = {
-    activeLanguageId: string;
+    activeLanguageId: LanguageId;
 }
 
 // activeProjectId models user selection
@@ -18,7 +19,7 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
 
     // Stored data (non-UI state) because it comes from external data
     // and now becomes activeLanguageId derived state
-    const projects = projectsData[activeLanguageId] as Project[];
+    const projects = projectsData[activeLanguageId];
 
     // This is derived because it can be calculated from activeProjectId
     const selectedProject: Project | null =

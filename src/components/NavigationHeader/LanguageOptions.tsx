@@ -1,19 +1,21 @@
+import type {LanguageId, LanguageUi} from "../../types/i18n";
+
 type LanguageOptionsProps ={
-    language: any;
-    setLanguage: any;
+    languageUi: LanguageUi;
+    onSelectLanguage: (lang: LanguageId) => void;
 }
 
-function LanguageOptions({language, setLanguage}:LanguageOptionsProps) {
+function LanguageOptions({languageUi, onSelectLanguage}:LanguageOptionsProps) {
     return (
         <>
             <div className="placeholder">LanguageOptions detail coming soon</div>
-            <button onClick={() => setLanguage('en')}>
+            <button onClick={() => onSelectLanguage('en')}>
                 EN
             </button>
-            <button onClick={() => setLanguage('zh-Tw')}>
+            <button onClick={() => onSelectLanguage('zh-Tw')}>
                 ZH
             </button>
-            <button onClick={() => setLanguage('jp')}>
+            <button onClick={() => onSelectLanguage('jp')}>
                 JP
             </button>
         </>

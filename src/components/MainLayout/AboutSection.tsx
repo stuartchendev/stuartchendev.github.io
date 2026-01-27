@@ -1,9 +1,11 @@
+import type {LanguageUi} from "../../types/i18n";
+
 type AboutSectionProps = {
-    language: any;
+    languageUi: LanguageUi;
 }
-function AboutSection({language}:AboutSectionProps) {
+function AboutSection({languageUi}:AboutSectionProps) {
     return (
-        <section className="placeholder" id="about">{language.aboutTitle} detail coming soon</section>
+        <section className="placeholder" id="about">{languageUi.aboutTitle ?? "About"} detail coming soon</section>
     )
 }
 
