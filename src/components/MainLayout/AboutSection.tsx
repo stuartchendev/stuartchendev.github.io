@@ -1,11 +1,12 @@
 import type {LanguageUi} from "../../types/i18n";
+import {t} from "../../helper/uiHelper"
 
 type AboutSectionProps = {
     languageUi: LanguageUi;
 }
 function AboutSection({languageUi}:AboutSectionProps) {
     return (
-        <section className="placeholder" id="about">{languageUi.aboutTitle ?? "About"} detail coming soon</section>
+        <section className="placeholder" id="about">{t(languageUi, "aboutTitle", "About")} detail coming soon</section>
     )
 }
 
