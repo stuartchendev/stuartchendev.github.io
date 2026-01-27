@@ -11,10 +11,12 @@
 // selectedProject: Project | undefined
 // projectContent = selectedProject
 
-type ProjectDetailViewProps = {
-    projectContent: any;
+import type {Project} from "../../../types/project";
+
+type ProjectDetailProps = {
+    projectContent: Project; // content must exist,
 }
-function ProjectDetail({projectContent}:ProjectDetailViewProps) {
+function ProjectDetail({projectContent}:ProjectDetailProps) {
     return (
         <>
             <DetailTitle projectTitle={projectContent.title}/>

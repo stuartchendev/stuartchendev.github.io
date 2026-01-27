@@ -1,9 +1,15 @@
 import ProjectDetail from './ProjectDetail';
+import type {Project} from "../../../types/project";
+import type { DisplayMode, OnClose } from "../../../types/ui";
 
 type ProjectDetailViewProps = {
-    displayMode: any;
-    selectedProject: any;
-    onClose: any;
+    displayMode: DisplayMode;
+    selectedProject: Project | null;
+    onClose: OnClose;
+}
+
+type BtnCloseProps = {
+    onClose: OnClose;
 }
 
 function ProjectDetailView({displayMode, selectedProject, onClose}: ProjectDetailViewProps) {
@@ -20,7 +26,7 @@ function ProjectDetailView({displayMode, selectedProject, onClose}: ProjectDetai
     )
 }
 
-function BtnClose({onClose}) {
+function BtnClose({onClose}: BtnCloseProps) {
     return(
         <button className="button__close" onClick={onClose}> Close </button>
     )
