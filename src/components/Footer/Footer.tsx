@@ -1,6 +1,8 @@
 // footer layout
+import type {ReactNode} from "react";
+
 type FooterProp = {
-    children: any;
+    children: ReactNode;
 }
 function Footer({ children }:FooterProp) {
     return <footer>{children}</footer>;
