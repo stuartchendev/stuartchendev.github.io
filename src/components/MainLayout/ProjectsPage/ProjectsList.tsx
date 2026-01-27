@@ -1,7 +1,9 @@
 import ProjectCard from "./ProjectCard";
+import type {Project} from "../../../types/project";
+
 type ProjectsListProps = {
-    projects: any;
-    onSelect: any;
+    projects: Project[];
+    onSelect: (id: string) => void;
 }
 
 function ProjectsList({projects, onSelect}: ProjectsListProps) {
