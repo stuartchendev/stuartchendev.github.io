@@ -1,20 +1,12 @@
-import type { Key } from "react";
 import type {Project} from "../../../types/project";
+import type {OnSelectProject} from "../../../types/ui";
 
 type ProjectCardProps = {
     project: Project;
-    onSelect: (id: string) => void;
+    onSelect: OnSelectProject;
 }
-
-type ProjectHeadProps = {
-    projectId: string;
-    projectTitle: string;
-}
-
-type ProjectShortDescriptionProps = {
-    projectDescription: string;
-}
-
+type ProjectHeadProps = Pick<Project, "id" | "title">
+type ProjectShortDescriptionProps = Pick<Project, "shortDescription">
 type ProjectTagsProps={
     tag: string;
 }
@@ -26,8 +18,8 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
 
     return (
         <li className="project__card" onClick={HandleSetActiveProjectId}>
-            <ProjectHead projectId={project.id} projectTitle={project.title}/>
-            <ProjectShortDescription projectDescription={project.shortDescription}/>
+            <ProjectHead id={project.id} title={project.title}/>
+            <ProjectShortDescription shortDescription={project.shortDescription}/>
             <ul>
                 {project.tags.map((tag , index: Key) =>
                     <ProjectTags key={index} tag={tag}/>
@@ -37,20 +29,19 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
     );
 }
 
-
-function ProjectHead ({projectId, projectTitle}:ProjectHeadProps) {
+function ProjectHead ({id, title}:ProjectHeadProps) {
     return(
         <>
-            <label>{'Id: ' + projectId}</label>
+            <label>{'Id: ' + id}</label>
             <br/>
-            <label>{'Title: '+ projectTitle}</label>
+            <label>{'Title: '+ title}</label>
         </>
     )
 }
 
-function ProjectShortDescription({projectDescription}:ProjectShortDescriptionProps) {
+function ProjectShortDescription({shortDescription}:ProjectShortDescriptionProps) {
     return(
-        <p>{projectDescription}</p>
+        <p>{shortDescription}</p>
     )
 }
 

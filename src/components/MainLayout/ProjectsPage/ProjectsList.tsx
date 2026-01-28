@@ -1,18 +1,19 @@
 import ProjectCard from "./ProjectCard";
 import type {Project} from "../../../types/project";
+import type {OnSelectProject} from "../../../types/ui";
 
 type ProjectsListProps = {
     projects: Project[];
-    onSelect: (id: string) => void;
+    onSelect: OnSelectProject;
 }
 
 function ProjectsList({projects, onSelect}: ProjectsListProps) {
 
     return (
         <ul className={`project__list`}>
-            {projects.map((project) =>
+            {projects.map((project, index) =>
                 <ProjectCard
-                    key={project.id}
+                    key={index}
                     project={project}
                     onSelect={onSelect}
                 />
