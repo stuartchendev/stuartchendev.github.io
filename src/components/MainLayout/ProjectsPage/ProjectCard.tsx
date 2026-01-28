@@ -8,6 +8,9 @@ type ProjectCardProps = {
 type ProjectHeadProps = Pick<Project, "id" | "title">
 type ProjectShortDescriptionProps = Pick<Project, "shortDescription">
 type ProjectTagsProps={
+    tags: Project["tags"];
+}
+type ProjectTagProps ={
     tag: string;
 }
 
@@ -21,9 +24,7 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
             <ProjectHead id={project.id} title={project.title}/>
             <ProjectShortDescription shortDescription={project.shortDescription}/>
             <ul>
-                {project.tags.map((tag , index: Key) =>
-                    <ProjectTags key={index} tag={tag}/>
-                )}
+                <ProjectTags tags={project.tags}/>
             </ul>
         </li>
     );
@@ -45,10 +46,16 @@ function ProjectShortDescription({shortDescription}:ProjectShortDescriptionProps
     )
 }
 
-function ProjectTags ({tag}: ProjectTagsProps) {
+function ProjectTags ({tags}: ProjectTagsProps) {
     return(
-        <li>{tag}</li>
+        tags.map((tag, index) => (
+            <ProjectTag tag={tag} key={index}/>
+        ))
     )
+}
+
+function ProjectTag({tag}:ProjectTagProps){
+    return <li>{tag}</li>
 }
 
 export default ProjectCard;
