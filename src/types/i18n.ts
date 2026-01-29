@@ -1,10 +1,19 @@
 export type LanguageId = "en" | "zh-Tw" | "jp";
 
 export type LanguageUi =  Partial<{
+    guildLineHeaderSection: string;
+    guildLineHeaderRole: string;
+    guildLineHeaderName: string;
+    socialLink: SocialLink[];
     aboutTitle: string;
     aboutInfo: AboutInfo;
     // future add
 }>;
+export type SocialLink ={
+    type: string;
+    href: string;
+    label: string;
+}
 
 export type AboutInfo = {
     aboutName: string;

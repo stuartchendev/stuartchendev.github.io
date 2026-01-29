@@ -1,24 +1,20 @@
 import type {LanguageId, LanguageUi} from "../../types/i18n";
+import LanguageOption from "./LanguageOption";
+import MediaLinkList from "./MediaLinkList";
 
 type LanguageOptionsProps ={
     languageUi: LanguageUi;
     onSelectLanguage: (lang: LanguageId) => void;
 }
 
+
 function LanguageOptions({languageUi, onSelectLanguage}:LanguageOptionsProps) {
+    const socialLink = languageUi.socialLink;
     return (
-        <>
-            <div className="placeholder">LanguageOptions detail coming soon</div>
-            <button onClick={() => onSelectLanguage('en')}>
-                EN
-            </button>
-            <button onClick={() => onSelectLanguage('zh-Tw')}>
-                ZH
-            </button>
-            <button onClick={() => onSelectLanguage('jp')}>
-                JP
-            </button>
-        </>
+        <div className="header__right">
+            <MediaLinkList links={socialLink} />
+            <LanguageOption onSelectLanguage={onSelectLanguage} />
+        </div>
     )
 }
 

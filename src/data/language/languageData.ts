@@ -2,6 +2,13 @@ import type {LanguageId, LanguageUi} from "../../types/i18n";
 
 export const languageData: Record<LanguageId, LanguageUi> = {
     "en": {
+        "guildLineHeaderName": "Stuart Chen",
+        "guildLineHeaderRole": "Frontend Developer · React",
+        "guildLineHeaderSection": "Projects",
+        "socialLink": [
+            {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
+            {type: "Email", href: "stuartchen.dev@gmail.com", label: "Email"},
+        ],
         "aboutTitle": "About Me",
         "aboutInfo": {
             "aboutName": "Yi Ting (Stuart) Chen",
@@ -23,6 +30,13 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         }
     },
     "zh-Tw": {
+        "guildLineHeaderName": "陳奕廷",
+        "guildLineHeaderRole": "前端開發者 · React",
+        "guildLineHeaderSection": "作品集",
+        "socialLink": [
+            {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
+            {type: "Email", href: "stuartchen.dev@gmail.com", label: "Email"},
+        ],
         "aboutTitle": "關於我",
         "aboutInfo": {
             "aboutName": "陳奕廷",
