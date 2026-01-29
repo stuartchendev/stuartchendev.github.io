@@ -6,7 +6,7 @@ type FooterContentProp = {
 
 function FooterContent({languageUi}:FooterContentProp) {
     return (
-        <div className="placeholder">FooterContent detail coming soon</div>
+        <div className="footer__content">FooterContent detail coming soon</div>
     )
 }
 

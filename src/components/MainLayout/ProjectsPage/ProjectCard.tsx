@@ -23,7 +23,7 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
         <li className="project__card" onClick={HandleSetActiveProjectId}>
             <ProjectHead id={project.id} title={project.title}/>
             <ProjectShortDescription shortDescription={project.shortDescription}/>
-            <ul>
+            <ul className="project__card-tags">
                 <ProjectTags tags={project.tags}/>
             </ul>
         </li>
@@ -33,16 +33,15 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
 function ProjectHead ({id, title}:ProjectHeadProps) {
     return(
         <>
-            <label>{'Id: ' + id}</label>
-            <br/>
-            <label>{title}</label>
+            <label className="project__card-id">{id}</label>
+            <h2>{title}</h2>
         </>
     )
 }
 
 function ProjectShortDescription({shortDescription}:ProjectShortDescriptionProps) {
     return(
-        <p>{shortDescription}</p>
+        <p className="project__card-description">{shortDescription}</p>
     )
 }
 
@@ -55,7 +54,7 @@ function ProjectTags ({tags}: ProjectTagsProps) {
 }
 
 function ProjectTag({tag}:ProjectTagProps){
-    return <li>{tag}</li>
+    return <li className="project__card-tag">{tag}</li>
 }
 
 export default ProjectCard;

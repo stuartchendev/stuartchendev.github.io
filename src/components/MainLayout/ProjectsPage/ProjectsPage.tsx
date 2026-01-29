@@ -33,7 +33,7 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
 
     // onClose purpose to clear activeProjectId
     return (
-     <section className="ProjectsPage">
+     <section className="projects__page">
          {projects && <ProjectsList projects={projects} onSelect={setActiveProjectId} />}
          {selectedProject &&
              <ProjectDetailView

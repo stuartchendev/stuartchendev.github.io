@@ -7,15 +7,14 @@ type LanguageOptionProps={
 function LanguageOption({onSelectLanguage}:LanguageOptionProps) {
     return (
         <>
-            <div className="placeholder">LanguageOptions detail TBC</div>
-            <button onClick={() => onSelectLanguage('en')}>
-                EN
+            <button className="language__btn" onClick={() => onSelectLanguage('en')}>
+                En
             </button>
-            <button onClick={() => onSelectLanguage('zh-Tw')}>
-                中文(繁體)
+            <button className="language__btn" onClick={() => onSelectLanguage('zh-Tw')}>
+                Zh(Tw)
             </button>
-            <button onClick={() => onSelectLanguage('jp')}>
-                日本語
+            <button className="language__btn" onClick={() => onSelectLanguage('jp')}>
+                Ja
             </button>
         </>
     )

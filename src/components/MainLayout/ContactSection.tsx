@@ -5,7 +5,7 @@ type CustomSectionProps = {
 }
 function ContactSection({languageUi}:CustomSectionProps) {
     return(
-        <section className="placeholder" id="contact">Contact detail coming soon</section>
+        <section className="contact__me" id="contact">Contact detail coming soon</section>
     )
 }
 export default ContactSection;

@@ -32,7 +32,7 @@ function HeaderYear({year}: HeaderYearProps){
 
 function HeaderTags({tags}:HeaderTagsProps){
     return (
-        <ul className="projectd__detail-tags">
+        <ul className="project__detail-tags">
             {tags.map((tag: string, index: number) => (
                 <HeaderTag tag={tag} key={`${tag}-${index}`}/>
             ))}
