@@ -1,4 +1,4 @@
-import ProjectDetail from './ProjectDetail';
+import ProjectDetail from './ProjectDetail/ProjectDetail';
 import type {Project} from "../../../types/project";
 import type { DisplayMode, OnClose } from "../../../types/ui";
 
