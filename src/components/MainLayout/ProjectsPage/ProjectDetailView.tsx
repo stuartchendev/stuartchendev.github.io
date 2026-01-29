@@ -4,7 +4,7 @@ import type { DisplayMode, OnClose } from "../../../types/ui";
 
 type ProjectDetailViewProps = {
     displayMode: DisplayMode;
-    selectedProject: Project | null;
+    selectedProject: Project;
     onClose: OnClose;
 }
 

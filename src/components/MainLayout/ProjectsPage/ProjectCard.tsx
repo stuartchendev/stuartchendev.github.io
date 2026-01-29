@@ -35,7 +35,7 @@ function ProjectHead ({id, title}:ProjectHeadProps) {
         <>
             <label>{'Id: ' + id}</label>
             <br/>
-            <label>{'Title: '+ title}</label>
+            <label>{title}</label>
         </>
     )
 }

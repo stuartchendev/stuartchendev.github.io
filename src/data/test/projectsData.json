@@ -55,6 +55,44 @@
       ]
     }
   ],
-  "zh-Tw": [],
+  "zh-Tw": [
+    {
+      "id": "smart-garage-door-system",
+      "title": "智慧鐵捲門系統",
+      "shortDescription": "使用 MQTT 通訊，偵測使用者接近後自動解鎖車庫門的智慧門禁系統。",
+      "tags": ["Android Studio", "MQTT", "Linux server", "Java"],
+      "image": "images/GP.png",
+      "year": "2023 Q4",
+      "githubLink": "",
+      "challenges": [
+        "提升接近偵測的準確度與穩定性。",
+        "建立 Linux server 與門禁裝置間可靠的 MQTT 通訊。",
+        "確保門禁端能正確解析並回應 MQTT 訊號。"
+      ],
+      "features": [
+        "以手機接近偵測實現免動手自動解鎖。",
+        "透過 MQTT 協定進行安全且即時的訊息傳遞。",
+        "可由行動端進行遠端控制（視專案實作情況調整）。"
+      ]
+    },
+    {
+      "id": "forkify",
+      "title": "Forkify 食譜搜尋 App",
+      "shortDescription": "以 MVC 架構實作的食譜搜尋應用，串接 API 取得資料並呈現。",
+      "tags": ["JavaScript", "MVC", "API"]
+    },
+    {
+      "id": "mapty",
+      "title": "Mapty 運動紀錄 App",
+      "shortDescription": "結合地圖與地理定位的運動紀錄工具，並以 OOP 思維設計資料結構。",
+      "tags": ["JavaScript", "OOP", "Geolocation"]
+    },
+    {
+      "id": "portfolio",
+      "title": "個人作品集網站",
+      "shortDescription": "支援 RWD 與深色模式的作品集網站，用於展示專案與個人資訊。",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    }
+  ],
   "jp": []
 }
