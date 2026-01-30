@@ -178,7 +178,7 @@ a:hover {
     border: 1px solid lightgray;
 }
 .project__card-tag:hover{
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 /*for project detail*/
@@ -267,8 +267,49 @@ a:hover {
 
 /*for contact*/
 .contact__me{
-    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
 }
+.contact-form {
+    display: grid;
+    gap: 14px;
+    min-width: 520px;
+    max-width: 600px;
+}
+
+.contact-form__field {
+    display: grid;
+    gap: 6px;
+}
+
+.contact-form__label {
+    font-weight: 600;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    padding: 10px 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 10px;
+    font: inherit;
+}
+
+.contact-form__submit {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.15);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-form__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 /*for footer*/
 footer{

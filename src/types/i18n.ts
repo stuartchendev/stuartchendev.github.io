@@ -7,6 +7,10 @@ export type LanguageUi =  Partial<{
     socialLink: SocialLink[];
     aboutTitle: string;
     aboutInfo: AboutInfo;
+    contactTitle: string;
+    contactLabelName: string;
+    contactLabelEmail: string;
+    contactLabelMessage: string;
     // future add
 }>;
 export type SocialLink ={

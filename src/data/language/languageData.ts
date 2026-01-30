@@ -27,7 +27,11 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                     {type: "text", text: " role where I can continue growing with a team that values clean design and engineering thinking."}
                 ]
             }
-        }
+        },
+        "contactTitle": "Contact Me",
+        "contactLabelName": "Name",
+        "contactLabelEmail": "Email",
+        "contactLabelMessage": "Message",
     },
     "zh-Tw": {
         "guildLineHeaderName": "陳奕廷",
@@ -55,7 +59,11 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                     {type: "text", text: " 的機會，希望加入重視工程思維與成長文化的團隊，持續把前端做得更紮實。"}
                 ]
             }
-        }
+        },
+        "contactTitle": "歡迎聯繫",
+        "contactLabelName": "姓名",
+        "contactLabelEmail": "電子郵件",
+        "contactLabelMessage": "訊息",
     },
     "jp": {
         "aboutTitle": "私について"
