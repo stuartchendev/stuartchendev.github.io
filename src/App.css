@@ -97,6 +97,19 @@ a:hover {
     gap: 12px;
 }
 
+.header__languageOptions{
+    display: flex;
+    gap: 12px;
+    justify-self: start;
+}
+.language__btn{
+    padding: 4px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.language__btn:hover{
+    background-color: var(--text-base);
+}
 
 /*for media link*/
 .media-links {

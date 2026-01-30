@@ -6,7 +6,7 @@ type LanguageOptionProps={
 
 function LanguageOption({onSelectLanguage}:LanguageOptionProps) {
     return (
-        <>
+        <div className="header__languageOptions">
             <button className="language__btn" onClick={() => onSelectLanguage('en')}>
                 En
             </button>
@@ -16,7 +16,7 @@ function LanguageOption({onSelectLanguage}:LanguageOptionProps) {
             <button className="language__btn" onClick={() => onSelectLanguage('jp')}>
                 Ja
             </button>
-        </>
+        </div>
     )
 }
 
