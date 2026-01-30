@@ -326,12 +326,6 @@ a:hover {
     cursor: not-allowed;
 }
 
-/*for footer__toolbar*/
-.footer__toolbar{
-    position: absolute;
-    right: 20px;
-}
-
 
 /*for footer*/
 footer {
@@ -350,4 +344,12 @@ footer ul {
     justify-content: center;
 }
 
+/*for footer__toolbar*/
+.footer__toolbar{
+    position: absolute;
+    right: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
 

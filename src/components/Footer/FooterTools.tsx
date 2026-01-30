@@ -1,6 +1,6 @@
 function FooterTools() {
     return (
-        <div className="footer__toolbar">FooterTools detail coming soon</div>
+        <div className="footer__toolbar">FooterTools TBC</div>
     )
 }
 
