@@ -10,8 +10,8 @@ type MediaLinkItemProps = {
 function MediaLinkList({ links }: MediaLinkListProps) {
     return(
         <div className="media-links">
-            {links.map((link, index) => (
-                <MediaLinkItem link={link} key={index} />
+            {links.map((link) => (
+                <MediaLinkItem link={link} key={link.href} />
             ))}
         </div>
     );
@@ -25,7 +25,7 @@ function MediaLinkItem({ link }: MediaLinkItemProps) {
             href={href}
             target="_blank"
             rel="noreferrer"
-            aria-label={typeof label === "string" ? label : "social link"}
+            aria-label={typeof label === "string" ? label : `Open ${href}`}
         >
             {label}
         </a>
