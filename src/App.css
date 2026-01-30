@@ -48,7 +48,21 @@ a:hover {
     text-decoration: none;
 }
 
-
+.button__close{
+    font-weight: bold;
+    position: absolute;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+}
+.button__close:hover{
+    background-color: #111;
+    color: white;
+}
 
 /*for NavigationHeader*/
 .header {

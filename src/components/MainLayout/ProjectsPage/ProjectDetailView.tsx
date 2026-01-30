@@ -28,7 +28,7 @@ function ProjectDetailView({displayMode, selectedProject, onClose}: ProjectDetai
 
 function BtnClose({onClose}: BtnCloseProps) {
     return(
-        <button className="button__close" onClick={onClose}> Close </button>
+        <button className="button__close" onClick={onClose}> X </button>
     )
 }
 
