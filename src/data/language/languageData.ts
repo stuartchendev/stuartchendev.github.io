@@ -7,7 +7,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "guildLineHeaderSection": "Projects",
         "socialLink": [
             {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
-            {type: "Email", href: "stuartchen.dev@gmail.com", label: "Email"},
+            {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"},
         ],
         "aboutTitle": "About Me",
         "aboutInfo": {
@@ -39,7 +39,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "guildLineHeaderSection": "作品集",
         "socialLink": [
             {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
-            {type: "Email", href: "stuartchen.dev@gmail.com", label: "Email"},
+            {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"},
         ],
         "aboutTitle": "關於我",
         "aboutInfo": {

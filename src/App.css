@@ -310,13 +310,28 @@ a:hover {
     cursor: not-allowed;
 }
 
+/*for footer__toolbar*/
+.footer__toolbar{
+    position: absolute;
+    right: 20px;
+}
+
 
 /*for footer*/
-footer{
-    padding: 48px 0;
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    color:#2f2f2f;
 }
-.footer__content{
-    margin-top: 16px;
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 
