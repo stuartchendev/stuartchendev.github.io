@@ -1,8 +1,6 @@
-import type {Project} from "../../../../types/project";
-
 type DetailSectionProps = {
     sectionKey: string;
-    title: Project["title"];
+    title: string;
     items: string[];
 };
 
@@ -46,8 +44,6 @@ function SectionContent({items}: SectionContentProps) {
 
 
 function SectionList({items}: SectionListProps) {
-    if (!Array.isArray(items) || items.length === 0) return null;
-
     return (
         <ul className="detail__list">
             {items.map((item: string, idx: number) => (

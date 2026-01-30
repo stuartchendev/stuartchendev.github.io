@@ -10,23 +10,11 @@ type ProjectDetailProps = {
 }
 
 function ProjectDetail({projectContent}:ProjectDetailProps) {
+    const { title, shortDescription, year, tags, githubLink, demoLink, features, challenges } = projectContent;
 
-    // must need
-    const title = projectContent.title;
-    const shortDescription = projectContent.shortDescription;
-
-    // options
-    const year = projectContent.year;
-    const tags = projectContent.tags;
-    const githubLink = projectContent.githubLink;
-    const demoLink = projectContent.demoLink;
-
-    const features = projectContent.features;
-    const challenges = projectContent.challenges;
-
-    const hasFeatures = Array.isArray(features) && features.length > 0;
-    const hasChallenges = Array.isArray(challenges) && challenges.length > 0;
-    const hasTags = Array.isArray(tags) && tags.length > 0;
+    const hasTags = tags.length > 0;
+    const hasFeatures = (features?.length ?? 0) > 0;
+    const hasChallenges = (challenges?.length ?? 0) > 0;
 
     return (
         <article className="project__detail">
@@ -38,10 +26,10 @@ function ProjectDetail({projectContent}:ProjectDetailProps) {
             </DetailHeader>
             <DetailDescription description={shortDescription}/>
             {hasFeatures && (
-                <DetailSection sectionKey="features" title="Feature" items={features}/>
+                <DetailSection sectionKey="features" title="Feature" items={features!}/>
             )}
             {hasChallenges && (
-                <DetailSection sectionKey="challenges" title="Challenges" items={challenges}/>
+                <DetailSection sectionKey="challenges" title="Challenges" items={challenges!}/>
             )}
         </article>
     )
