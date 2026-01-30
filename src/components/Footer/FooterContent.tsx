@@ -5,22 +5,24 @@ type FooterContentProp = {
     languageUi: LanguageUi;
 }
 type FooterCopyrightProps = {
+    year: number;
     name: AboutInfo["aboutName"];
 }
 
 function FooterContent({languageUi}:FooterContentProp) {
     const socialLinks = languageUi.socialLink;
     const copyrightOwner = languageUi.aboutInfo.aboutName;
+    const year = new Date().getFullYear();
     return (
         <>
-            <FooterCopyright name={copyrightOwner} />
+            <FooterCopyright name={copyrightOwner} year={year} />
             <MediaLinkList links={socialLinks}/>
         </>
     )
 }
-function FooterCopyright({name}:FooterCopyrightProps) {
+function FooterCopyright({name, year}:FooterCopyrightProps) {
     return (
-        <p>© 2026 {name}</p>
+        <p>© {year} {name}</p>
     )
 }
 
