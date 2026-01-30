@@ -87,6 +87,9 @@ a:hover {
     opacity: 0.85;
     font-weight: 600;
 }
+.header__section{
+    margin: 0 16px;
+}
 
 .header__right {
     display: flex;

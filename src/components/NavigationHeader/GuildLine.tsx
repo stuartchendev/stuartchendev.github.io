@@ -21,7 +21,9 @@ function GuildLine({ languageUi }:GuildLineProps) {
                 <HeaderSpan type="role" spanContent={languageUi.guildLineHeaderRole}/>
             </HeaderBrand>
             <HeaderGuildLine>
+                <HeaderSpan type="section" spanContent={languageUi.aboutTitle}/>
                 <HeaderSpan type="section" spanContent={languageUi.guildLineHeaderSection}/>
+                <HeaderSpan type="section" spanContent={languageUi.contactTitle}/>
             </HeaderGuildLine>
         </div>
     )
