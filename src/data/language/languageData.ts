@@ -20,11 +20,17 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                     {type: "br"},
                     {type: "text", text: "I care deeply about "},
                     {type: "text", text: "state design, data flow, and maintainability, ", strong: true},
-                    {type: "text", text: " and I learn primarily through building and refactoring real projects rather than just completing features."},
+                    {
+                        type: "text",
+                        text: " and I learn primarily through building and refactoring real projects rather than just completing features."
+                    },
                     {type: "br"},
                     {type: "text", text: "I’m currently looking for a "},
                     {type: "text", text: "Junior Frontend Engineer", strong: true},
-                    {type: "text", text: " role where I can continue growing with a team that values clean design and engineering thinking."}
+                    {
+                        type: "text",
+                        text: " role where I can continue growing with a team that values clean design and engineering thinking."
+                    }
                 ]
             }
         },
@@ -65,7 +71,52 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "contactLabelEmail": "電子郵件",
         "contactLabelMessage": "訊息",
     },
-    "jp": {
-        "aboutTitle": "私について"
+    "ja": {
+        "guildLineHeaderName": "Stuart Chen",
+        "guildLineHeaderRole": "フロントエンドエンジニア · React",
+        "guildLineHeaderSection": "プロジェクト",
+        "socialLink": [
+            {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
+            {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"}
+        ],
+        "aboutTitle": "自己紹介",
+        "aboutInfo": {
+            "aboutName": "Yi Ting (Stuart) Chen",
+            "aboutSubTitle": "独学のフロントエンドエンジニア",
+            "aboutDescription": {
+                "parts": [
+                    {"type": "text", "text": "私は "},
+                    {"type": "text", "text": "JavaScript・React・TypeScript", "strong": true},
+                    {"type": "text", "text": " を中心に取り組んでいます。"},
+                    {"type": "br"},
+                    {"type": "text", "text": "特に "},
+                    {
+                        "type": "text",
+                        "text": "state 設計、データフロー、保守性",
+                        "strong": true
+                    },
+                    {
+                        "type": "text",
+                        "text": " を重視しており、単に機能を実装するだけでなく、実際のプロジェクトを作りながらリファクタリングを通して学ぶことを大切にしています。"
+                    },
+                    {"type": "br"},
+                    {"type": "text", "text": "現在、"},
+                    {
+                        "type": "text",
+                        "text": "Junior フロントエンドエンジニア",
+                        "strong": true
+                    },
+                    {
+                        "type": "text",
+                        "text": " として、クリーンな設計やエンジニアリング思考を大切にするチームで成長できるポジションを探しています。"
+                    }
+                ]
+            }
+        },
+        "contactTitle": "お問い合わせ",
+        "contactLabelName": "お名前",
+        "contactLabelEmail": "メールアドレス",
+        "contactLabelMessage": "メッセージ",
     }
+
 };

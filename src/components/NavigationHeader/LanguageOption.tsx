@@ -13,7 +13,7 @@ function LanguageOption({onSelectLanguage}:LanguageOptionProps) {
             <button className="language__btn" onClick={() => onSelectLanguage('zh-Tw')}>
                 Zh(Tw)
             </button>
-            <button className="language__btn" onClick={() => onSelectLanguage('jp')}>
+            <button className="language__btn" onClick={() => onSelectLanguage('ja')}>
                 Ja
             </button>
         </div>
