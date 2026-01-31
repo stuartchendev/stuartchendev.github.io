@@ -9,7 +9,7 @@
         "React",
         "TypeScript"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
       "demoLink": "https://stuartchendev.github.io/",
@@ -33,10 +33,10 @@
         "MVC",
         "API"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
-      "githubLink": "TBC",
-      "demoLink": "TBC",
+      "githubLink": "",
+      "demoLink": "",
       "challenges": [
         "Designing a clear separation of concerns using MVC in a non-framework environment",
         "Managing asynchronous API data while keeping UI state predictable",
@@ -58,7 +58,7 @@
         "Leaflet",
         "State Management"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
       "demoLink": "https://mapty-mvc-app.netlify.app/",
@@ -83,7 +83,7 @@
         "Linux server",
         "Java"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2023 Q4",
       "githubLink": "",
       "demoLink": "",
@@ -109,7 +109,7 @@
         "React",
         "TypeScript"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
       "demoLink": "https://stuartchendev.github.io/",
@@ -133,7 +133,7 @@
         "MVC",
         "API"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
       "githubLink": "TBC",
       "demoLink": "TBC",
@@ -158,7 +158,7 @@
         "Leaflet",
         "State Management"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
       "demoLink": "https://mapty-mvc-app.netlify.app/",
@@ -204,7 +204,7 @@
         "React",
         "TypeScript"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
       "demoLink": "https://stuartchendev.github.io/",
@@ -228,7 +228,7 @@
         "MVC",
         "API"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
       "githubLink": "TBC",
       "demoLink": "TBC",
@@ -253,7 +253,7 @@
         "Leaflet",
         "State Management"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
       "demoLink": "https://mapty-mvc-app.netlify.app/",
@@ -278,7 +278,7 @@
         "Linux サーバー",
         "Java"
       ],
-      "image": "img/TBC.png",
+      "image": [],
       "year": "2023 Q4",
       "githubLink": "",
       "demoLink": "",
