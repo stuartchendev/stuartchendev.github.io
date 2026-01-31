@@ -36,7 +36,7 @@
       "image": [],
       "year": "2025 Q4",
       "githubLink": "",
-      "demoLink": "",
+      "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "Designing a clear separation of concerns using MVC in a non-framework environment",
         "Managing asynchronous API data while keeping UI state predictable",
@@ -135,8 +135,8 @@
       ],
       "image": [],
       "year": "2025 Q4",
-      "githubLink": "TBC",
-      "demoLink": "TBC",
+      "githubLink": "",
+      "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "在不依賴前端框架的情況下，設計清楚的 MVC 職責分離",
         "在處理非同步 API 資料時，維持 UI 狀態的一致性與可預測性",
@@ -230,8 +230,8 @@
       ],
       "image": [],
       "year": "2025 Q4",
-      "githubLink": "TBC",
-      "demoLink": "TBC",
+      "githubLink": "",
+      "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "フレームワークに依存せず、MVC による明確な責務分離を設計すること",
         "非同期 API データを扱いながら、UI 状態の一貫性と予測可能性を保つこと",
