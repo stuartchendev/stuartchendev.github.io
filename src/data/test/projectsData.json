@@ -1,27 +1,27 @@
 {
   "en": [
     {
-      "id": "smart-garage-door-system",
-      "title": "Smart Garage Door System",
-      "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
+      "id": "portfolio",
+      "title": "Portfolio Website",
+      "shortDescription": "A personal portfolio built with React and TypeScript to showcase projects through clear state design, data-driven UI, and maintainable component architecture.",
       "tags": [
-        "Android Studio",
-        "MQTT",
-        "Linux server",
-        "Java"
+        "HTML/CSS",
+        "React",
+        "TypeScript"
       ],
-      "image": "images/GP.png",
-      "year": "2023 Q4",
-      "githubLink": "",
+      "image": "img/TBC.png",
+      "year": "2026 Q1",
+      "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
+      "demoLink": "https://stuartchendev.github.io/",
       "challenges": [
-        "Ensure the system can accurately detect the user approaching the garage door.",
-        "Establish reliable MQTT communication between the Linux server and the door system.",
-        "Ensure the door system correctly processes and responds to MQTT signals."
+        "Designing clear state responsibility without mixing UI state and project data",
+        "Avoiding duplicated UI state in project detail interactions",
+        "Structuring modal interactions without relying on fragile event propagation"
       ],
       "features": [
-        "Hands-free automatic door unlocking using mobile device proximity detection.",
-        "Secure communication using MQTT protocol.",
-        "Remote access and control via a mobile app (if applicable)."
+        "Multi-language support with data-driven UI structure",
+        "Project list with detail view using a single source of truth (activeProjectId)",
+        "Reusable layout and navigation components for future extension"
       ]
     },
     {
@@ -45,34 +45,53 @@
       ]
     },
     {
-      "id": "portfolio",
-      "title": "Portfolio Website",
-      "shortDescription": "Personal portfolio with responsive layout and dark mode",
+      "id": "smart-garage-door-system",
+      "title": "Smart Garage Door System",
+      "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
       "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "Android Studio",
+        "MQTT",
+        "Linux server",
+        "Java"
+      ],
+      "image": "img/TBC.png",
+      "year": "2023 Q4",
+      "githubLink": "",
+      "challenges": [
+        "Ensure the system can accurately detect the user approaching the garage door.",
+        "Establish reliable MQTT communication between the Linux server and the door system.",
+        "Ensure the door system correctly processes and responds to MQTT signals."
+      ],
+      "features": [
+        "Hands-free automatic door unlocking using mobile device proximity detection.",
+        "Secure communication using MQTT protocol.",
+        "Remote access and control via a mobile app (if applicable)."
       ]
     }
   ],
   "zh-Tw": [
     {
-      "id": "smart-garage-door-system",
-      "title": "智慧鐵捲門系統",
-      "shortDescription": "使用 MQTT 通訊，偵測使用者接近後自動解鎖車庫門的智慧門禁系統。",
-      "tags": ["Android Studio", "MQTT", "Linux server", "Java"],
-      "image": "images/GP.png",
-      "year": "2023 Q4",
-      "githubLink": "",
+      "id": "portfolio",
+      "title": "作品集網站",
+      "shortDescription": "使用 React 與 TypeScript 打造的個人作品集網站，著重於清楚的 state 設計、資料驅動的 UI，以及可維護的元件架構。",
+      "tags": [
+        "HTML/CSS",
+        "React",
+        "TypeScript"
+      ],
+      "image": "img/TBC.png",
+      "year": "2026 Q1",
+      "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
+      "demoLink": "https://stuartchendev.github.io/",
       "challenges": [
-        "提升接近偵測的準確度與穩定性。",
-        "建立 Linux server 與門禁裝置間可靠的 MQTT 通訊。",
-        "確保門禁端能正確解析並回應 MQTT 訊號。"
+        "在不混合 UI 狀態與專案資料的前提下，設計清楚的 state 責任邊界",
+        "避免在專案細節互動中產生重複的 UI state",
+        "在不依賴脆弱的事件傳遞技巧下，設計穩定的 modal 互動結構"
       ],
       "features": [
-        "以手機接近偵測實現免動手自動解鎖。",
-        "透過 MQTT 協定進行安全且即時的訊息傳遞。",
-        "可由行動端進行遠端控制（視專案實作情況調整）。"
+        "支援多語系的資料驅動 UI 架構",
+        "以單一狀態來源（activeProjectId）實作專案列表與細節檢視",
+        "可重用的版型與導覽元件，方便未來功能擴充"
       ]
     },
     {
@@ -94,5 +113,30 @@
       "tags": ["HTML", "CSS", "JavaScript"]
     }
   ],
-  "ja": []
+  "ja": [
+    {
+      "id": "portfolio",
+      "title": "ポートフォリオサイト",
+      "shortDescription": "React と TypeScript を用いて構築した個人ポートフォリオです。明確な state 設計、データ駆動の UI、そして保守性の高いコンポーネント構成に重点を置いています。",
+      "tags": [
+        "HTML/CSS",
+        "React",
+        "TypeScript"
+      ],
+      "image": "img/TBC.png",
+      "year": "2026 Q1",
+      "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
+      "demoLink": "https://stuartchendev.github.io/",
+      "challenges": [
+        "UI 状態とプロジェクトデータを混在させず、明確な state の責務を設計すること",
+        "プロジェクト詳細のインタラクションにおいて、重複した UI state を避けること",
+        "イベント伝播に依存しない、安定したモーダル構造を設計すること"
+      ],
+      "features": [
+        "多言語対応のデータ駆動 UI 構造",
+        "単一の状態管理（activeProjectId）によるプロジェクト一覧と詳細表示",
+        "将来の拡張を考慮した、再利用可能なレイアウトおよびナビゲーションコンポーネント"
+      ]
+    }
+  ]
 }
