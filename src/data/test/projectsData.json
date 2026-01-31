@@ -27,21 +27,50 @@
     {
       "id": "forkify",
       "title": "Forkify App",
-      "shortDescription": "Recipe search app with MVC architecture",
+      "shortDescription": "A recipe search and management application built with vanilla JavaScript, focusing on MVC architecture, clear data flow, and maintainable modular design.",
       "tags": [
         "JavaScript",
         "MVC",
         "API"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "TBC",
+      "demoLink": "TBC",
+      "challenges": [
+        "Designing a clear separation of concerns using MVC in a non-framework environment",
+        "Managing asynchronous API data while keeping UI state predictable",
+        "Keeping DOM updates efficient and consistent across multiple interactive features"
+      ],
+      "features": [
+        "Recipe search with external API integration using async/await",
+        "Modular MVC architecture with dedicated model, view, and controller layers",
+        "Interactive features including pagination, servings adjustment, and bookmarks with persistence"
       ]
     },
     {
       "id": "mapty",
       "title": "Mapty App",
-      "shortDescription": "Workout tracking app using OOP and Maps",
+      "shortDescription": "A map-based workout tracking application refactored into a clear MVC architecture, focusing on state separation, predictable UI behavior, and long-term maintainability.",
       "tags": [
         "JavaScript",
-        "OOP",
-        "Geolocation"
+        "MVC",
+        "Leaflet",
+        "State Management"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "https://github.com/stuartchendev/mapty-app",
+      "demoLink": "https://mapty-mvc-app.netlify.app/",
+      "challenges": [
+        "Refactoring a monolithic application into a multi-entity MVC architecture",
+        "Separating domain state from UI instance state to avoid unintended render side effects",
+        "Designing deterministic control flow for complex user interactions on the map"
+      ],
+      "features": [
+        "Geolocation-based workout creation with map interaction",
+        "Running and cycling workout tracking with persistent state (localStorage)",
+        "Clear separation between model, controller, and view layers for scalability"
       ]
     },
     {
@@ -57,6 +86,7 @@
       "image": "img/TBC.png",
       "year": "2023 Q4",
       "githubLink": "",
+      "demoLink": "",
       "challenges": [
         "Ensure the system can accurately detect the user approaching the garage door.",
         "Establish reliable MQTT communication between the Linux server and the door system.",
@@ -96,21 +126,72 @@
     },
     {
       "id": "forkify",
-      "title": "Forkify 食譜搜尋 App",
-      "shortDescription": "以 MVC 架構實作的食譜搜尋應用，串接 API 取得資料並呈現。",
-      "tags": ["JavaScript", "MVC", "API"]
+      "title": "Forkify 食譜應用",
+      "shortDescription": "使用原生 JavaScript 開發的食譜搜尋與管理應用，著重於 MVC 架構、清楚的資料流，以及可維護的模組化設計。",
+      "tags": [
+        "JavaScript",
+        "MVC",
+        "API"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "TBC",
+      "demoLink": "TBC",
+      "challenges": [
+        "在不依賴前端框架的情況下，設計清楚的 MVC 職責分離",
+        "在處理非同步 API 資料時，維持 UI 狀態的一致性與可預測性",
+        "在多種互動功能下，保持 DOM 更新的效率與穩定性"
+      ],
+      "features": [
+        "透過 async/await 串接外部 API 的食譜搜尋功能",
+        "具備明確 model、view、controller 分層的 MVC 架構設計",
+        "包含分頁、份量調整與書籤儲存（localStorage）的互動功能"
+      ]
     },
     {
       "id": "mapty",
-      "title": "Mapty 運動紀錄 App",
-      "shortDescription": "結合地圖與地理定位的運動紀錄工具，並以 OOP 思維設計資料結構。",
-      "tags": ["JavaScript", "OOP", "Geolocation"]
+      "title": "Mapty 運動地圖應用",
+      "shortDescription": "一款以地圖為核心的運動紀錄應用，將原有實作重構為清楚的 MVC 架構，著重於狀態分離、可預測的 UI 行為，以及長期可維護性。",
+      "tags": [
+        "JavaScript",
+        "MVC",
+        "Leaflet",
+        "State Management"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "https://github.com/stuartchendev/mapty-app",
+      "demoLink": "https://mapty-mvc-app.netlify.app/",
+      "challenges": [
+        "將單一結構的應用重構為多實體的 MVC 架構",
+        "明確區分領域狀態（domain state）與 UI 實例狀態，避免非預期的畫面重新渲染",
+        "為地圖互動設計具決定性的控制流程，降低複雜互動帶來的錯誤風險"
+      ],
+      "features": [
+        "基於地理定位的運動建立與地圖互動",
+        "跑步與自行車運動紀錄，並使用 localStorage 進行狀態保存",
+        "清楚分離 model、controller 與 view 的 MVC 架構，提升擴充性"
+      ]
     },
     {
-      "id": "portfolio",
-      "title": "個人作品集網站",
-      "shortDescription": "支援 RWD 與深色模式的作品集網站，用於展示專案與個人資訊。",
-      "tags": ["HTML", "CSS", "JavaScript"]
+      "id": "smart-garage-door-system",
+      "title": "智慧車庫門系統",
+      "shortDescription": "使用 MQTT 通訊，偵測使用者接近後自動解鎖車庫門的智慧門禁系統。",
+      "tags": ["Android Studio", "MQTT", "Linux server", "Java"],
+      "image": "images/GP.png",
+      "year": "2023 Q4",
+      "githubLink": "",
+      "demoLink": "",
+      "challenges": [
+        "提升接近偵測的準確度與穩定性。",
+        "建立 Linux server 與門禁裝置間可靠的 MQTT 通訊。",
+        "確保門禁端能正確解析並回應 MQTT 訊號。"
+      ],
+      "features": [
+        "以手機接近偵測實現免動手自動解鎖。",
+        "透過 MQTT 協定進行安全且即時的訊息傳遞。",
+        "可由行動端進行遠端控制（視專案實作情況調整）。"
+      ]
     }
   ],
   "ja": [
@@ -136,6 +217,80 @@
         "多言語対応のデータ駆動 UI 構造",
         "単一の状態管理（activeProjectId）によるプロジェクト一覧と詳細表示",
         "将来の拡張を考慮した、再利用可能なレイアウトおよびナビゲーションコンポーネント"
+      ]
+    },
+    {
+      "id": "forkify",
+      "title": "Forkify レシピアプリ",
+      "shortDescription": "Vanilla JavaScript を用いて開発したレシピ検索・管理アプリです。MVC アーキテクチャ、明確なデータフロー、保守性の高いモジュール設計に重点を置いています。",
+      "tags": [
+        "JavaScript",
+        "MVC",
+        "API"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "TBC",
+      "demoLink": "TBC",
+      "challenges": [
+        "フレームワークに依存せず、MVC による明確な責務分離を設計すること",
+        "非同期 API データを扱いながら、UI 状態の一貫性と予測可能性を保つこと",
+        "複数のインタラクションが存在する中で、DOM 更新の効率と安定性を維持すること"
+      ],
+      "features": [
+        "async/await を用いた外部 API 連携によるレシピ検索機能",
+        "model・view・controller を明確に分離した MVC アーキテクチャ",
+        "ページネーション、分量調整、ブックマーク（localStorage）などのインタラクション機能"
+      ]
+    },
+    {
+      "id": "mapty",
+      "title": "Mapty ワークアウト管理アプリ",
+      "shortDescription": "地図を中心としたワークアウト記録アプリです。既存実装を明確な MVC アーキテクチャへリファクタリングし、状態分離、予測可能な UI 挙動、長期的な保守性に重点を置いています。",
+      "tags": [
+        "JavaScript",
+        "MVC",
+        "Leaflet",
+        "State Management"
+      ],
+      "image": "img/TBC.png",
+      "year": "2025 Q4",
+      "githubLink": "https://github.com/stuartchendev/mapty-app",
+      "demoLink": "https://mapty-mvc-app.netlify.app/",
+      "challenges": [
+        "単一構造のアプリケーションを、複数エンティティを持つ MVC アーキテクチャへ再設計すること",
+        "ドメイン状態と UI インスタンス状態を明確に分離し、意図しない再描画を防ぐこと",
+        "地図操作を含む複雑なインタラクションに対して、決定論的な制御フローを設計すること"
+      ],
+      "features": [
+        "位置情報を用いたワークアウト作成と地図インタラクション",
+        "ランニング・サイクリングの記録管理と localStorage による永続化",
+        "model・controller・view を明確に分離した MVC 構成による高い拡張性"
+      ]
+    },
+    {
+      "id": "smart-garage-door-system",
+      "title": "スマートガレージドアシステム",
+      "shortDescription": "ユーザーがガレージに近づいたことを検知し、MQTT ベースの通信を通じて自動的にドアを解錠するスマートガレージドアシステムです。",
+      "tags": [
+        "Android Studio",
+        "MQTT",
+        "Linux サーバー",
+        "Java"
+      ],
+      "image": "img/TBC.png",
+      "year": "2023 Q4",
+      "githubLink": "",
+      "demoLink": "",
+      "challenges": [
+        "ユーザーがガレージドアに接近したことを正確に検知する仕組みを構築すること",
+        "Linux サーバーとドア制御システム間で、安定した MQTT 通信を確立すること",
+        "MQTT シグナルを正しく処理し、ドア制御へ確実に反映させること"
+      ],
+      "features": [
+        "モバイル端末の近接検知を用いたハンズフリー自動ドア解錠",
+        "MQTT プロトコルによるセキュアな通信",
+        "モバイルアプリからのリモート操作および制御（該当する場合）"
       ]
     }
   ]
