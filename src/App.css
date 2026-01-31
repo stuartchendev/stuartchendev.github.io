@@ -181,43 +181,75 @@ a:hover {
 .project__card{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
     border-radius: 16px;
-    border: 1px solid lightgray;
+    border: 2px solid lightgray;
     margin: 1rem;
     padding: 1rem;
-    max-width: 600px;
+    max-width: 500px;
+    min-width: 500px;
     min-height: 350px;
 }
+.project__card h2 {
+    border-bottom: 5px solid lightgray;
+}
 .project__card:hover{
-    border: 1px solid orange;
+    border: 2px solid orange;
     box-shadow: 2px 2px 4px lightgray;
 }
 .project__card-description{
     padding: 16px;
+    text-align: justify;
 }
+.project__detail-meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .project__card-tags,
 .project__detail-tags{
     display: flex;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
+    align-items: end;
 }
 .project__card-tag,
 .project__detail-tag{
     display: flex;
     font-size: small;
     align-items: center;
-    padding: 10px;
+    padding: 3px 10px;
     margin: 5px;
     border-radius: 8px;
     border: 1px solid lightgray;
 }
 
 /*for project detail*/
+.project__detail{
+    padding: 5%;
+}
+.project__detail-link{
+    padding-right: 16px;
+}
 .project__detail-title { margin: 0 0 8px; }
-.project__detail-description { margin-top: 10px; }
-.detail__section-features { margin-top: 18px; }
-.detail__section-challenges { margin-top: 18px; }
+.project__detail-description {
+    background-color: white;
+    padding: 25px 10px;
+    margin-top: 10px;
+    border-top: 1px solid lightgray;
+    text-align: justify;
+}
+.detail__list{
+    list-style: disc;
+}
+.detail__section-features {
+    margin-top: 10px;
+}
+.detail__section-challenges {
+    margin-top: 20px;
+}
 .detail__list { margin: 10px 0 0; padding-left: 18px; }
 .detail__list-item { margin: 6px 0; }
 
@@ -272,7 +304,9 @@ a:hover {
     flex-direction: column;
     background: #fff;
     border-radius: 12px;
-    max-width: 640px;
+    max-width: 740px;
+    min-width: 540px;
+    min-height: 540px;
     width: 90%;
     padding: 24px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
