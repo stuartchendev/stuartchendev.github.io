@@ -35,7 +35,7 @@
       ],
       "image": [],
       "year": "2025 Q4",
-      "githubLink": "",
+      "githubLink": "https://github.com/stuartchendev/javascript-practices/tree/main/Project5_forkify/Guide-forkify",
       "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "Designing a clear separation of concerns using MVC in a non-framework environment",
@@ -135,7 +135,7 @@
       ],
       "image": [],
       "year": "2025 Q4",
-      "githubLink": "",
+      "githubLink": "https://github.com/stuartchendev/javascript-practices/tree/main/Project5_forkify/Guide-forkify",
       "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "在不依賴前端框架的情況下，設計清楚的 MVC 職責分離",
@@ -230,7 +230,7 @@
       ],
       "image": [],
       "year": "2025 Q4",
-      "githubLink": "",
+      "githubLink": "https://github.com/stuartchendev/javascript-practices/tree/main/Project5_forkify/Guide-forkify",
       "demoLink": "https://forkify-sturartchen.netlify.app",
       "challenges": [
         "フレームワークに依存せず、MVC による明確な責務分離を設計すること",

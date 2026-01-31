@@ -11,7 +11,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         ],
         "aboutTitle": "About Me",
         "aboutInfo": {
-            "aboutName": "Yi Ting (Stuart) Chen",
+            "aboutName": "Yi-Ting (Stuart) Chen",
             "aboutSubTitle": "self-taught frontend developer",
             'aboutDescription': {
                 parts: [
