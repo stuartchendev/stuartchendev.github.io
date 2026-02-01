@@ -1,73 +1,87 @@
-## Project Overview
+# Portfolio — React + TypeScript
 
-This is a personal portfolio website built with React and TypeScript.
+A personal portfolio website built with **React** and **TypeScript**.
 
-The goal of this project is to present my frontend projects in a clear and maintainable way,
-while practicing component design, state responsibility, and data-driven UI patterns.
+This project focuses on building a **maintainable UI architecture** and practicing:
+- component design & responsibility boundaries
+- state vs derived state
+- data-driven UI patterns
+- responsive layout for real devices (tested down to 320px)
 
-The site supports multiple languages and is structured to be easily extended in the future.
+## Live Demo
+- Demo: https://stuartchendev.github.io/
+- Repo: https://github.com/stuartchendev/stuartchendev.github.io
 
-## Why React and TypeScript
-
-This project uses React to reduce manual DOM manipulation and to make UI state more explicit.
-
-TypeScript is introduced to improve type safety between components and data,
-and to make future refactoring and feature extension more predictable.
+## Tech Stack
+- React
+- TypeScript
+- CSS (responsive layout)
+- Deployment: GitHub Pages
 
 ## Key Features
+- Multi-language support (English / Traditional Chinese / Japanese)
+- Projects list + project detail view (modal)
+- Data-driven project structure (single source of truth)
+- Reusable layout components (navigation / sections)
+- Toolbar space reserved for future UI features (e.g. theme toggle)
 
-- Multi-language support (i18n)
-- Project list with detail view (modal-based)
-- Data-driven UI structure
-- Reusable layout and navigation components
+## Architecture & Technical Decisions
 
-## Technical Decisions & Architecture
+### 1) State Responsibility (UI state vs data)
+I store only **user-driven UI state** (e.g. active language, active project id).
+Project content is treated as **data**, and feature components derive what they need.
 
-This portfolio focuses on building a maintainable and scalable front-end architecture,
-rather than implementing features all at once.
+This keeps the state model small and prevents duplicated or conflicting UI state.
 
+### 2) Project Detail Interaction: `activeProjectId` as Single Source of Truth
+I use `activeProjectId` to represent user selection.
+The selected project is **derived** from this id.
 
-### State Responsibility
+**Why not a boolean `isOpen`?**  
+Because the core interaction is selecting a **project entity**, not toggling a UI panel.
+The UI presentation (modal/drawer) is a rendering detail.
 
-At the application level, I store only user-driven state, such as the active language.
+### 3) Modal structure: overlay and modal as siblings
+The overlay and modal are rendered as siblings instead of nesting the modal inside the overlay.
 
-This avoids mixing UI concerns with data logic and keeps the state model simple.
+This avoids accidental dismissal and prevents relying on event propagation hacks.
 
-Project data itself is treated as non-UI state and is interpreted by feature components when needed.
+### 4) Responsive design decisions
+- Desktop: 2-column project grid for comparison
+- Mobile: 1-column layout for readability and tap targets (tested at 320px)
+- Large screens: constrain content width to keep visual density and scanning comfortable
 
+## Scope Decisions (Intentional)
+- Tag filtering is not implemented yet because the current project count is small.
+  It becomes valuable when the list grows (see Future Improvements).
 
-### Project Detail Interaction Design
+## Screenshots
 
-I use `activeProjectId` as the single source of truth for project detail interactions.
+### Desktop layout (2-column grid)
+<img src="Demo-Img/desktopgrid.png" alt="Desktop layout" width="600"/>
 
-The selected project is derived from this id, which avoids duplicated UI state
-and keeps the data flow predictable.
+### Mobile layout (320px)
+<img src="Demo-Img/mobile320px.png" alt="Mobile layout" width="250"/>
 
-
->### **Why not a boolean state?**
->Because the core interaction is selecting a project entity.
->The UI presentation (modal or drawer) is a detail, not the state itself.
-
-> ### **Overlay Click Handling**
->
-> The overlay and modal are rendered as siblings rather than nested elements.
-> This prevents accidental modal dismissal without relying on event propagation hacks.
-
-### Modal Structure Decision
-
-The overlay and modal are rendered as siblings rather than nested elements.
-
-This prevents accidental modal dismissal without relying on event propagation hacks.
+### Project detail modal
+<img src="Demo-Img/modalopen.png" alt="Project detail modal" width="600"/>
 
 
+## Getting Started
+```bash
+npm install
+npm run dev
+```
+## Build
+```bash
+npm run build
+npm run preview
+```
 ## Future Improvements
+- Add tag filtering when the project list grows
 
-- Introduce project filtering and tagging based on existing project data.
-- Improve responsive layout and mobile interactions.
-- Extend project detail view to support loading and error states when integrating APIs.
+- Improve project detail preview (lighter content, richer media such as GIF/video)
 
+- Add theme toggle (dark mode)、back-to-top button
 
-
-
-
-
+- Accessibility pass (focus states / aria labels / contrast)
