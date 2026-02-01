@@ -185,7 +185,7 @@ a:hover {
 
 /* for project list*/
 .projects__page{
-    padding:  48px;
+    padding-block: clamp(48px, 8vw, 96px);
 }
 .project__list{
     display: grid;
@@ -210,13 +210,15 @@ a:hover {
     width: auto;
     min-width: 0;
     min-height: clamp(240px, 26vw, 360px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .project__card h2 {
     border-bottom: 5px solid var(--color-border);
 }
 .project__card:hover{
     border: 2px solid var(--color-accent);
-    box-shadow: 2px 2px 4px var(--color-border);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 .project__card-description{
     display: -webkit-box;
@@ -507,9 +509,6 @@ footer ul {
         text-align: justify;
     }
     /*projects*/
-    .projects__page{
-        padding: 16px;
-    }
     .project__list{
         grid-template-columns: 1fr;
     }
