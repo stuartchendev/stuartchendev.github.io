@@ -15,6 +15,7 @@ import type {LanguageId} from "./types/i18n";
 import {languageData} from "./data/language/languageData";
 import {useState} from "react";
 import useToolbarVisible from "./components/Footer/useToolbarVisible";
+import useTheme from "./components/Footer/useTheme";
 
 // Portfolio-Structure-NOTE:
 // main: root
@@ -43,6 +44,9 @@ function App() {
     // For footer showToolbar
     const showToolbar = useToolbarVisible(800);
 
+    // For Theme Toggle
+    const {theme, toggleTheme} = useTheme();
+
     return (
       <>
         <NavigationHeader>
@@ -55,7 +59,7 @@ function App() {
             <ContactSection languageUi={currentLanguageUI}/>
         </MainLayout>
         <Footer>
-            {showToolbar && <FooterTools/>}
+            {showToolbar && <FooterTools onToggleTheme={toggleTheme} theme={theme}/>}
             <FooterContent languageUi={currentLanguageUI}/>
         </Footer>
       </>
