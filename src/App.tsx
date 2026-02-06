@@ -14,6 +14,7 @@ import {DEFAULT_LANGUAGE} from "./config";
 import type {LanguageId} from "./types/i18n";
 import {languageData} from "./data/language/languageData";
 import {useState} from "react";
+import useToolbarVisible from "./components/Footer/useToolbarVisible";
 
 // Portfolio-Structure-NOTE:
 // main: root
@@ -39,6 +40,9 @@ function App() {
     // languageContent is not stored in state because it has no independent lifecycle
     const currentLanguageUI = languageData[activeLanguageId];
 
+    // For footer showToolbar
+    const showToolbar = useToolbarVisible(800);
+
     return (
       <>
         <NavigationHeader>
@@ -51,7 +55,7 @@ function App() {
             <ContactSection languageUi={currentLanguageUI}/>
         </MainLayout>
         <Footer>
-            <FooterTools/>
+            {showToolbar && <FooterTools/>}
             <FooterContent languageUi={currentLanguageUI}/>
         </Footer>
       </>
