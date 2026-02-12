@@ -281,7 +281,7 @@ a:hover {
 }
 .project__detail-link{
     padding-right: 16px;
-    color: var(--color-tool-bg);
+    color: var(--color-text);
 }
 .project__detail-title {
     margin: 0 0 8px;
