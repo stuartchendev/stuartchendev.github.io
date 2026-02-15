@@ -16,7 +16,7 @@ function fakeFetchTitle(shouldFail = false, ms = 800): Promise<TitleData> {
     });
 }
 
-function AsyncMessageHandler() {
+function AsyncMessageHandlerExample() {
     const [data, setData] = useState<TitleData | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -68,4 +68,4 @@ function DataTitle({ title }: TitleData) {
     return <div>{title}</div>;
 }
 
-export default AsyncMessageHandler;
+export default AsyncMessageHandlerExample;
