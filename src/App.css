@@ -84,14 +84,14 @@ a:hover {
     text-decoration: none;
 }
 
+/*for async state message dialog*/
 .projects__state {
-    margin-top: 32px;
+    margin: 32px 50px;
     padding: 32px;
     border-radius: 16px;
-
-    background: rgba(255, 255, 255, 0.03); /* 或用你主題色系 */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
+    background: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    width: min(600px, 92vw);
     text-align: center;
 }
 
@@ -115,13 +115,25 @@ a:hover {
     height: 24px;
     margin: 0 auto 16px;
     border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.15);
-    border-top-color: white;
+    border: 3px solid var(--color-surface);
+    border-top-color: var(--color-accent);
     animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+.btn--primary{
+    padding: 5px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+.btn--primary:hover{
+    color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 
@@ -250,6 +262,10 @@ a:hover {
 
 /* for project list*/
 .projects__page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-block: clamp(48px, 8vw, 96px);
 }
 .project__list{
@@ -409,7 +425,7 @@ a:hover {
 
 /*Project*/
 /*close button*/
-.button__close {
+.button__close{
     position: absolute;
     cursor: pointer;
     font-weight: 700;
