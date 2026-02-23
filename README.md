@@ -51,6 +51,29 @@ This avoids accidental dismissal and prevents relying on event propagation hacks
 - Mobile: 1-column layout for readability and tap targets (tested at 320px)
 - Large screens: constrain content width to keep visual density and scanning comfortable
 
+### 5) Async State, Error Handling & Retry
+(Implemented in `ProjectsPage` component)
+
+**What**
+- I model fetching as an explicit async state machine:
+  `idle → loading → success | error`
+
+**Why**
+- Avoids scattered boolean flags (`isLoading`, `hasError`, etc.)
+- Keeps UI predictable and makes retry behavior explicit
+- Scales better when more async flows are added
+
+**UI strategy**
+- Treat `idle` as a loading state so the page shows a consistent loading UI immediately.
+- `error` renders a visible fallback message and a `Retry` button.
+- `Retry` re-runs the same async task and re-enters the state machine (`loading → success/error`).
+
+**Implementation notes**
+- The async task is derived from `activeLanguageId`, so it only re-fetches when language changes.
+- Guard against stale responses (race conditions) so only the latest request can update the state.
+
+**Trade-off**
+- Slightly more verbose than a single `isLoading` flag, but clearer and more maintainable for real-world async UI.
 ## Scope Decisions (Intentional)
 - Tag filtering is not implemented yet because the current project count is small.
   It becomes valuable when the list grows (see Future Improvements).
