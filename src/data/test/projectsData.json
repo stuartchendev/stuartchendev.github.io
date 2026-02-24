@@ -5,9 +5,12 @@
       "title": "Portfolio Website",
       "shortDescription": "A personal portfolio built with React and TypeScript to showcase projects through clear state design, data-driven UI, and maintainable component architecture.",
       "tags": [
-        "HTML/CSS",
         "React",
-        "TypeScript"
+        "TypeScript",
+        "State-driven UI",
+        "Derived State",
+        "Component Architecture",
+        "i18n"
       ],
       "image": [],
       "year": "2026 Q1",
@@ -29,9 +32,12 @@
       "title": "Forkify App",
       "shortDescription": "A recipe search and management application built with vanilla JavaScript, focusing on MVC architecture, clear data flow, and maintainable modular design.",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "API"
+        "MVC Architecture",
+        "State Management",
+        "Async Data Flow",
+        "REST API Integration",
+        "Modular Architecture",
+        "Local Persistence"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -53,10 +59,12 @@
       "title": "Mapty App",
       "shortDescription": "A map-based workout tracking application refactored into a clear MVC architecture, focusing on state separation, predictable UI behavior, and long-term maintainability.",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "Leaflet",
-        "State Management"
+        "OOP → MVC",
+        "State Separation",
+        "Deterministic Flow",
+        "Leaflet Integration",
+        "Local Persistence",
+        "Geolocation"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -78,10 +86,12 @@
       "title": "Smart Garage Door System",
       "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
       "tags": [
-        "Android Studio",
-        "MQTT",
-        "Linux server",
-        "Java"
+        "MQTT Pub/Sub",
+        "System Integration",
+        "Linux Server Setup",
+        "Distributed Communication",
+        "Android Client",
+        "Device Proximity Detection"
       ],
       "image": [],
       "year": "2023 Q4",
@@ -105,9 +115,12 @@
       "title": "作品集網站",
       "shortDescription": "使用 React 與 TypeScript 打造的個人作品集網站，著重於清楚的 state 設計、資料驅動的 UI，以及可維護的元件架構。",
       "tags": [
-        "HTML/CSS",
         "React",
-        "TypeScript"
+        "TypeScript",
+        "State-driven UI",
+        "Derived State",
+        "Component Architecture",
+        "i18n"
       ],
       "image": [],
       "year": "2026 Q1",
@@ -129,9 +142,12 @@
       "title": "Forkify 食譜應用",
       "shortDescription": "使用原生 JavaScript 開發的食譜搜尋與管理應用，著重於 MVC 架構、清楚的資料流，以及可維護的模組化設計。",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "API"
+        "MVC Architecture",
+        "State Management",
+        "Async Data Flow",
+        "REST API Integration",
+        "Modular Architecture",
+        "Local Persistence"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -153,10 +169,12 @@
       "title": "Mapty 運動地圖應用",
       "shortDescription": "一款以地圖為核心的運動紀錄應用，將原有實作重構為清楚的 MVC 架構，著重於狀態分離、可預測的 UI 行為，以及長期可維護性。",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "Leaflet",
-        "State Management"
+        "OOP → MVC",
+        "State Separation",
+        "Deterministic Flow",
+        "Leaflet Integration",
+        "Local Persistence",
+        "Geolocation"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -177,7 +195,14 @@
       "id": "smart-garage-door-system",
       "title": "智慧車庫門系統",
       "shortDescription": "使用 MQTT 通訊，偵測使用者接近後自動解鎖車庫門的智慧門禁系統。",
-      "tags": ["Android Studio", "MQTT", "Linux server", "Java"],
+      "tags": [
+        "MQTT Pub/Sub",
+        "System Integration",
+        "Linux Server Setup",
+        "Distributed Communication",
+        "Android Client",
+        "Device Proximity Detection"
+      ],
       "image": "images/GP.png",
       "year": "2023 Q4",
       "githubLink": "",
@@ -200,9 +225,12 @@
       "title": "ポートフォリオサイト",
       "shortDescription": "React と TypeScript を用いて構築した個人ポートフォリオです。明確な state 設計、データ駆動の UI、そして保守性の高いコンポーネント構成に重点を置いています。",
       "tags": [
-        "HTML/CSS",
         "React",
-        "TypeScript"
+        "TypeScript",
+        "State-driven UI",
+        "Derived State",
+        "Component Architecture",
+        "i18n"
       ],
       "image": [],
       "year": "2026 Q1",
@@ -224,9 +252,12 @@
       "title": "Forkify レシピアプリ",
       "shortDescription": "Vanilla JavaScript を用いて開発したレシピ検索・管理アプリです。MVC アーキテクチャ、明確なデータフロー、保守性の高いモジュール設計に重点を置いています。",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "API"
+        "MVC Architecture",
+        "State Management",
+        "Async Data Flow",
+        "REST API Integration",
+        "Modular Architecture",
+        "Local Persistence"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -248,10 +279,12 @@
       "title": "Mapty ワークアウト管理アプリ",
       "shortDescription": "地図を中心としたワークアウト記録アプリです。既存実装を明確な MVC アーキテクチャへリファクタリングし、状態分離、予測可能な UI 挙動、長期的な保守性に重点を置いています。",
       "tags": [
-        "JavaScript",
-        "MVC",
-        "Leaflet",
-        "State Management"
+        "OOP → MVC",
+        "State Separation",
+        "Deterministic Flow",
+        "Leaflet Integration",
+        "Local Persistence",
+        "Geolocation"
       ],
       "image": [],
       "year": "2025 Q4",
@@ -273,10 +306,12 @@
       "title": "スマートガレージドアシステム",
       "shortDescription": "ユーザーがガレージに近づいたことを検知し、MQTT ベースの通信を通じて自動的にドアを解錠するスマートガレージドアシステムです。",
       "tags": [
-        "Android Studio",
-        "MQTT",
-        "Linux サーバー",
-        "Java"
+        "MQTT Pub/Sub",
+        "System Integration",
+        "Linux Server Setup",
+        "Distributed Communication",
+        "Android Client",
+        "Device Proximity Detection"
       ],
       "image": [],
       "year": "2023 Q4",

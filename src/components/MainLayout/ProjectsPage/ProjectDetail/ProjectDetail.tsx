@@ -18,12 +18,12 @@ function ProjectDetail({projectContent}:ProjectDetailProps) {
 
     return (
         <article className="project__detail">
-            <DetailHeader title={title}>
-                {(year || hasTags) &&
-                    <HeaderMetaRow year={year} tags={tags}/>}
-                {(githubLink || demoLink) &&
+            <DetailHeader title={title} year={year}>
+                | {(githubLink || demoLink) &&
                     <HeaderLinkRow githubLink={githubLink} demoLink={demoLink}/>}
             </DetailHeader>
+            {(year || hasTags) &&
+                <HeaderMetaRow  tags={tags}/>}
             <DetailDescription description={shortDescription}/>
             {hasFeatures && (
                 <DetailSection sectionKey="features" title="Feature" items={features!}/>
