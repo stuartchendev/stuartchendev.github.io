@@ -12,25 +12,29 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutTitle": "About Me",
         "aboutInfo": {
             "aboutName": "Yi-Ting (Stuart) Chen",
-            "aboutSubTitle": "self-taught frontend developer",
+            "aboutSubTitle": "self-taught frontend developer · open to remote",
             'aboutDescription': {
                 parts: [
-                    {type: "text", text: "I focus on "},
+                    {type: "text", text: "I specialize in "},
                     {type: "text", text: "JavaScript, React, and TypeScript", strong: true},
+                    {type: "text", text: ", focusing on "},
+                    {type: "text", text: "state modeling, clear data flow, and maintainable UI architecture.", strong: true},
                     {type: "br"},
-                    {type: "text", text: "I care deeply about "},
-                    {type: "text", text: "state design, data flow, and maintainability, ", strong: true},
-                    {
-                        type: "text",
-                        text: " and I learn primarily through building and refactoring real projects rather than just completing features."
-                    },
+
+                    {type: "text", text: "My work centers on designing state-driven interfaces that reflect real user intent, while keeping responsibilities clearly separated and predictable."},
                     {type: "br"},
+
+                    {type: "text", text: "I build and refactor production-style projects to improve "},
+                    {type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true},
+                    {type: "br"},
+
+                    {type: "text", text: "I use AI as a development accelerator, while maintaining ownership of "},
+                    {type: "text", text: "architectural decisions and code quality.", strong: true},
+                    {type: "br"},
+
                     {type: "text", text: "I’m currently looking for a "},
                     {type: "text", text: "Junior Frontend Engineer", strong: true},
-                    {
-                        type: "text",
-                        text: " role where I can continue growing with a team that values clean design and engineering thinking."
-                    }
+                    {type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer."}
                 ]
             }
         },
