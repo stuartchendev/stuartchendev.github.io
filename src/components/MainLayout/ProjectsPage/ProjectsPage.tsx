@@ -43,7 +43,7 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
 
     // onClose purpose to clear activeProjectId
     return (
-     <section className="projects__page">
+     <section className="projects__page" id="projects">
          {isLoading && <ProjectsStateView status="loading" />}
 
          {isError && (

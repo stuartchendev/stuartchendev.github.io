@@ -3,6 +3,7 @@
     --text-tag: 12px;
     --text-sm: 14px;
     --text-lg: 18px;
+    --line-height: 1.5rem;
 
     --h1: 32px;
     --h2: 24px;
@@ -222,12 +223,30 @@ a:hover {
 /*for About me*/
 .about__me{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 45px 0;
+}
+.about__hero{
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 48px 0;
+    padding: 28px 0;
+}
+.about__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: var(--line-height);
+}
+.about__next{
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-top: 16px;
 }
 .about__avatar {
-    width: 70%;
+    width: 65%;
     margin-bottom: 12px;
     animation: flicker var(--animation-duration) infinite var(--animation-timing);
 }
@@ -249,16 +268,40 @@ a:hover {
 .about__content {
     margin-top: 16px;
     padding: 16px;
-    width: 60%;
+    width: 45%;
 }
 .about__phase{
-    padding-right: 16px;
-    width: 80%;
+    width: 100%;
 }
 .about__phase strong{
     color: var(--color-accent);
 }
-
+.about__phase-long{
+    margin-bottom: 16px;
+}
+.about__actions{
+    margin: 16px 0;
+}
+.about__actions-btn{
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    box-shadow: 0 0 1px var(--color-border);
+    color: var(--color-text);
+    padding: 10px;
+    border-radius: 14px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+}
+.about__actions-btn:hover{
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    text-decoration: none;
+}
+.about__actions-btn:focus-visible{
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
 /* for project list*/
 .projects__page{
     display: flex;
@@ -656,10 +699,17 @@ footer ul {
     .about__me{
         flex-direction: column;
     }
+    .about__hero{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .about__avatar{
         width: 100%;
         height: 300px;
         object-fit: contain;
+    }
+    .about__description{
+        text-align: center;
     }
     .about__content {
         display: flex;

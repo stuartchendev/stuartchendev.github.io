@@ -7,14 +7,17 @@ type AboutSectionProps = {
     languageUi: LanguageUi;
 }
 
+
 function AboutSection({languageUi}:AboutSectionProps) {
     const aboutInfo = languageUi.aboutInfo;
     if (!aboutInfo) return null;
 
     return (
         <section className="about__me" id="about">
-            <AboutSectionAvatar />
-            <AboutSectionContent aboutInfo={aboutInfo} />
+            <div className="about__hero">
+                <AboutSectionAvatar />
+                <AboutSectionContent aboutInfo={aboutInfo} />
+            </div>
         </section>
     )
 }

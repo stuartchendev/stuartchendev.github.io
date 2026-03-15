@@ -18,28 +18,33 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutInfo": {
             "aboutName": "Yi-Ting (Stuart) Chen",
             "aboutSubTitle": "self-taught frontend developer · open to remote",
-            'aboutDescription': {
+            "aboutSummary": {
                 parts: [
-                    {type: "text", text: "I specialize in "},
-                    {type: "text", text: "JavaScript, React, and TypeScript", strong: true},
-                    {type: "text", text: ", focusing on "},
-                    {type: "text", text: "state modeling, clear data flow, and maintainable UI architecture.", strong: true},
-                    {type: "br"},
+                    { type: "text", text: "I build " },
+                    { type: "text", text: "React and TypeScript interfaces", strong: true },
+                    { type: "text", text: " with " },
+                    { type: "text", text: "clear state design, predictable data flow, and maintainable UI architecture.", strong: true },
+                    { type: "br" },
 
-                    {type: "text", text: "My work centers on designing state-driven interfaces that reflect real user intent, while keeping responsibilities clearly separated and predictable."},
-                    {type: "br"},
+                    { type: "text", text: "I focus on translating " },
+                    { type: "text", text: "real user intent", strong: true },
+                    { type: "text", text: " into reliable, state-driven UI with " },
+                    { type: "text", text: "clear responsibilities and consistent behavior.", strong: true }
+                ]
+            },
+            "aboutDetails": {
+                parts: [
+                    { type: "text", text: "I build and refactor production-style projects to improve " },
+                    { type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true },
+                    { type: "br" },
 
-                    {type: "text", text: "I build and refactor production-style projects to improve "},
-                    {type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true},
-                    {type: "br"},
+                    { type: "text", text: "I use AI as a development accelerator, while maintaining ownership of " },
+                    { type: "text", text: "architectural decisions and code quality.", strong: true },
+                    { type: "br" },
 
-                    {type: "text", text: "I use AI as a development accelerator, while maintaining ownership of "},
-                    {type: "text", text: "architectural decisions and code quality.", strong: true},
-                    {type: "br"},
-
-                    {type: "text", text: "I’m currently looking for a "},
-                    {type: "text", text: "Junior Frontend Engineer", strong: true},
-                    {type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer."}
+                    { type: "text", text: "I’m currently looking for a " },
+                    { type: "text", text: "Junior Frontend Engineer", strong: true },
+                    { type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer." }
                 ]
             }
         },
@@ -62,18 +67,33 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutInfo": {
             "aboutName": "陳奕廷",
             "aboutSubTitle": "專注於前端工程的自學開發者",
-            'aboutDescription': {
+            "aboutSummary": {
                 parts: [
-                    {type: "text", text: "主要使用 "},
-                    {type: "text", text: "JavaScript、React 與 TypeScript", strong: true},
-                    {type: "br"},
-                    {type: "text", text: "在學習過程中，我特別重視"},
-                    {type: "text", text: "狀態設計、資料流與可維護性", strong: true},
-                    {type: "text", text: "，並透過實作專案（如 Forkify、Mapty）反覆驗證設計取捨，而不是只追求功能完成。"},
-                    {type: "br"},
-                    {type: "text", text: "目前正在尋找 "},
-                    {type: "text", text: "Junior Frontend Engineer", strong: true},
-                    {type: "text", text: " 的機會，希望加入重視工程思維與成長文化的團隊，持續把前端做得更紮實。"}
+                    { type: "text", text: "I build " },
+                    { type: "text", text: "React and TypeScript interfaces", strong: true },
+                    { type: "text", text: " with " },
+                    { type: "text", text: "clear state design, predictable data flow, and maintainable UI architecture.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I focus on translating " },
+                    { type: "text", text: "real user intent", strong: true },
+                    { type: "text", text: " into reliable, state-driven UI with " },
+                    { type: "text", text: "clear responsibilities and consistent behavior.", strong: true }
+                ]
+            },
+            "aboutDetails": {
+                parts: [
+                    { type: "text", text: "I build and refactor production-style projects to improve " },
+                    { type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I use AI as a development accelerator, while maintaining ownership of " },
+                    { type: "text", text: "architectural decisions and code quality.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I’m currently looking for a " },
+                    { type: "text", text: "Junior Frontend Engineer", strong: true },
+                    { type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer." }
                 ]
             }
         },
@@ -96,33 +116,33 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutInfo": {
             "aboutName": "Yi Ting (Stuart) Chen",
             "aboutSubTitle": "独学のフロントエンドエンジニア",
-            "aboutDescription": {
-                "parts": [
-                    {"type": "text", "text": "私は "},
-                    {"type": "text", "text": "JavaScript・React・TypeScript", "strong": true},
-                    {"type": "text", "text": " を中心に取り組んでいます。"},
-                    {"type": "br"},
-                    {"type": "text", "text": "特に "},
-                    {
-                        "type": "text",
-                        "text": "state 設計、データフロー、保守性",
-                        "strong": true
-                    },
-                    {
-                        "type": "text",
-                        "text": " を重視しており、単に機能を実装するだけでなく、実際のプロジェクトを作りながらリファクタリングを通して学ぶことを大切にしています。"
-                    },
-                    {"type": "br"},
-                    {"type": "text", "text": "現在、"},
-                    {
-                        "type": "text",
-                        "text": "Junior フロントエンドエンジニア",
-                        "strong": true
-                    },
-                    {
-                        "type": "text",
-                        "text": " として、クリーンな設計やエンジニアリング思考を大切にするチームで成長できるポジションを探しています。"
-                    }
+            "aboutSummary": {
+                parts: [
+                    { type: "text", text: "I build " },
+                    { type: "text", text: "React and TypeScript interfaces", strong: true },
+                    { type: "text", text: " with " },
+                    { type: "text", text: "clear state design, predictable data flow, and maintainable UI architecture.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I focus on translating " },
+                    { type: "text", text: "real user intent", strong: true },
+                    { type: "text", text: " into reliable, state-driven UI with " },
+                    { type: "text", text: "clear responsibilities and consistent behavior.", strong: true }
+                ]
+            },
+            "aboutDetails": {
+                parts: [
+                    { type: "text", text: "I build and refactor production-style projects to improve " },
+                    { type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I use AI as a development accelerator, while maintaining ownership of " },
+                    { type: "text", text: "architectural decisions and code quality.", strong: true },
+                    { type: "br" },
+
+                    { type: "text", text: "I’m currently looking for a " },
+                    { type: "text", text: "Junior Frontend Engineer", strong: true },
+                    { type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer." }
                 ]
             }
         },
