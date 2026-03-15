@@ -9,7 +9,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "ESNext",
     "target": "ESNext",
-    "types": [],
+    "types": ["vite/client"],
     // For nodejs:
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     // "types": ["node"],

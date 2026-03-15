@@ -351,6 +351,7 @@ a:hover {
 }
 .project__detail-links{
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -645,6 +646,8 @@ footer ul {
     }
     .header__right{
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .media-link{
         padding: 3px;
@@ -655,7 +658,7 @@ footer ul {
     }
     .about__avatar{
         width: 100%;
-        height: 200px;
+        height: 300px;
         object-fit: contain;
     }
     .about__content {
@@ -703,6 +706,9 @@ footer ul {
         margin: 5px 0;
         gap: 3px;
         flex-wrap: wrap;
+    }
+    .project__detail-links{
+        gap: 2px;
     }
     .project__detail-tag {
         padding: 3px 5px;
