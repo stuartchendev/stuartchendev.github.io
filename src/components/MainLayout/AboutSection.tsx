@@ -14,10 +14,8 @@ function AboutSection({languageUi}:AboutSectionProps) {
 
     return (
         <section className="about__me" id="about">
-            <div className="about__hero">
                 <AboutSectionAvatar />
                 <AboutSectionContent aboutInfo={aboutInfo} />
-            </div>
         </section>
     )
 }

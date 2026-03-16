@@ -1,0 +1,36 @@
+:root {
+    --text-base: 16px;
+    --text-tag: 12px;
+    --text-sm: 14px;
+    --text-lg: 18px;
+    --line-height: 1.5rem;
+
+    --h1: 32px;
+    --h2: 24px;
+    --h3: 18px;
+
+    --lh: 1.6;
+
+    --color-text: #111;
+    --color-bg: #fff;
+    --color-border: lightgray;
+    --color-accent: rgb(255, 165, 0);
+    --color-ui-border: rgba(0,0,0,0.15);
+    --color-tool-bg: rgba(17, 17, 17, 0.06);
+    --color-surface: rgb(255, 255, 255);
+    --color-shadow: rgba(0,0,0,0.08);
+
+    --transform-3d: translate3d(0, 0, 0);
+    --animation-duration: 2s;
+    --animation-timing: ease-in-out;
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #0b0f14;
+    --color-text: #e6edf3;
+    --color-border: rgba(255,255,255,0.18);
+    --color-surface: #121826;
+    --color-shadow: rgba(0,0,0,0.45);
+    --color-ui-border: rgba(255,255,255,0.18);
+    --color-tool-bg: rgba(255,255,255,0.06);
+}
