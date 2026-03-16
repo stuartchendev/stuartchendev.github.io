@@ -79,7 +79,7 @@ function AboutActions(){
                 target="_blank"
                 rel="noreferrer"
             >
-                Open Resume
+                Open Resume 🤝
             </a>
         </div>
     )
