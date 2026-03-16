@@ -17,7 +17,8 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutTitle": "About Me",
         "aboutInfo": {
             "aboutName": "Yi-Ting (Stuart) Chen",
-            "aboutSubTitle": "self-taught frontend developer · open to remote",
+            "aboutSubTitle": "self-taught frontend developer",
+            "jobLocation": "open to remote",
             "aboutSummary": {
                 parts: [
                     { type: "text", text: "I build " },
@@ -67,6 +68,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutInfo": {
             "aboutName": "陳奕廷",
             "aboutSubTitle": "專注於前端工程的自學開發者",
+            "jobLocation": "open to remote",
             "aboutSummary": {
                 parts: [
                     { type: "text", text: "I build " },
@@ -116,6 +118,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutInfo": {
             "aboutName": "Yi Ting (Stuart) Chen",
             "aboutSubTitle": "独学のフロントエンドエンジニア",
+            "jobLocation": "open to remote",
             "aboutSummary": {
                 parts: [
                     { type: "text", text: "I build " },

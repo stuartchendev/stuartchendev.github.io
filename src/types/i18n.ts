@@ -22,6 +22,7 @@ export type SocialLink ={
 export type AboutInfo = {
     aboutName: string;
     aboutSubTitle: string;
+    jobLocation: string;
     aboutSummary: AboutDescriptionItem;
     aboutDetails: AboutDescriptionItem;
 };

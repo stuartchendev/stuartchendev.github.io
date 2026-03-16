@@ -5,7 +5,10 @@ type AboutSectionContentProps= {
     aboutInfo: AboutInfo;
 }
 type AboutNameProps= Pick<AboutInfo, "aboutName">
-type AboutSubTitleProps = Pick<AboutInfo, "aboutSubTitle">
+type AboutSubTitleProps = {
+    aboutSubTitle: AboutInfo["aboutSubTitle"];
+    jobLocation: AboutInfo["jobLocation"];
+}
 
 type AboutSummaryProps = {
     aboutSummary: AboutInfo["aboutSummary"];
@@ -21,7 +24,7 @@ function AboutSectionContent({aboutInfo}:AboutSectionContentProps) {
     return (
         <article className="about__content">
             <AboutName aboutName={aboutInfo.aboutName}/>
-            <AboutSubTitle aboutSubTitle={aboutInfo.aboutSubTitle}/>
+            <AboutSubTitle aboutSubTitle={aboutInfo.aboutSubTitle} jobLocation={aboutInfo.jobLocation}/>
             <AboutSummary aboutSummary={aboutInfo.aboutSummary} />
             <AboutActions />
             <div className="about__description">
@@ -37,11 +40,15 @@ function AboutName({aboutName}:AboutNameProps) {
         </h1>
     )
 }
-function AboutSubTitle({aboutSubTitle}:AboutSubTitleProps){
+function AboutSubTitle({aboutSubTitle, jobLocation}:AboutSubTitleProps){
     return (
-        <h2 className="about__SubTitle">
-            {aboutSubTitle}
-        </h2>
+        <>
+            <h2 className="about__subtitle">
+                <span>{aboutSubTitle}</span>
+                <span className="about__subtitle-separator"> · </span>
+                <span className="about__subtitle-nowrap">{jobLocation}</span>
+            </h2>
+        </>
     )
 }
 
