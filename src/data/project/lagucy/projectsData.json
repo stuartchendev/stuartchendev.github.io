@@ -12,6 +12,8 @@
         "Component Architecture",
         "i18n"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "Portfolio Preview",
       "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
@@ -39,6 +41,8 @@
         "Modular Architecture",
         "Local Persistence"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/forkify-app",
@@ -66,6 +70,8 @@
         "Local Persistence",
         "Geolocation"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
@@ -93,6 +99,8 @@
         "Android Client",
         "Device Proximity Detection"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2023 Q4",
       "githubLink": "",
@@ -122,6 +130,8 @@
         "Component Architecture",
         "i18n"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
@@ -149,6 +159,8 @@
         "Modular Architecture",
         "Local Persistence"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/forkify-app",
@@ -176,6 +188,8 @@
         "Local Persistence",
         "Geolocation"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
@@ -203,6 +217,8 @@
         "Android Client",
         "Device Proximity Detection"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": "images/GP.png",
       "year": "2023 Q4",
       "githubLink": "",
@@ -232,6 +248,8 @@
         "Component Architecture",
         "i18n"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2026 Q1",
       "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
@@ -259,6 +277,8 @@
         "Modular Architecture",
         "Local Persistence"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/forkify-app",
@@ -286,6 +306,8 @@
         "Local Persistence",
         "Geolocation"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2025 Q4",
       "githubLink": "https://github.com/stuartchendev/mapty-app",
@@ -313,6 +335,8 @@
         "Android Client",
         "Device Proximity Detection"
       ],
+      "thumbnailSrc": "",
+      "thumbnailAlt": "",
       "image": [],
       "year": "2023 Q4",
       "githubLink": "",

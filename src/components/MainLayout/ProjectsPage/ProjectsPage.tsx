@@ -2,7 +2,7 @@ import ProjectsList from "./ProjectsList";
 import ProjectDetailView from "./ProjectDetailView";
 import {useCallback, useEffect, useState} from "react";
 import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
-import {projectsData} from "../../../data/test/projectsData";
+import {projectsData} from "../../../data/project/projectsData";
 import type {Project} from "../../../types/project.ts";
 import type {LanguageId} from "../../../types/i18n";
 import {useAsync} from "../../../playground/AsyncMessageHook";
