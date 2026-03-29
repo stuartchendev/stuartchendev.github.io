@@ -1,8 +1,8 @@
 import type {Project} from "../../types/project"
 import type {LanguageId} from "../../types/i18n"
-import portfolioThumb from "@/img/project-thumbnails/portfolio_preview_thumbnail.png"
-import forkifyThumb from "@/img/project-thumbnails/forkify_preview_thumbnail.png"
-import maptyThumb from "@/img/project-thumbnails/mapty_preview_thumbnail.png"
+import portfolioThumb from "../../img/project-thumbnails/portfolio_preview_thumbnail.png"
+import forkifyThumb from "../../img/project-thumbnails/forkify_preview_thumbnail.png"
+import maptyThumb from "../../img/project-thumbnails/mapty_preview_thumbnail.png"
 
 export const projectsData: Record<LanguageId, Project[]> = {
     "en": [
