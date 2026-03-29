@@ -4,6 +4,9 @@ export interface Project {
     shortDescription: string;
     tags: string[];
     // optional
+    // for project card thumbnail
+    thumbnailSrc?: string;
+    thumbnailAlt?: string;
     image?: string[];
     year?: string;
     githubLink?: string;
