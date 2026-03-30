@@ -3,7 +3,7 @@ import type {LanguageId} from "../../types/i18n"
 import portfolioThumb from "../../img/project-thumbnails/portfolio_preview_thumbnail.png"
 import forkifyThumb from "../../img/project-thumbnails/forkify_preview_thumbnail.png"
 import maptyThumb from "../../img/project-thumbnails/mapty_preview_thumbnail.png"
-
+import graduateThumb from "../../img/project-thumbnails/graduate_project_preview.png"
 export const projectsData: Record<LanguageId, Project[]> = {
     "en": [
         {
@@ -105,8 +105,8 @@ export const projectsData: Record<LanguageId, Project[]> = {
                 "Android Client",
                 "Device Proximity Detection"
             ],
-            "thumbnailSrc": "",
-            "thumbnailAlt": "",
+            "thumbnailSrc": graduateThumb,
+            "thumbnailAlt": "Graduate Project Preview",
             "image": [],
             "year": "2023 Q4",
             "githubLink": "",
@@ -223,8 +223,8 @@ export const projectsData: Record<LanguageId, Project[]> = {
                 "Android Client",
                 "Device Proximity Detection"
             ],
-            "thumbnailSrc": "",
-            "thumbnailAlt": "",
+            "thumbnailSrc": graduateThumb,
+            "thumbnailAlt": "Graduate Project Preview",
             "image": ["images/GP.png"],
             "year": "2023 Q4",
             "githubLink": "",
@@ -341,8 +341,8 @@ export const projectsData: Record<LanguageId, Project[]> = {
                 "Android Client",
                 "Device Proximity Detection"
             ],
-            "thumbnailSrc": "",
-            "thumbnailAlt": "",
+            "thumbnailSrc": graduateThumb,
+            "thumbnailAlt": "Graduate Project Preview",
             "image": [],
             "year": "2023 Q4",
             "githubLink": "",

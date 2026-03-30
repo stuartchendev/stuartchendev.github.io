@@ -13,7 +13,7 @@ type ProjectThumbnailProps ={
 }
 type ProjectYearProp=Pick<Project, "year">;
 
-type ProjectTitleProps = Pick<Project, "id" | "title">;
+type ProjectTitleProps = Pick<Project, "title">;
 type ProjectShortDescriptionProps = Pick<Project, "shortDescription">;
 
 function ProjectCard({project, onSelect}: ProjectCardProps) {
@@ -23,20 +23,24 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
 
     return (
         <li className="project__card" onClick={HandleSetActiveProjectId}>
-            {project.thumbnailSrc &&
-                <ProjectThumbnail thumbnailSrc={project.thumbnailSrc} thumbnailAlt={project.thumbnailAlt} title={project.title} />
-            }
-            <div className="project__card-header">
-                <ProjectYear year={project.year} />
-                <span className="project__card-affordance">View details ↗</span>
+            <div className="project__card-visual">
+                {project.thumbnailSrc &&
+                    <ProjectThumbnail thumbnailSrc={project.thumbnailSrc} thumbnailAlt={project.thumbnailAlt}
+                                      title={project.title}/>
+                }
+                <div className="project__card-header">
+                    <ProjectYear year={project.year}/>
+                    <span className="project__card-affordance">View details ↗</span>
+                </div>
             </div>
-            <ProjectTitle id={project.id} title={project.title} />
-            <ProjectShortDescription shortDescription={project.shortDescription} />
-            <ProjectTagsSection tags={project.tags} />
+            <ProjectTitle title={project.title}/>
+            <ProjectShortDescription shortDescription={project.shortDescription}/>
+            <ProjectTagsSection tags={project.tags}/>
         </li>
     );
 }
-function ProjectThumbnail({ thumbnailSrc, thumbnailAlt, title }: ProjectThumbnailProps) {
+
+function ProjectThumbnail({thumbnailSrc, thumbnailAlt, title}: ProjectThumbnailProps) {
     return (
         <div className="project__card-thumbnail">
             <img
@@ -55,10 +59,9 @@ function ProjectYear({year}: ProjectYearProp) {
     )
 }
 
-function ProjectTitle({ id, title }: ProjectTitleProps) {
+function ProjectTitle({title }: ProjectTitleProps) {
     return (
         <>
-            <label className="project__card-id">{id}</label>
             <h2>{title}</h2>
         </>
     );

@@ -1,5 +1,4 @@
-//import './style/App.css';
-import './style/index.css';
+import './style/App.css';
 import NavigationHeader from "./components/NavigationHeader/NavigationHeader";
 import GuildLine from "./components/NavigationHeader/GuildLine";
 import LanguageOptions from "./components/NavigationHeader/LanguageOptions";
