@@ -229,48 +229,16 @@
 .contact__me{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 25px;
-}
-.contact-form {
-    display: grid;
-    gap: 14px;
-    width: min(600px, 92vw);
+    height: 70vh;
 }
 
-.contact-form__field {
-    display: grid;
-    gap: 6px;
-}
-
-.contact-form__label {
-    font-weight: 600;
-}
-
-.contact-form__input,
-.contact-form__textarea {
-    padding: 10px 12px;
-    border: 1px solid var(--color-ui-border);
-    background: var(--color-surface);
-    color: var(--color-text);
-    border-radius: 10px;
-    font: inherit;
-}
-
-.contact-form__submit {
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid var(--color-ui-border);
-    background: var(--color-surface);
-    color: var(--color-text);
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.contact-form__submit:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.contact__email{
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 3rem;
 }
 
 
@@ -415,6 +383,13 @@ footer ul {
     }
     .detail__section-challenges {
         padding-top: 0;
+    }
+    /*contact*/
+    .contact__me{
+        align-items: flex-start;
+    }
+    .contact__email{
+        font-size: 1.25rem;
     }
     /*footer*/
     footer{

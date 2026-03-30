@@ -1,5 +1,4 @@
 import type {LanguageUi} from "../../types/i18n";
-import ContactForm from "./ContactForm";
 
 type CustomSectionProps = {
     languageUi: LanguageUi
@@ -8,16 +7,25 @@ type CustomSectionProps = {
 function ContactSection({languageUi}:CustomSectionProps) {
     return(
         <section className="contact__me" id="contact">
-            <ContactTitle title={languageUi.contactTitle}/>
-            <ContactForm languageUi={languageUi}/>
+            <ContactIntro title={languageUi.contactIntro}/>
+            <ContactEmail />
         </section>
     )
 }
 
 
-function ContactTitle(props: { title: any }) {
+function ContactIntro(props: { title: string }) {
     return (
-        <h2 className="contact__title">{props.title}</h2>
+        <h2 className="contact__intro">{props.title}</h2>
     )
 }
+
+function ContactEmail() {
+    return (
+        <a href="mailto:stuartchen.dev@gmail.com" className="contact__email">
+            stuartchen.dev@gmail.com
+        </a>
+    )
+}
+
 export default ContactSection;

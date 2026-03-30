@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import type {LanguageUi} from "../../types/i18n";
+import type {LanguageUi} from "../../../types/i18n";
 import ContactFormField from "./ContactFormField";
 
 type ContactFieldEvent =

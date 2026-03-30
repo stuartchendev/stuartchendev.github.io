@@ -23,7 +23,6 @@ function GuildLine({ languageUi }:GuildLineProps) {
             <HeaderGuildLine>
                 <HeaderSpan type="section" spanContent={languageUi.aboutTitle}/>
                 <HeaderSpan type="section" spanContent={languageUi.guildLineHeaderSection}/>
-                <HeaderSpan type="section" spanContent={languageUi.contactTitle}/>
             </HeaderGuildLine>
         </div>
     )

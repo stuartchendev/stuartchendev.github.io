@@ -42,17 +42,10 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                     { type: "text", text: "I use AI as a development accelerator, while maintaining ownership of " },
                     { type: "text", text: "architectural decisions and code quality.", strong: true },
                     { type: "br" },
-
-                    { type: "text", text: "I’m currently looking for a " },
-                    { type: "text", text: "Junior Frontend Engineer", strong: true },
-                    { type: "text", text: " role in a collaborative team where I can contribute reliably and continue growing as an engineer." }
                 ]
             }
         },
-        "contactTitle": "Contact Me",
-        "contactLabelName": "Name",
-        "contactLabelEmail": "Email",
-        "contactLabelMessage": "Message",
+        "contactIntro": "Open to junior frontend opportunities and remote-friendly roles.",
     },
     "zh-Tw": {
         "guildLineHeaderName": "陳奕廷",
@@ -99,10 +92,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                 ]
             }
         },
-        "contactTitle": "歡迎聯繫",
-        "contactLabelName": "姓名",
-        "contactLabelEmail": "電子郵件",
-        "contactLabelMessage": "訊息",
+        "contactIntro": "歡迎聯繫",
     },
     "ja": {
         "guildLineHeaderName": "Stuart Chen",
@@ -149,10 +139,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
                 ]
             }
         },
-        "contactTitle": "お問い合わせ",
-        "contactLabelName": "お名前",
-        "contactLabelEmail": "メールアドレス",
-        "contactLabelMessage": "メッセージ",
+        "contactIntro": "お問い合わせ",
     }
 
 };
