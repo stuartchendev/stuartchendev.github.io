@@ -10,7 +10,7 @@ type ProjectsListProps = {
 function ProjectsList({projects, onSelect}: ProjectsListProps) {
 
     return (
-        <ul className={`project__list`}>
+        <ul className={`project__list`}  id="projects">
             {projects.map((project, index) =>
                 <ProjectCard
                     key={index}
