@@ -10,7 +10,7 @@ type ProjectDetailProps = {
 }
 
 function ProjectDetail({projectContent}:ProjectDetailProps) {
-    const { title, shortDescription, year, tags, githubLink, demoLink, features, challenges } = projectContent;
+    const { title, detailDescription, year, tags, githubLink, demoLink, features, challenges } = projectContent;
 
     const hasTags = tags.length > 0;
     const hasFeatures = (features?.length ?? 0) > 0;
@@ -24,7 +24,7 @@ function ProjectDetail({projectContent}:ProjectDetailProps) {
             </DetailHeader>
             {(year || hasTags) &&
                 <HeaderMetaRow  tags={tags}/>}
-            <DetailDescription description={shortDescription}/>
+            <DetailDescription description={detailDescription}/>
             {hasFeatures && (
                 <DetailSection sectionKey="features" title="Feature" items={features!}/>
             )}

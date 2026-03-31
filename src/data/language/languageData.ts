@@ -22,25 +22,24 @@ export const languageData: Record<LanguageId, LanguageUi> = {
             "aboutSummary": {
                 parts: [
                     { type: "text", text: "I build " },
-                    { type: "text", text: "React and TypeScript interfaces", strong: true },
+                    { type: "text", text: "React and TypeScript interfaces"},
                     { type: "text", text: " with " },
-                    { type: "text", text: "clear state design, predictable data flow, and maintainable UI architecture.", strong: true },
+                    { type: "text", text: "clear state design, predictable data flow, and maintainable UI architecture."},
                     { type: "br" },
 
-                    { type: "text", text: "I focus on translating " },
-                    { type: "text", text: "real user intent", strong: true },
+                    { type: "text", text: "I focus on " },
+                    { type: "text", text: "translating real user intent", strong: true },
                     { type: "text", text: " into reliable, state-driven UI with " },
                     { type: "text", text: "clear responsibilities and consistent behavior.", strong: true }
                 ]
             },
             "aboutDetails": {
                 parts: [
-                    { type: "text", text: "I build and refactor production-style projects to improve " },
-                    { type: "text", text: "separation of concerns, consistent state transitions, and long-term maintainability.", strong: true },
+                    { type: "text", text: "I build and refactor frontend projects with a focus on " },
+                    { type: "text", text: "clear responsibility, predictable state changes, and maintainable structure.", strong: true },
                     { type: "br" },
 
-                    { type: "text", text: "I use AI as a development accelerator, while maintaining ownership of " },
-                    { type: "text", text: "architectural decisions and code quality.", strong: true },
+                    { type: "text", text: "I use AI to speed up execution, while keeping ownership of design decisions and code quality." },
                     { type: "br" },
                 ]
             }

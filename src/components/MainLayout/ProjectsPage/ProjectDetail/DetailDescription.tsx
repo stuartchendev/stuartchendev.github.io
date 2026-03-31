@@ -1,7 +1,7 @@
 import type {Project} from "../../../../types/project";
 
 type DescriptionProps = {
-    description: Project["shortDescription"];
+    description: Project["detailDescription"];
 }
 
 function DetailDescription({description}: DescriptionProps){

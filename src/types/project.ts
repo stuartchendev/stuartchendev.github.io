@@ -11,6 +11,7 @@ export interface Project {
     year?: string;
     githubLink?: string;
     demoLink?: string;
+    detailDescription: string;
     challenges?: string[];
     features?: string[];
 }

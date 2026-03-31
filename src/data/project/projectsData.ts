@@ -9,7 +9,7 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "portfolio",
             "title": "Portfolio Website",
-            "shortDescription": "A personal portfolio built with React and TypeScript to showcase projects through clear state design, data-driven UI, and maintainable component architecture.",
+            "shortDescription": "A React and TypeScript portfolio focused on clear state design and maintainable UI structure.",
             "tags": [
                 "React",
                 "TypeScript",
@@ -24,21 +24,23 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2026 Q1",
             "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
             "demoLink": "https://stuartchendev.github.io/",
+            "detailDescription": "A personal portfolio built with React and TypeScript to showcase projects through clear state design, derived state reasoning, and maintainable UI architecture.",
             "challenges": [
-                "Designing clear state responsibility without mixing UI state and project data",
-                "Avoiding duplicated UI state in project detail interactions",
-                "Structuring modal interactions without relying on fragile event propagation"
+                "Keeping state responsibility clear without mixing UI state and project data",
+                "Avoiding duplicated state in project detail interactions",
+                "Modeling async behavior predictably without relying on scattered boolean flags"
             ],
             "features": [
-                "Multi-language support with data-driven UI structure",
-                "Project list with detail view using a single source of truth (activeProjectId)",
-                "Reusable layout and navigation components for future extension"
+                "Multi-language support with a data-driven content structure",
+                "Project list and detail modal using activeProjectId as a single source of truth",
+                "Derived state patterns for predictable UI logic",
+                "Async UI flow with loading, error, and retry handling"
             ]
         },
         {
             "id": "forkify",
             "title": "Forkify App",
-            "shortDescription": "A recipe search and management application built with vanilla JavaScript, focusing on MVC architecture, clear data flow, and maintainable modular design.",
+            "shortDescription": "A recipe search application built with vanilla JavaScript, focused on MVC architecture, clear data flow, and modular design.",
             "tags": [
                 "MVC Architecture",
                 "State Management",
@@ -53,21 +55,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/forkify-app",
             "demoLink": "https://forkify-sturartchen.netlify.app",
+            "detailDescription": "A recipe search application built with vanilla JavaScript to demonstrate MVC architecture, centralized state management, and predictable async data flow without relying on a frontend framework.",
             "challenges": [
-                "Designing a clear separation of concerns using MVC in a non-framework environment",
-                "Managing asynchronous API data while keeping UI state predictable",
-                "Keeping DOM updates efficient and consistent across multiple interactive features"
+                "Designing clear responsibility boundaries across model, view, and controller in a non-framework environment",
+                "Managing asynchronous API data while keeping UI updates predictable",
+                "Normalizing external API data into application state instead of storing raw responses directly",
+                "Balancing richer interactive features with maintainable DOM update logic"
             ],
             "features": [
                 "Recipe search with external API integration using async/await",
-                "Modular MVC architecture with dedicated model, view, and controller layers",
-                "Interactive features including pagination, servings adjustment, and bookmarks with persistence"
+                "Centralized application state for search results, recipe details, bookmarks, and pagination",
+                "MVC architecture with dedicated model, view, and controller responsibilities",
+                "Interactive features including pagination, servings adjustment, and bookmark persistence"
             ]
         },
         {
             "id": "mapty",
             "title": "Mapty App",
-            "shortDescription": "A map-based workout tracking application refactored into a clear MVC architecture, focusing on state separation, predictable UI behavior, and long-term maintainability.",
+            "shortDescription": "A map-based workout tracking application refactored into a clearer MVC architecture, focused on state separation and maintainable UI behavior.",
             "tags": [
                 "OOP → MVC",
                 "State Separation",
@@ -82,21 +87,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/mapty-app",
             "demoLink": "https://mapty-mvc-app.netlify.app/",
+            "detailDescription": "A map-based workout tracking application refactored from an OOP structure into MVC to improve state separation, control flow clarity, and long-term maintainability.",
             "challenges": [
-                "Refactoring a monolithic application into a multi-entity MVC architecture",
+                "Refactoring a monolithic OOP-style implementation into a clearer MVC structure",
                 "Separating domain state from UI instance state to avoid unintended render side effects",
-                "Designing deterministic control flow for complex user interactions on the map"
+                "Designing deterministic control flow for map interactions and workout updates",
+                "Improving maintainability without overcomplicating the original application"
             ],
             "features": [
-                "Geolocation-based workout creation with map interaction",
-                "Running and cycling workout tracking with persistent state (localStorage)",
-                "Clear separation between model, controller, and view layers for scalability"
+                "Geolocation-based workout creation with interactive map input",
+                "Running and cycling workout tracking with persistent state using localStorage",
+                "MVC-based structure with clearer separation between model, view, and controller",
+                "Refactored state flow to make feature behavior easier to extend and maintain"
             ]
         },
         {
             "id": "smart-garage-door-system",
             "title": "Smart Garage Door System",
-            "shortDescription": "A smart garage door system that detects when a user approaches and automatically unlocks the door via an MQTT-based communication system.",
+            "shortDescription": "A smart garage door system using MQTT-based communication to automatically unlock when a user approaches.",
             "tags": [
                 "MQTT Pub/Sub",
                 "System Integration",
@@ -111,15 +119,18 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
+            "detailDescription": "A smart garage door system built with an MQTT-based communication model to demonstrate event-driven system design, device coordination, and reliable message handling between a mobile client and a Linux-based server.",
             "challenges": [
-                "Ensure the system can accurately detect the user approaching the garage door.",
-                "Establish reliable MQTT communication between the Linux server and the door system.",
-                "Ensure the door system correctly processes and responds to MQTT signals."
+                "Designing a reliable event-driven communication flow using MQTT",
+                "Ensuring accurate and stable proximity detection from the mobile device",
+                "Coordinating message handling between multiple system components (client, server, device)",
+                "Maintaining system reliability under asynchronous and network-dependent conditions"
             ],
             "features": [
-                "Hands-free automatic door unlocking using mobile device proximity detection.",
-                "Secure communication using MQTT protocol.",
-                "Remote access and control via a mobile app (if applicable)."
+                "Automatic door unlocking based on mobile device proximity detection",
+                "MQTT-based publish/subscribe communication between client and server",
+                "Linux server handling message routing and device coordination",
+                "Real-time communication flow between mobile application and door system"
             ]
         }
     ],
@@ -142,21 +153,23 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2026 Q1",
             "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
             "demoLink": "https://stuartchendev.github.io/",
+            "detailDescription": "使用 React 與 TypeScript 打造的個人作品集網站，透過清楚的 state 設計、derived state 推理，以及可維護的 UI 架構來展示專案。",
             "challenges": [
-                "在不混合 UI 狀態與專案資料的前提下，設計清楚的 state 責任邊界",
-                "避免在專案細節互動中產生重複的 UI state",
-                "在不依賴脆弱的事件傳遞技巧下，設計穩定的 modal 互動結構"
+                "在不混合 UI 狀態與專案資料的前提下，維持清楚的 state 責任分工",
+                "避免在專案細節互動中產生重複狀態",
+                "在不依賴分散的 boolean flags 下，讓非同步行為保持可預測"
             ],
             "features": [
-                "支援多語系的資料驅動 UI 架構",
-                "以單一狀態來源（activeProjectId）實作專案列表與細節檢視",
-                "可重用的版型與導覽元件，方便未來功能擴充"
+                "支援多語系的資料驅動內容結構",
+                "以 activeProjectId 作為單一狀態來源的專案列表與細節 modal",
+                "使用 derived state patterns 維持可預測的 UI 邏輯",
+                "具備 loading、error 與 retry handling 的 async UI flow"
             ]
         },
         {
             "id": "forkify",
             "title": "Forkify 食譜應用",
-            "shortDescription": "使用原生 JavaScript 開發的食譜搜尋與管理應用，著重於 MVC 架構、清楚的資料流，以及可維護的模組化設計。",
+            "shortDescription": "使用原生 JavaScript 開發的食譜搜尋應用，著重於 MVC 架構、清楚的資料流，以及模組化設計。",
             "tags": [
                 "MVC Architecture",
                 "State Management",
@@ -171,21 +184,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/forkify-app",
             "demoLink": "https://forkify-sturartchen.netlify.app",
+            "detailDescription": "使用原生 JavaScript 開發的食譜搜尋應用，透過 MVC 架構、集中式狀態管理，以及可預測的非同步資料流來展示不依賴前端框架的工程設計。",
             "challenges": [
-                "在不依賴前端框架的情況下，設計清楚的 MVC 職責分離",
-                "在處理非同步 API 資料時，維持 UI 狀態的一致性與可預測性",
-                "在多種互動功能下，保持 DOM 更新的效率與穩定性"
+                "在不依賴前端框架的情況下，設計 model、view、controller 之間清楚的責任邊界",
+                "在處理非同步 API 資料時，維持可預測的 UI 更新",
+                "將外部 API 資料正規化為 application state，而不是直接儲存原始回應",
+                "在互動功能逐漸增加時，維持 DOM 更新邏輯的可維護性"
             ],
             "features": [
                 "透過 async/await 串接外部 API 的食譜搜尋功能",
-                "具備明確 model、view、controller 分層的 MVC 架構設計",
-                "包含分頁、份量調整與書籤儲存（localStorage）的互動功能"
+                "以集中式 application state 管理搜尋結果、食譜細節、書籤與分頁",
+                "具備明確 model、view、controller 職責分工的 MVC 架構",
+                "包含分頁、份量調整與書籤保存等互動功能"
             ]
         },
         {
             "id": "mapty",
             "title": "Mapty 運動地圖應用",
-            "shortDescription": "一款以地圖為核心的運動紀錄應用，將原有實作重構為清楚的 MVC 架構，著重於狀態分離、可預測的 UI 行為，以及長期可維護性。",
+            "shortDescription": "一款以地圖為核心的運動紀錄應用，重構為更清楚的 MVC 架構，著重於狀態分離與可維護的 UI 行為。",
             "tags": [
                 "OOP → MVC",
                 "State Separation",
@@ -200,21 +216,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/mapty-app",
             "demoLink": "https://mapty-mvc-app.netlify.app/",
+            "detailDescription": "一款以地圖為核心的運動紀錄應用，從 OOP 結構重構為 MVC，以提升狀態分離、控制流程清晰度，以及長期可維護性。",
             "challenges": [
-                "將單一結構的應用重構為多實體的 MVC 架構",
-                "明確區分領域狀態（domain state）與 UI 實例狀態，避免非預期的畫面重新渲染",
-                "為地圖互動設計具決定性的控制流程，降低複雜互動帶來的錯誤風險"
+                "將偏單體的 OOP 實作重構為更清楚的 MVC 結構",
+                "區分 domain state 與 UI instance state，避免非預期的 render side effects",
+                "為地圖互動與運動更新設計具決定性的控制流程",
+                "在不過度複雜化原始應用的前提下提升可維護性"
             ],
             "features": [
-                "基於地理定位的運動建立與地圖互動",
-                "跑步與自行車運動紀錄，並使用 localStorage 進行狀態保存",
-                "清楚分離 model、controller 與 view 的 MVC 架構，提升擴充性"
+                "基於地理定位與互動式地圖輸入的運動建立流程",
+                "跑步與自行車運動紀錄，並以 localStorage 保存狀態",
+                "以 MVC 為基礎，明確分離 model、view、controller",
+                "重構 state flow，讓功能行為更容易擴充與維護"
             ]
         },
         {
             "id": "smart-garage-door-system",
             "title": "智慧車庫門系統",
-            "shortDescription": "使用 MQTT 通訊，偵測使用者接近後自動解鎖車庫門的智慧門禁系統。",
+            "shortDescription": "使用 MQTT 通訊，當使用者接近時自動解鎖車庫門的智慧門禁系統。",
             "tags": [
                 "MQTT Pub/Sub",
                 "System Integration",
@@ -229,15 +248,18 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
+            "detailDescription": "一套使用 MQTT 通訊模型打造的智慧車庫門系統，用來展示 event-driven 系統設計、裝置協作，以及行動端與 Linux 伺服器之間可靠的訊息處理流程。",
             "challenges": [
-                "提升接近偵測的準確度與穩定性。",
-                "建立 Linux server 與門禁裝置間可靠的 MQTT 通訊。",
-                "確保門禁端能正確解析並回應 MQTT 訊號。"
+                "使用 MQTT 設計可靠的 event-driven 通訊流程",
+                "確保行動裝置的接近偵測準確且穩定",
+                "協調 client、server、device 等多個系統元件之間的訊息處理",
+                "在非同步與網路條件影響下維持系統可靠性"
             ],
             "features": [
-                "以手機接近偵測實現免動手自動解鎖。",
-                "透過 MQTT 協定進行安全且即時的訊息傳遞。",
-                "可由行動端進行遠端控制（視專案實作情況調整）。"
+                "根據行動裝置接近偵測自動解鎖車庫門",
+                "以 MQTT publish/subscribe 模型進行 client 與 server 間通訊",
+                "由 Linux 伺服器負責訊息路由與裝置協調",
+                "行動應用與門禁裝置之間的即時通訊流程"
             ]
         }
     ],
@@ -260,21 +282,23 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2026 Q1",
             "githubLink": "https://github.com/stuartchendev/stuartchendev.github.io",
             "demoLink": "https://stuartchendev.github.io/",
+            "detailDescription": "React と TypeScript を用いて構築した個人ポートフォリオで、明確な state 設計、derived state の考え方、そして保守しやすい UI アーキテクチャを通じてプロジェクトを紹介しています。",
             "challenges": [
-                "UI 状態とプロジェクトデータを混在させず、明確な state の責務を設計すること",
-                "プロジェクト詳細のインタラクションにおいて、重複した UI state を避けること",
-                "イベント伝播に依存しない、安定したモーダル構造を設計すること"
+                "UI 状態とプロジェクトデータを混在させず、state の責務を明確に保つこと",
+                "プロジェクト詳細のインタラクションで重複した state を避けること",
+                "分散した boolean flags に頼らず、非同期挙動を予測可能に設計すること"
             ],
             "features": [
-                "多言語対応のデータ駆動 UI 構造",
-                "単一の状態管理（activeProjectId）によるプロジェクト一覧と詳細表示",
-                "将来の拡張を考慮した、再利用可能なレイアウトおよびナビゲーションコンポーネント"
+                "データ駆動のコンテンツ構造による多言語対応",
+                "activeProjectId を単一の状態ソースとして使ったプロジェクト一覧と詳細モーダル",
+                "予測しやすい UI ロジックを保つための derived state パターン",
+                "loading・error・retry handling を備えた async UI フロー"
             ]
         },
         {
             "id": "forkify",
             "title": "Forkify レシピアプリ",
-            "shortDescription": "Vanilla JavaScript を用いて開発したレシピ検索・管理アプリです。MVC アーキテクチャ、明確なデータフロー、保守性の高いモジュール設計に重点を置いています。",
+            "shortDescription": "Vanilla JavaScript で構築したレシピ検索アプリで、MVC アーキテクチャ、明確なデータフロー、モジュール設計に重点を置いています。",
             "tags": [
                 "MVC Architecture",
                 "State Management",
@@ -289,21 +313,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/forkify-app",
             "demoLink": "https://forkify-sturartchen.netlify.app",
+            "detailDescription": "Vanilla JavaScript で構築したレシピ検索アプリで、フロントエンドフレームワークに依存せず、MVC アーキテクチャ、集中型 state 管理、予測可能な非同期データフローを示すことを目的としています。",
             "challenges": [
-                "フレームワークに依存せず、MVC による明確な責務分離を設計すること",
-                "非同期 API データを扱いながら、UI 状態の一貫性と予測可能性を保つこと",
-                "複数のインタラクションが存在する中で、DOM 更新の効率と安定性を維持すること"
+                "フレームワークなしの環境で、model・view・controller 間の責務境界を明確に設計すること",
+                "非同期 API データを扱いながら、UI 更新を予測可能に保つこと",
+                "外部 API の生レスポンスをそのまま保存せず、application state 用に正規化すること",
+                "インタラクションが増えても、DOM 更新ロジックの保守性を保つこと"
             ],
             "features": [
-                "async/await を用いた外部 API 連携によるレシピ検索機能",
-                "model・view・controller を明確に分離した MVC アーキテクチャ",
-                "ページネーション、分量調整、ブックマーク（localStorage）などのインタラクション機能"
+                "async/await を用いた外部 API 連携によるレシピ検索",
+                "検索結果、レシピ詳細、ブックマーク、ページネーションを集中管理する application state",
+                "model・view・controller の責務を明確に分けた MVC アーキテクチャ",
+                "ページネーション、分量調整、ブックマーク保持などのインタラクション機能"
             ]
         },
         {
             "id": "mapty",
             "title": "Mapty ワークアウト管理アプリ",
-            "shortDescription": "地図を中心としたワークアウト記録アプリです。既存実装を明確な MVC アーキテクチャへリファクタリングし、状態分離、予測可能な UI 挙動、長期的な保守性に重点を置いています。",
+            "shortDescription": "地図ベースのワークアウト記録アプリを、より明確な MVC アーキテクチャへリファクタリングし、状態分離と保守しやすい UI 挙動に焦点を当てたプロジェクトです。",
             "tags": [
                 "OOP → MVC",
                 "State Separation",
@@ -318,21 +345,24 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2025 Q4",
             "githubLink": "https://github.com/stuartchendev/mapty-app",
             "demoLink": "https://mapty-mvc-app.netlify.app/",
+            "detailDescription": "地図ベースのワークアウト記録アプリを OOP 構造から MVC へリファクタリングし、状態分離、制御フローの明確さ、長期的な保守性を改善しました。",
             "challenges": [
-                "単一構造のアプリケーションを、複数エンティティを持つ MVC アーキテクチャへ再設計すること",
-                "ドメイン状態と UI インスタンス状態を明確に分離し、意図しない再描画を防ぐこと",
-                "地図操作を含む複雑なインタラクションに対して、決定論的な制御フローを設計すること"
+                "モノリシックな OOP スタイルの実装を、より明確な MVC 構造へリファクタリングすること",
+                "domain state と UI instance state を分離し、意図しない render side effects を防ぐこと",
+                "地図操作とワークアウト更新のために決定的な制御フローを設計すること",
+                "元のアプリを過度に複雑化せずに保守性を高めること"
             ],
             "features": [
-                "位置情報を用いたワークアウト作成と地図インタラクション",
-                "ランニング・サイクリングの記録管理と localStorage による永続化",
-                "model・controller・view を明確に分離した MVC 構成による高い拡張性"
+                "位置情報とインタラクティブな地図入力を使ったワークアウト作成",
+                "localStorage を用いたランニング・サイクリング記録の永続化",
+                "model・view・controller をより明確に分離した MVC ベースの構造",
+                "state flow をリファクタリングし、機能挙動を拡張・保守しやすく改善"
             ]
         },
         {
             "id": "smart-garage-door-system",
             "title": "スマートガレージドアシステム",
-            "shortDescription": "ユーザーがガレージに近づいたことを検知し、MQTT ベースの通信を通じて自動的にドアを解錠するスマートガレージドアシステムです。",
+            "shortDescription": "ユーザーが近づくと自動でドアを解錠する、MQTT ベース通信のスマートガレージドアシステムです。",
             "tags": [
                 "MQTT Pub/Sub",
                 "System Integration",
@@ -347,15 +377,18 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
+            "detailDescription": "MQTT ベースの通信モデルで構築したスマートガレージドアシステムで、event-driven なシステム設計、デバイス間の協調、モバイルクライアントと Linux サーバー間の信頼できるメッセージ処理を示しています。",
             "challenges": [
-                "ユーザーがガレージドアに接近したことを正確に検知する仕組みを構築すること",
-                "Linux サーバーとドア制御システム間で、安定した MQTT 通信を確立すること",
-                "MQTT シグナルを正しく処理し、ドア制御へ確実に反映させること"
+                "MQTT を用いて信頼できる event-driven 通信フローを設計すること",
+                "モバイル端末の近接検知を正確かつ安定して行うこと",
+                "client・server・device など複数コンポーネント間のメッセージ処理を協調させること",
+                "非同期かつネットワーク依存の条件下でシステム信頼性を維持すること"
             ],
             "features": [
-                "モバイル端末の近接検知を用いたハンズフリー自動ドア解錠",
-                "MQTT プロトコルによるセキュアな通信",
-                "モバイルアプリからのリモート操作および制御（該当する場合）"
+                "モバイル端末の近接検知による自動ドア解錠",
+                "client と server 間の MQTT publish/subscribe 通信",
+                "Linux サーバーによるメッセージルーティングとデバイス協調",
+                "モバイルアプリとドア装置間のリアルタイム通信フロー"
             ]
         }
     ]
