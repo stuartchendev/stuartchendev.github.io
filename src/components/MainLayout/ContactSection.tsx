@@ -1,12 +1,15 @@
 import type {LanguageUi} from "../../types/i18n";
+import MediaLinkList from "../NavigationHeader/MediaLinkList";
 
 type CustomSectionProps = {
     languageUi: LanguageUi
 }
 
 function ContactSection({languageUi}:CustomSectionProps) {
+    const socialLinks = languageUi.socialLink.slice(0,3);
     return(
         <section className="contact__me" id="contact">
+            <MediaLinkList links={socialLinks}/>
             <ContactIntro title={languageUi.contactIntro}/>
             <ContactEmail />
         </section>

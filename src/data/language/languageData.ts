@@ -17,7 +17,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutTitle": "About Me",
         "aboutInfo": {
             "aboutName": "Yi-Ting (Stuart) Chen",
-            "aboutSubTitle": "self-taught frontend developer",
+            "aboutSubTitle": "Frontend Developer (React + TypeScript)",
             "jobLocation": "open to remote",
             "aboutSummary": {
                 parts: [
@@ -36,7 +36,7 @@ export const languageData: Record<LanguageId, LanguageUi> = {
             "aboutDetails": {
                 parts: [
                     { type: "text", text: "I build and refactor frontend projects with a focus on " },
-                    { type: "text", text: "clear responsibility, predictable state changes, and maintainable structure.", strong: true },
+                    { type: "text", text: "clear responsibilities, predictable state changes, and maintainable structure.", strong: true },
                     { type: "br" },
 
                     { type: "text", text: "I use AI to speed up execution, while keeping ownership of design decisions and code quality." },

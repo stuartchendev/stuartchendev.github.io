@@ -9,7 +9,7 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "portfolio",
             "title": "Portfolio Website",
-            "shortDescription": "A React and TypeScript portfolio focused on clear state design and maintainable UI structure.",
+            "shortDescription": "A React and TypeScript portfolio focused on state modeling, predictable data flow, and maintainable UI structure.",
             "tags": [
                 "React",
                 "TypeScript",
@@ -40,7 +40,7 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "forkify",
             "title": "Forkify App",
-            "shortDescription": "A recipe search application built with vanilla JavaScript, focused on MVC architecture, clear data flow, and modular design.",
+            "shortDescription": "A recipe search app built with vanilla JavaScript, focused on MVC architecture, normalized data, and predictable async updates.",
             "tags": [
                 "MVC Architecture",
                 "State Management",
@@ -72,7 +72,7 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "mapty",
             "title": "Mapty App",
-            "shortDescription": "A map-based workout tracking application refactored into a clearer MVC architecture, focused on state separation and maintainable UI behavior.",
+            "shortDescription": "A map-based workout app refactored from OOP to MVC, focused on clearer data flow and reduced coupling.",
             "tags": [
                 "OOP → MVC",
                 "State Separation",
@@ -104,7 +104,7 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "smart-garage-door-system",
             "title": "Smart Garage Door System",
-            "shortDescription": "A smart garage door system using MQTT-based communication to automatically unlock when a user approaches.",
+            "shortDescription": "A smart garage door system using MQTT, focused on system integration and real-time communication.",
             "tags": [
                 "MQTT Pub/Sub",
                 "System Integration",

@@ -233,6 +233,9 @@
     align-items: center;
     padding: 25px;
 }
+.contact__intro{
+    margin: 0;
+}
 
 .contact__email{
     color: var(--color-accent);
