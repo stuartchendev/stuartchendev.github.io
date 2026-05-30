@@ -4,6 +4,8 @@ import portfolioThumb from "../../img/project-thumbnails/portfolio_preview_thumb
 import forkifyThumb from "../../img/project-thumbnails/forkify_preview_thumbnail.png"
 import maptyThumb from "../../img/project-thumbnails/mapty_preview_thumbnail.png"
 import graduateThumb from "../../img/project-thumbnails/graduate_project_preview.png"
+import frlThumb from "../../img/project-thumbnails/frl_preview_thumbnail.png"
+
 export const projectsData: Record<LanguageId, Project[]> = {
     "en": [
         {
@@ -35,6 +37,39 @@ export const projectsData: Record<LanguageId, Project[]> = {
                 "Project list and detail modal using activeProjectId as a single source of truth",
                 "Derived state patterns for predictable UI logic",
                 "Async UI flow with loading, error, and retry handling"
+            ]
+        },
+        {
+            id: "frontend-reasoning-lab",
+            title: "Frontend Reasoning Lab",
+            shortDescription:
+                "A small React and TypeScript proof project focused on state-driven UI, evaluator boundaries, and frontend reasoning.",
+            tags: [
+                "React",
+                "TypeScript",
+                "State-driven UI",
+                "Derived State",
+                "Component Architecture",
+                "AI-assisted Workflow"
+            ],
+            thumbnailSrc: frlThumb,
+            thumbnailAlt: "Frontend Reasoning Lab Preview",
+            image: [],
+            year: "2026 Q2",
+            githubLink: "https://github.com/stuartchendev/frontend-reasoning-lab",
+            demoLink: "https://frontend-reasoning-lab.netlify.app/",
+            detailDescription:
+                "Frontend Reasoning Lab is a tiny proof project built with React and TypeScript to make frontend reasoning visible in a controlled UI workflow. Instead of focusing on product size, it demonstrates how state, derived data, evaluator logic, and component responsibilities can be separated and explained clearly.",
+            challenges: [
+                "Keeping the project intentionally small while still showing meaningful frontend reasoning",
+                "Separating user-facing UI state from evaluation logic and derived feedback",
+                "Designing the workflow so each step has a clear responsibility instead of mixing data, UI, and decision logic"
+            ],
+            features: [
+                "State-driven UI flow for a small controlled interaction",
+                "Derived feedback based on user input and evaluator results",
+                "Clear responsibility separation between UI components, state, and evaluation logic",
+                "AI-assisted engineering workflow documented as part of the project reasoning"
             ]
         },
         {
@@ -167,6 +202,37 @@ export const projectsData: Record<LanguageId, Project[]> = {
             ]
         },
         {
+            "id": "frontend-reasoning-lab",
+            "title": "Frontend Reasoning Lab",
+            "shortDescription": "一個使用 React 與 TypeScript 打造的小型 proof project，聚焦於 state-driven UI、evaluator 邊界，以及前端推理。",
+            "tags": [
+                "React",
+                "TypeScript",
+                "State-driven UI",
+                "Derived State",
+                "Component Architecture",
+                "AI-assisted Workflow"
+            ],
+            "thumbnailSrc": frlThumb,
+            "thumbnailAlt": "Frontend Reasoning Lab Preview",
+            "image": [],
+            "year": "2026 Q2",
+            "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
+            "demoLink": "https://frontend-reasoning-lab.netlify.app/",
+            "detailDescription": "Frontend Reasoning Lab 是一個使用 React 與 TypeScript 打造的微型 proof project，目標是在受控的 UI workflow 中讓前端推理變得可見。它不著重於產品規模，而是展示如何清楚分離並說明 state、derived data、evaluator logic 與元件責任。",
+            "challenges": [
+                "在刻意保持專案小型的同時，仍呈現有意義的前端推理",
+                "分離 user-facing UI state、evaluation logic 與 derived feedback",
+                "設計每個步驟都有清楚責任的 workflow，避免混合 data、UI 與 decision logic"
+            ],
+            "features": [
+                "針對小型受控互動設計的 state-driven UI flow",
+                "根據使用者輸入與 evaluator results 產生的 derived feedback",
+                "在 UI components、state 與 evaluation logic 之間建立清楚的責任分離",
+                "將 AI-assisted engineering workflow 作為專案推理的一部分記錄下來"
+            ]
+        },
+        {
             "id": "forkify",
             "title": "Forkify 食譜應用",
             "shortDescription": "使用原生 JavaScript 開發的食譜搜尋應用，著重於 MVC 架構、清楚的資料流，以及模組化設計。",
@@ -293,6 +359,37 @@ export const projectsData: Record<LanguageId, Project[]> = {
                 "activeProjectId を単一の状態ソースとして使ったプロジェクト一覧と詳細モーダル",
                 "予測しやすい UI ロジックを保つための derived state パターン",
                 "loading・error・retry handling を備えた async UI フロー"
+            ]
+        },
+        {
+            "id": "frontend-reasoning-lab",
+            "title": "Frontend Reasoning Lab",
+            "shortDescription": "React と TypeScript を用いた小さな proof project で、state-driven UI、evaluator の境界、そしてフロントエンド推論に焦点を当てています。",
+            "tags": [
+                "React",
+                "TypeScript",
+                "State-driven UI",
+                "Derived State",
+                "Component Architecture",
+                "AI-assisted Workflow"
+            ],
+            "thumbnailSrc": frlThumb,
+            "thumbnailAlt": "Frontend Reasoning Lab Preview",
+            "image": [],
+            "year": "2026 Q2",
+            "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
+            "demoLink": "https://frontend-reasoning-lab.netlify.app/",
+            "detailDescription": "Frontend Reasoning Lab は、React と TypeScript を用いて構築した小さな proof project で、制御された UI workflow の中でフロントエンド推論を見える形にすることを目的としています。プロダクトの規模ではなく、state、derived data、evaluator logic、コンポーネント責務をどのように分離し、明確に説明できるかを示しています。",
+            "challenges": [
+                "プロジェクトを意図的に小さく保ちながら、意味のあるフロントエンド推論を示すこと",
+                "user-facing UI state と evaluation logic、derived feedback を分離すること",
+                "data、UI、decision logic を混在させず、各ステップが明確な責務を持つ workflow を設計すること"
+            ],
+            "features": [
+                "小さな制御されたインタラクションのための state-driven UI flow",
+                "ユーザー入力と evaluator results に基づく derived feedback",
+                "UI components、state、evaluation logic の間にある明確な責務分離",
+                "AI-assisted engineering workflow をプロジェクトの reasoning の一部として記録"
             ]
         },
         {
