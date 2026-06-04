@@ -6,4 +6,7 @@ export const DEFAULT_LANGUAGE: LanguageId = 'en'; // en | zh-Tw | jp
 
 export const MAX_TAGS = 3; // project tags maximum display number
 
-export const RESUME_URL = `${import.meta.env.BASE_URL}Stuart_Chen_Frontend_Engineer_resume.pdf`
+export const RESUME_URLS = {
+  en: `${import.meta.env.BASE_URL}resume/Stuart_Chen_Frontend_Engineer_resume.pdf`,
+  "zh-TW": `${import.meta.env.BASE_URL}resume/Stuart_Chen_Local_Taiwan_Junior_Frontend_Resume.pdf`,
+} as const;

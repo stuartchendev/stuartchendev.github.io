@@ -1,8 +1,8 @@
-import type {AboutDescriptionItem, AboutInfo} from "../../types/i18n";
-import {RESUME_URL} from "../../config";
+import type {AboutDescriptionItem, AboutInfo, ResumeLink} from "../../types/i18n";
 
 type AboutSectionContentProps= {
     aboutInfo: AboutInfo;
+    resumeLink: ResumeLink;
 }
 type AboutNameProps= Pick<AboutInfo, "aboutName">
 type AboutSubTitleProps = {
@@ -13,6 +13,9 @@ type AboutSubTitleProps = {
 type AboutSummaryProps = {
     aboutSummary: AboutInfo["aboutSummary"];
 }
+type AboutActionsProps = {
+    resumeLink: ResumeLink;
+}
 type AboutPhaseProps = {
     phase: AboutDescriptionItem;
 }
@@ -20,13 +23,13 @@ type AboutDetailsSectionProps = {
     aboutDescription: AboutInfo["aboutDetails"];
 }
 
-function AboutSectionContent({aboutInfo}:AboutSectionContentProps) {
+function AboutSectionContent({aboutInfo, resumeLink}:AboutSectionContentProps) {
     return (
         <article className="about__content">
             <AboutName aboutName={aboutInfo.aboutName}/>
             <AboutSubTitle aboutSubTitle={aboutInfo.aboutSubTitle} jobLocation={aboutInfo.jobLocation}/>
             <AboutSummary aboutSummary={aboutInfo.aboutSummary} />
-            <AboutActions />
+            <AboutActions resumeLink={resumeLink} />
             <div className="about__description">
                 <AboutDetailsSection aboutDescription={aboutInfo.aboutDetails} />
             </div>
@@ -70,16 +73,16 @@ function AboutPhase({phase}:AboutPhaseProps) {
     )
 }
 
-function AboutActions(){
+function AboutActions({resumeLink}: AboutActionsProps){
     return(
         <div className="about__actions">
             <a
                 className="about__actions-btn"
-                href={RESUME_URL}
+                href={resumeLink.href}
                 target="_blank"
                 rel="noreferrer"
             >
-                Open Resume 🤝
+                {resumeLink.label}
             </a>
         </div>
     )

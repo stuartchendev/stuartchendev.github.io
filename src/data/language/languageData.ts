@@ -1,6 +1,6 @@
 import type {LanguageId, LanguageUi} from "../../types/i18n";
 
-import {RESUME_URL} from "../../config";
+import {RESUME_URLS} from "../../config";
 
 
 export const languageData: Record<LanguageId, LanguageUi> = {
@@ -8,10 +8,14 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "guildLineHeaderName": "Stuart Chen",
         "guildLineHeaderRole": "Frontend Developer · React",
         "guildLineHeaderSection": "Projects",
+        "resume":{
+            "label": "Open Resume 🤝",
+            "href": RESUME_URLS.en
+        },
         "socialLink": [
             {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
             {type: "LinkedIn", href: "https://www.linkedin.com/in/stuartchendev", label: "LinkedIn"},
-            {type: "Resume", href: RESUME_URL, label: "Resume"},
+            {type: "Resume", href: RESUME_URLS.en, label: "Resume"},
             {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"},
         ],
         "aboutTitle": "About Me",
@@ -50,10 +54,14 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "guildLineHeaderName": "陳奕廷",
         "guildLineHeaderRole": "前端開發者 · React",
         "guildLineHeaderSection": "作品集",
+        "resume": {
+            "label": "開啟履歷 🤝",
+            "href": RESUME_URLS["zh-TW"]
+        },
         "socialLink": [
             {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
             {type: "LinkedIn", href: "https://www.linkedin.com/in/stuartchendev", label: "LinkedIn"},
-            {type: "Resume", href: RESUME_URL, label: "Resume"},
+            {type: "Resume", href: RESUME_URLS["zh-TW"], label: "Resume"},
             {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"},
         ],
         "aboutTitle": "關於我",
@@ -92,10 +100,14 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "guildLineHeaderName": "Stuart Chen",
         "guildLineHeaderRole": "フロントエンドエンジニア · React",
         "guildLineHeaderSection": "プロジェクト",
+        "resume":{
+            "label": "Open Resume 🤝",
+            "href": RESUME_URLS.en
+        },
         "socialLink": [
             {type: "Github", href: "https://github.com/stuartchendev", label: "Github"},
             {type: "LinkedIn", href: "https://www.linkedin.com/in/stuartchendev", label: "LinkedIn"},
-            {type: "Resume", href: RESUME_URL, label: "Resume"},
+            {type: "Resume", href: RESUME_URLS.en, label: "Resume"},
             {type: "Email", href: "mailto:stuartchen.dev@gmail.com", label: "Email"},
         ],
         "aboutTitle": "自己紹介",

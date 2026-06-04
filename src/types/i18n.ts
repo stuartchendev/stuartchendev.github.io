@@ -4,12 +4,17 @@ export type LanguageUi =  Partial<{
     guildLineHeaderSection: string;
     guildLineHeaderRole: string;
     guildLineHeaderName: string;
+    resume: ResumeLink;
     socialLink: SocialLink[];
     aboutTitle: string;
     aboutInfo: AboutInfo;
     contactIntro: string;
     // future add
 }>;
+export type ResumeLink = {
+    label: string;
+    href: string;
+}
 export type SocialLink ={
     type: string;
     href: string;

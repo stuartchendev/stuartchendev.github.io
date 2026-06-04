@@ -10,12 +10,13 @@ type AboutSectionProps = {
 
 function AboutSection({languageUi}:AboutSectionProps) {
     const aboutInfo = languageUi.aboutInfo;
+    const resumeLink = languageUi.resume;
     if (!aboutInfo) return null;
 
     return (
         <section className="about__me" id="about">
                 <AboutSectionAvatar />
-                <AboutSectionContent aboutInfo={aboutInfo} />
+                <AboutSectionContent aboutInfo={aboutInfo} resumeLink={resumeLink} />
         </section>
     )
 }
