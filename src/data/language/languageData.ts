@@ -68,34 +68,34 @@ export const languageData: Record<LanguageId, LanguageUi> = {
         "aboutTitle": "關於我",
         "aboutInfo": {
             "aboutName": "陳奕廷",
-            "aboutSubTitle": "專注於前端工程的自學開發者",
-            "jobLocation": "open to remote",
+            "aboutSubTitle": "專注前端工程的自學開發者",
+            "jobLocation": "開放遠端機會",
             "aboutSummary": {
                 parts: [
-                    { type: "text", text: "我打造 " },
-                    { type: "text", text: "React 與 TypeScript 介面" },
-                    { type: "text", text: "，著重於 " },
+                    { type: "text", text: "我使用 " },
+                    { type: "text", text: "React 與 TypeScript 建立前端介面" },
+                    { type: "text", text: "，重視 " },
                     { type: "text", text: "清楚的 state 設計、可預測的資料流，以及可維護的 UI 架構。" },
                     { type: "br" },
 
-                    { type: "text", text: "我專注於將 " },
-                    { type: "text", text: "真實使用者意圖轉化", strong: true },
-                    { type: "text", text: " 為可靠的 state-driven UI，並維持 " },
-                    { type: "text", text: "清楚的責任切分與一致的行為。", strong: true }
+                    { type: "text", text: "我關注的不只是畫面完成，也包含如何將 " },
+                    { type: "text", text: "使用者需求轉成清楚的 UI 行為", strong: true },
+                    { type: "text", text: "，並維持 " },
+                    { type: "text", text: "清楚的責任切分與一致的狀態變化。", strong: true }
                 ]
             },
             "aboutDetails": {
                 parts: [
-                    { type: "text", text: "我打造並重構前端專案，重點放在 " },
-                    { type: "text", text: "清楚的責任切分、可預測的 state 變化，以及可維護的結構。", strong: true },
+                    { type: "text", text: "我打造並重構前端專案時，會重視 " },
+                    { type: "text", text: "清楚的責任切分、可預測的 state 變化，以及容易維護的程式結構。", strong: true },
                     { type: "br" },
 
-                    { type: "text", text: "我使用 AI 來加快執行速度，同時保有對設計決策與程式碼品質的主導權。" },
+                    { type: "text", text: "我也使用 AI 協助規劃、檢查與文件整理，但會保留對設計決策與程式碼品質的主導權。" },
                     { type: "br" }
                 ]
             }
         },
-        "contactIntro": "目前開放 junior frontend 職缺與 remote-friendly 工作機會。"
+        "contactIntro": "目前正在尋找 Junior 前端工程相關職務，也開放遠端友善的工作機會。"
     },
     "ja": {
         "guildLineHeaderName": "Stuart Chen",
