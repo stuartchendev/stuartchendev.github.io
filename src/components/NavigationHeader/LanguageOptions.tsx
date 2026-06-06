@@ -1,4 +1,5 @@
-import type {LanguageId, LanguageUi} from "../../types/i18n";
+import type {LanguageUi} from "../../types/i18n";
+import type {LanguageId} from "../../config";
 import LanguageOption from "./LanguageOption";
 import MediaLinkList from "./MediaLinkList";
 

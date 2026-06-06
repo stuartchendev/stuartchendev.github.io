@@ -1,5 +1,3 @@
-export type LanguageId = "en" | "zh-Tw" | "ja";
-
 export type LanguageUi =  Partial<{
     guildLineHeaderSection: string;
     guildLineHeaderRole: string;
