@@ -40,36 +40,39 @@ export const projectsData: Record<LanguageId, Project[]> = {
             ]
         },
         {
-            id: "frontend-reasoning-lab",
-            title: "Frontend Reasoning Lab",
-            shortDescription:
-                "A small React and TypeScript proof project focused on state-driven UI, evaluator boundaries, and frontend reasoning.",
-            tags: [
+            "id": "frontend-reasoning-lab",
+            "title": "Frontend Reasoning Lab",
+            "shortDescription":
+                "A React and TypeScript reasoning workspace with question navigation, state-driven evaluation flows, and documented AI-assisted engineering decisions.",
+
+            "tags": [
                 "React",
                 "TypeScript",
                 "State-driven UI",
                 "Derived State",
-                "Component Architecture",
+                "Question Navigation",
                 "AI-assisted Workflow"
             ],
-            thumbnailSrc: frlThumb,
-            thumbnailAlt: "Frontend Reasoning Lab Preview",
-            image: [],
-            year: "2026 Q2",
-            githubLink: "https://github.com/stuartchendev/frontend-reasoning-lab",
-            demoLink: "https://frontend-reasoning-lab.netlify.app/",
-            detailDescription:
-                "Frontend Reasoning Lab is a tiny proof project built with React and TypeScript to make frontend reasoning visible in a controlled UI workflow. Instead of focusing on product size, it demonstrates how state, derived data, evaluator logic, and component responsibilities can be separated and explained clearly.",
-            challenges: [
-                "Keeping the project intentionally small while still showing meaningful frontend reasoning",
-                "Separating user-facing UI state from evaluation logic and derived feedback",
-                "Designing the workflow so each step has a clear responsibility instead of mixing data, UI, and decision logic"
+            "thumbnailSrc": frlThumb,
+            "thumbnailAlt": "Frontend Reasoning Lab Preview",
+            "image": [],
+            "year": "2026 Q2",
+            "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
+            "demoLink": "https://frontend-reasoning-lab.netlify.app/",
+            "detailDescription":
+                "Frontend Reasoning Lab is a React and TypeScript workspace designed to make frontend reasoning visible through interactive questions and controlled evaluation flows. The current version expands the original proof project into a navigable question workspace while keeping question selection, evaluator logic, derived feedback, and component responsibilities clearly separated.",
+
+            "challenges": [
+                "Expanding a focused proof project into a navigable workspace without turning it into an open-ended platform",
+                "Keeping the selected question as a clear source of truth across navigation and evaluation flows",
+                "Separating question data, UI state, evaluator logic, and derived feedback into clear responsibility boundaries"
             ],
-            features: [
-                "State-driven UI flow for a small controlled interaction",
-                "Derived feedback based on user input and evaluator results",
-                "Clear responsibility separation between UI components, state, and evaluation logic",
-                "AI-assisted engineering workflow documented as part of the project reasoning"
+
+            "features": [
+                "Question navigator with searchable question selection",
+                "State-driven workspace that renders the selected question and evaluation workflow",
+                "Derived feedback based on structured evaluator results",
+                "Documented AI-assisted workflow, architectural decisions, and validation process"
             ]
         },
         {
@@ -204,13 +207,15 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "frontend-reasoning-lab",
             "title": "Frontend Reasoning Lab",
-            "shortDescription": "一個使用 React 與 TypeScript 打造的小型 proof project，聚焦於 state-driven UI、evaluator 邊界，以及前端推理。",
+            "shortDescription":
+                "使用 React 與 TypeScript 打造的前端推理工作區，包含題目導覽、state-driven 評估流程，以及可追蹤的 AI-assisted 工程決策。",
+
             "tags": [
                 "React",
                 "TypeScript",
                 "State-driven UI",
                 "Derived State",
-                "Component Architecture",
+                "Question Navigation",
                 "AI-assisted Workflow"
             ],
             "thumbnailSrc": frlThumb,
@@ -219,17 +224,20 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "year": "2026 Q2",
             "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
             "demoLink": "https://frontend-reasoning-lab.netlify.app/",
-            "detailDescription": "Frontend Reasoning Lab 是一個使用 React 與 TypeScript 打造的微型 proof project，目標是在受控的 UI workflow 中讓前端推理變得可見。它不著重於產品規模，而是展示如何清楚分離並說明 state、derived data、evaluator logic 與元件責任。",
+            "detailDescription":
+                "Frontend Reasoning Lab 是一個使用 React 與 TypeScript 打造的前端推理工作區，透過互動題目與受控的評估流程，讓前端工程判斷變得可見。目前版本將原本的小型 proof project 擴充為可導覽的題目工作區，同時維持題目選擇、evaluator logic、derived feedback 與元件責任之間清楚的邊界。",
+
             "challenges": [
-                "在刻意保持專案小型的同時，仍呈現有意義的前端推理",
-                "分離 user-facing UI state、evaluation logic 與 derived feedback",
-                "設計每個步驟都有清楚責任的 workflow，避免混合 data、UI 與 decision logic"
+                "將聚焦的小型 proof project 擴充為可導覽的工作區，同時避免演變成無邊界的平台",
+                "讓目前選取的題目成為導覽與評估流程中清楚的單一狀態來源",
+                "清楚分離題目資料、UI state、evaluator logic 與 derived feedback 的責任邊界"
             ],
+
             "features": [
-                "針對小型受控互動設計的 state-driven UI flow",
-                "根據使用者輸入與 evaluator results 產生的 derived feedback",
-                "在 UI components、state 與 evaluation logic 之間建立清楚的責任分離",
-                "將 AI-assisted engineering workflow 作為專案推理的一部分記錄下來"
+                "支援搜尋與題目選擇的 Question Navigator",
+                "根據目前選取題目呈現內容與評估流程的 state-driven workspace",
+                "根據 structured evaluator results 產生的 derived feedback",
+                "記錄 AI-assisted workflow、架構決策與驗證流程"
             ]
         },
         {
