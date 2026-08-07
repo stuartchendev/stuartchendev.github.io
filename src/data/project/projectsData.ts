@@ -43,36 +43,36 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "id": "frontend-reasoning-lab",
             "title": "Frontend Reasoning Lab",
             "shortDescription":
-                "A React and TypeScript reasoning workspace with question navigation, state-driven evaluation flows, and documented AI-assisted engineering decisions.",
+                "A React and TypeScript frontend reasoning workflow with targeted feedback, revision comparison, bounded next-action recommendations, and validated AI outputs.",
 
             "tags": [
                 "React",
                 "TypeScript",
                 "State-driven UI",
-                "Derived State",
-                "Question Navigation",
-                "AI-assisted Workflow"
+                "AI-assisted Workflow",
+                "AI Output Validation",
+                "Revision Comparison"
             ],
             "thumbnailSrc": frlThumb,
             "thumbnailAlt": "Frontend Reasoning Lab Preview",
             "image": [],
-            "year": "2026 Q2",
+            "year": "2026 Q2–Q3",
             "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
             "demoLink": "https://frontend-reasoning-lab.netlify.app/",
             "detailDescription":
-                "Frontend Reasoning Lab is a React and TypeScript workspace designed to make frontend reasoning visible through interactive questions and controlled evaluation flows. The current version expands the original proof project into a navigable question workspace while keeping question selection, evaluator logic, derived feedback, and component responsibilities clearly separated.",
+                "Frontend Reasoning Lab is a structured frontend reasoning workflow built with clear application boundaries. It provides targeted feedback, supports revision comparison, and produces bounded next-action recommendations. AI outputs are validated before entering application state, while the application owns session state, workflow transitions, and recommendation handling. The full workflow was verified end to end with LM Studio and OpenAI in local development.",
 
             "challenges": [
-                "Expanding a focused proof project into a navigable workspace without turning it into an open-ended platform",
-                "Keeping the selected question as a clear source of truth across navigation and evaluation flows",
-                "Separating question data, UI state, evaluator logic, and derived feedback into clear responsibility boundaries"
+                "Designing a multi-step reasoning workflow without delegating state or workflow decisions to the AI model",
+                "Validating structured AI outputs before applying them to application state and failing safely when responses are invalid",
+                "Verifying the complete workflow consistently with both LM Studio and OpenAI"
             ],
 
             "features": [
-                "Question navigator with searchable question selection",
-                "State-driven workspace that renders the selected question and evaluation workflow",
-                "Derived feedback based on structured evaluator results",
-                "Documented AI-assisted workflow, architectural decisions, and validation process"
+                "Structured frontend reasoning workflow with targeted feedback",
+                "Revision comparison for reviewing how an answer changes after feedback",
+                "Bounded next-action recommendations based on the reviewed revision",
+                "Validated AI outputs with application-owned state and workflow transitions"
             ]
         },
         {
@@ -208,36 +208,36 @@ export const projectsData: Record<LanguageId, Project[]> = {
             "id": "frontend-reasoning-lab",
             "title": "Frontend Reasoning Lab",
             "shortDescription":
-                "使用 React 與 TypeScript 打造的前端推理工作區，包含題目導覽、state-driven 評估流程，以及可追蹤的 AI-assisted 工程決策。",
+                "以 React 與 TypeScript 建立的結構化前端推理流程，整合針對性回饋、修訂前後比較、有明確邊界的下一步建議與 AI 輸出驗證。",
 
             "tags": [
                 "React",
                 "TypeScript",
                 "State-driven UI",
-                "Derived State",
-                "Question Navigation",
-                "AI-assisted Workflow"
+                "AI-assisted Workflow",
+                "AI Output Validation",
+                "Revision Comparison"
             ],
             "thumbnailSrc": frlThumb,
             "thumbnailAlt": "Frontend Reasoning Lab Preview",
             "image": [],
-            "year": "2026 Q2",
+            "year": "2026 Q2–Q3",
             "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
             "demoLink": "https://frontend-reasoning-lab.netlify.app/",
             "detailDescription":
-                "Frontend Reasoning Lab 是一個使用 React 與 TypeScript 打造的前端推理工作區，透過互動題目與受控的評估流程，讓前端工程判斷變得可見。目前版本將原本的小型 proof project 擴充為可導覽的題目工作區，同時維持題目選擇、evaluator logic、derived feedback 與元件責任之間清楚的邊界。",
+                "Frontend Reasoning Lab 是一個具有明確應用程式責任邊界的結構化前端推理流程。它會針對回答提供回饋、支援修訂前後比較，並產生範圍明確的下一步建議。AI 輸出必須先通過驗證才能進入應用程式狀態；session state、流程轉換與建議處理仍由應用程式決定。完整流程已在本機開發環境使用 LM Studio 與 OpenAI 完成端到端驗證。",
 
             "challenges": [
-                "將聚焦的小型 proof project 擴充為可導覽的工作區，同時避免演變成無邊界的平台",
-                "讓目前選取的題目成為導覽與評估流程中清楚的單一狀態來源",
-                "清楚分離題目資料、UI state、evaluator logic 與 derived feedback 的責任邊界"
+                "設計多步驟推理流程，同時避免把狀態或流程決策交給 AI 模型",
+                "在更新應用程式狀態前驗證結構化 AI 輸出，並在回傳無效時安全停止",
+                "使用 LM Studio 與 OpenAI 一致地驗證完整端到端流程"
             ],
 
             "features": [
-                "支援搜尋與題目選擇的 Question Navigator",
-                "根據目前選取題目呈現內容與評估流程的 state-driven workspace",
-                "根據 structured evaluator results 產生的 derived feedback",
-                "記錄 AI-assisted workflow、架構決策與驗證流程"
+                "結合針對性回饋的結構化前端推理流程",
+                "用於檢視回答如何根據回饋調整的修訂前後比較",
+                "根據修訂檢視結果產生有明確邊界的下一步建議",
+                "經驗證的 AI 輸出與由應用程式掌控的狀態及流程轉換"
             ]
         },
         {
@@ -372,32 +372,32 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "frontend-reasoning-lab",
             "title": "Frontend Reasoning Lab",
-            "shortDescription": "React と TypeScript を用いた小さな proof project で、state-driven UI、evaluator の境界、そしてフロントエンド推論に焦点を当てています。",
+            "shortDescription": "React と TypeScript で構築した構造化フロントエンド推論ワークフローです。対象を絞ったフィードバック、修正前後の比較、範囲を限定した次のアクション提案、AI 出力の検証を扱います。",
             "tags": [
                 "React",
                 "TypeScript",
                 "State-driven UI",
-                "Derived State",
-                "Component Architecture",
-                "AI-assisted Workflow"
+                "AI-assisted Workflow",
+                "AI Output Validation",
+                "Revision Comparison"
             ],
             "thumbnailSrc": frlThumb,
             "thumbnailAlt": "Frontend Reasoning Lab Preview",
             "image": [],
-            "year": "2026 Q2",
+            "year": "2026 Q2–Q3",
             "githubLink": "https://github.com/stuartchendev/frontend-reasoning-lab",
             "demoLink": "https://frontend-reasoning-lab.netlify.app/",
-            "detailDescription": "Frontend Reasoning Lab は、React と TypeScript を用いて構築した小さな proof project で、制御された UI workflow の中でフロントエンド推論を見える形にすることを目的としています。プロダクトの規模ではなく、state、derived data、evaluator logic、コンポーネント責務をどのように分離し、明確に説明できるかを示しています。",
+            "detailDescription": "Frontend Reasoning Lab は、アプリケーション側の責務境界を明確にした構造化フロントエンド推論ワークフローです。回答に対する対象を絞ったフィードバック、修正前後の比較、範囲を限定した次のアクション提案を提供します。AI の出力はアプリケーションの状態に反映する前に検証し、セッション状態、ワークフローの遷移、提案の処理はアプリケーション側が管理します。ローカル開発環境では、LM Studio と OpenAI を使用してワークフロー全体をエンドツーエンドで検証しています。",
             "challenges": [
-                "プロジェクトを意図的に小さく保ちながら、意味のあるフロントエンド推論を示すこと",
-                "user-facing UI state と evaluation logic、derived feedback を分離すること",
-                "data、UI、decision logic を混在させず、各ステップが明確な責務を持つ workflow を設計すること"
+                "状態やワークフローの判断を AI モデルに委ねず、複数ステップの推論フローを設計すること",
+                "構造化された AI 出力を状態へ反映する前に検証し、無効な場合は安全に停止すること",
+                "LM Studio と OpenAI の両方で、ワークフロー全体を一貫して検証すること"
             ],
             "features": [
-                "小さな制御されたインタラクションのための state-driven UI flow",
-                "ユーザー入力と evaluator results に基づく derived feedback",
-                "UI components、state、evaluation logic の間にある明確な責務分離",
-                "AI-assisted engineering workflow をプロジェクトの reasoning の一部として記録"
+                "対象を絞ったフィードバックを含む構造化フロントエンド推論ワークフロー",
+                "フィードバック後の回答の変化を確認するための修正前後の比較",
+                "修正版の確認結果に基づく、範囲を限定した次のアクション提案",
+                "検証済みの AI 出力と、アプリケーション側が管理する状態およびワークフロー遷移"
             ]
         },
         {
