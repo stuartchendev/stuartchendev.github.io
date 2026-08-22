@@ -11,13 +11,19 @@ function ProjectsList({projects, onSelect}: ProjectsListProps) {
 
     return (
         <ul className={`project__list`}  id="projects">
-            {projects.map((project, index) =>
+            {projects.map((project) => project.id === "frontend-reasoning-lab" ? (
                 <ProjectCard
-                    key={index}
+                    key={project.id}
+                    project={project}
+                    detailHref={`/projects/${project.id}`}
+                />
+            ) : (
+                <ProjectCard
+                    key={project.id}
                     project={project}
                     onSelect={onSelect}
                 />
-            )}
+            ))}
         </ul>
     )
 }

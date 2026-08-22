@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function (locationPath) {
+        if (locationPath.search.startsWith('?/')) {
+          var restoredPath = locationPath.search
+            .slice(2)
+            .split('&')
+            .map(function (segment) { return segment.replace(/~and~/g, '&'); })
+            .join('?');
+          window.history.replaceState(null, '', '/' + restoredPath + locationPath.hash);
+        }
+      }(window.location));
+    </script>
     <link rel="icon" type="image/svg+xml" href="src/img/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

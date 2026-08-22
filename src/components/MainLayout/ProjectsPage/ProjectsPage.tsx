@@ -1,6 +1,7 @@
 import ProjectsList from "./ProjectsList";
 import ProjectDetailView from "./ProjectDetailView";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useLayoutEffect, useState} from "react";
+import {useLocation, useNavigationType} from "react-router-dom";
 import {DEV_DISPLAY_VIEW_TYPE} from "../../../config";
 import {projectsData} from "../../../data/project/projectsData";
 import type {Project} from "../../../types/project.ts";
@@ -18,6 +19,9 @@ type fakeFetchProjectsProps = {
 
 // activeProjectId models user selection
 function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
+    const {hash} = useLocation();
+    const navigationType = useNavigationType();
+
     // Single source of truth that represents which project the user selects
     const [activeProjectId, setActiveProjectId] = useState<string | null>(
         ()=> localStorage.getItem("projectId")
@@ -30,6 +34,23 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
     const task = useCallback(() => fakeFetchProjects({activeLanguageId}), [activeLanguageId]);
 
     const { state, retry, isLoading, isError, isSuccess } = useAsync(task, [activeLanguageId]);
+
+    useLayoutEffect(() => {
+        if (!isSuccess) return;
+
+        if (hash === "#projects") {
+            document.getElementById("projects")?.scrollIntoView({
+                behavior: "auto",
+                block: "start",
+            });
+            return;
+        }
+
+        const projectsScrollY = window.history.state?.projectsScrollY;
+        if (navigationType === "POP" && typeof projectsScrollY === "number") {
+            window.scrollTo({top: projectsScrollY, left: 0, behavior: "auto"});
+        }
+    }, [hash, isSuccess, navigationType]);
 
     // Stored data (non-UI state) because it comes from external data
     // and now becomes activeLanguageId derived state

@@ -12,9 +12,12 @@ import FooterContent from "./components/Footer/FooterContent";
 import {type LanguageId, LANGUAGE_STORAGE_KEY} from "./config";
 import {getInitialLanguage} from "./helper/language";
 import {languageData} from "./data/language/languageData";
-import {useState} from "react";
+import {lazy, Suspense, useState} from "react";
+import {Route, Routes} from "react-router-dom";
 import useToolbarVisible from "./components/Footer/useToolbarVisible";
 import useTheme from "./components/Footer/useTheme";
+
+const ProjectFocusPage = lazy(() => import("./components/ProjectFocus/ProjectFocusPage"));
 
 // Portfolio-Structure-NOTE:
 // main: root
@@ -53,15 +56,26 @@ function App() {
 
     return (
       <>
-        <NavigationHeader>
-            <GuildLine languageUi={currentLanguageUI}/>
-            <LanguageOptions languageUi={currentLanguageUI} onSelectLanguage={handleLanguageChange}/>
-        </NavigationHeader>
-        <MainLayout>
-            <AboutSection languageUi={currentLanguageUI}/>
-            <ProjectsPage activeLanguageId={activeLanguageId}/>
-            <ContactSection languageUi={currentLanguageUI}/>
-        </MainLayout>
+        <Routes>
+            <Route
+                path="/"
+                element={
+                    <PortfolioHome
+                        activeLanguageId={activeLanguageId}
+                        currentLanguageUI={currentLanguageUI}
+                        onLanguageChange={handleLanguageChange}
+                    />
+                }
+            />
+            <Route
+                path="/projects/:projectId"
+                element={
+                    <Suspense fallback={<main className="focus-status">Loading case study…</main>}>
+                        <ProjectFocusPage activeLanguageId={activeLanguageId}/>
+                    </Suspense>
+                }
+            />
+        </Routes>
         <Footer>
             {showToolbar && <FooterTools onToggleTheme={toggleTheme} theme={theme}/>}
             <FooterContent languageUi={currentLanguageUI}/>
@@ -69,4 +83,27 @@ function App() {
       </>
     )
 }
+
+type PortfolioHomeProps = {
+    activeLanguageId: LanguageId;
+    currentLanguageUI: (typeof languageData)[LanguageId];
+    onLanguageChange: (languageId: LanguageId) => void;
+};
+
+function PortfolioHome({activeLanguageId, currentLanguageUI, onLanguageChange}: PortfolioHomeProps) {
+    return (
+        <>
+            <NavigationHeader>
+                <GuildLine languageUi={currentLanguageUI}/>
+                <LanguageOptions languageUi={currentLanguageUI} onSelectLanguage={onLanguageChange}/>
+            </NavigationHeader>
+            <MainLayout>
+                <AboutSection languageUi={currentLanguageUI}/>
+                <ProjectsPage activeLanguageId={activeLanguageId}/>
+                <ContactSection languageUi={currentLanguageUI}/>
+            </MainLayout>
+        </>
+    );
+}
+
 export default App

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "projectId": "frontend-reasoning-lab",
+  "title": "Frontend Reasoning Lab: Constraining AI with an Application-Owned Workflow",
+  "summary": "A bounded React and TypeScript reference workflow showing how application-owned state, validated model output, and a stable adapter contract constrain AI evaluation across local live inference and public replay.",
+  "sections": [
+    {
+      "id": "engineering-question",
+      "title": "How can frontend architecture constrain AI evaluation?",
+      "blocks": [
+        {
+          "id": "engineering-question-context",
+          "type": "prose",
+          "content": {
+            "paragraphs": [
+              "Frontend Reasoning Lab is intentionally narrower than a course platform or an open-ended question bank. It demonstrates one guided Answer → Revise → Review workflow for examining frontend reasoning.",
+              "The central engineering question is how to use model-generated evaluation without allowing the model to own navigation, workflow state, grading contracts, or browser rendering."
+            ]
+          },
+          "evidenceRefs": ["readme-scope", "readme-workflow"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "application-ownership-decision",
+          "type": "callout",
+          "content": {
+            "kind": "decision",
+            "title": "Application-owned workflow",
+            "body": "The application owns legal transitions, selected content, request correlation, validation boundaries, and rendering. AI supplies structured evaluation results inside those constraints."
+          },
+          "evidenceRefs": ["readme-scope", "app-selection", "session-reducer", "server-validation"],
+          "epistemicStatus": "fact"
+        }
+      ]
+    },
+    {
+      "id": "responsibility-boundary",
+      "title": "Separating model execution from application state",
+      "blocks": [
+        {
+          "id": "responsibility-boundary-explanation",
+          "type": "prose",
+          "content": {
+            "paragraphs": [
+              "Question identity is owned by the application root and resolved from the guided-question registry. The practice hook coordinates asynchronous work, the reducer accepts only legal synchronous transitions, adapters perform evaluation, and React renders the resulting phase.",
+              "Because public replay and local live inference implement the same application-facing adapter, the session workflow does not need to know which execution source produced a validated result."
+            ]
+          },
+          "evidenceRefs": ["readme-data-flow", "app-selection", "session-hook", "session-reducer", "evaluation-composition"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "responsibility-boundary-diagram",
+          "type": "diagram",
+          "content": {
+            "title": "Validated results enter an application-owned state machine",
+            "nodes": [
+              {"id": "selection", "label": "App and Question Navigator", "responsibility": "Own selected content and start a fresh question session."},
+              {"id": "workspace", "label": "Practice workspace", "responsibility": "Emit answer, revision, retry, and recommendation intents."},
+              {"id": "orchestration", "label": "usePracticeSession", "responsibility": "Coordinate adapter calls and correlate pending work."},
+              {"id": "adapter", "label": "Evaluation adapter", "responsibility": "Provide public replay or local live-model evaluation behind one interface."},
+              {"id": "validation", "label": "Validation boundary", "responsibility": "Convert external output into a validated domain result."},
+              {"id": "reducer", "label": "Practice session reducer", "responsibility": "Accept legal transitions and ignore stale correlated responses."},
+              {"id": "rendering", "label": "React rendering", "responsibility": "Render the next legal Answer, Revise, or Review phase."}
+            ],
+            "relationships": [
+              {"from": "selection", "to": "workspace", "label": "selected question and fresh session"},
+              {"from": "workspace", "to": "orchestration", "label": "user intent"},
+              {"from": "orchestration", "to": "adapter", "label": "evaluation request"},
+              {"from": "adapter", "to": "validation", "label": "candidate structured result"},
+              {"from": "validation", "to": "reducer", "label": "validated domain result"},
+              {"from": "reducer", "to": "rendering", "label": "legal session state"}
+            ]
+          },
+          "evidenceRefs": ["readme-data-flow", "app-selection", "session-hook", "session-reducer", "server-validation", "public-adapter"],
+          "epistemicStatus": "inference"
+        }
+      ]
+    },
+    {
+      "id": "async-correctness",
+      "title": "Protecting the active session from stale results",
+      "blocks": [
+        {
+          "id": "async-correlation-explanation",
+          "type": "prose",
+          "content": {
+            "paragraphs": [
+              "Submitting an answer or revision snapshots the editable text before evaluation begins. Each pending operation carries a sessionId and requestId, and completion is accepted only when both still match the active request.",
+              "Starting another question creates a fresh session. Results from the previous question then have no state effect, preventing late model responses from appearing beneath newly selected content."
+            ]
+          },
+          "evidenceRefs": ["session-hook", "session-reducer", "stale-response-tests"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "async-correlation-constraint",
+          "type": "callout",
+          "content": {
+            "kind": "constraint",
+            "title": "Validation alone is not enough",
+            "body": "A structurally valid response can still be wrong for the current screen. Session and request identity protect the temporal boundary after model-output validation has succeeded."
+          },
+          "evidenceRefs": ["session-reducer", "stale-response-tests"],
+          "epistemicStatus": "inference"
+        }
+      ]
+    },
+    {
+      "id": "two-execution-modes",
+      "title": "Two execution modes, one application contract",
+      "blocks": [
+        {
+          "id": "execution-mode-comparison",
+          "type": "comparison",
+          "content": {
+            "title": "Public production and local development preserve different trust boundaries",
+            "sides": [
+              {"id": "public-production", "label": "Public production", "summary": "Replays captured, validated results for verified demo inputs."},
+              {"id": "local-development", "label": "Local development", "summary": "Runs live LM Studio or OpenAI inference through server-owned adapters."}
+            ],
+            "dimensions": [
+              {"label": "Evaluation source", "values": {"public-production": "Validated Call 1 and Call 2 fixtures captured from a real local model run.", "local-development": "Live model responses returned through the local Netlify development runtime."}},
+              {"label": "Accepted input", "values": {"public-production": "Only the exact verified demo answer and revision.", "local-development": "Arbitrary answers and revisions accepted by the live evaluation path."}},
+              {"label": "Application-owned behavior", "values": {"public-production": "Reducer transitions, comparison presentation, recommendation navigation, and reset.", "local-development": "The same transitions, validation contracts, navigation, and rendering."}},
+              {"label": "Runtime boundary", "values": {"public-production": "No public credential or open-ended model endpoint is required.", "local-development": "Provider configuration and credentials remain server-owned and local."}}
+            ]
+          },
+          "evidenceRefs": ["readme-modes", "evaluation-composition", "public-adapter", "public-adapter-tests"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "public-replay-caveat",
+          "type": "callout",
+          "content": {
+            "kind": "caveat",
+            "title": "The hosted walkthrough is not live public inference",
+            "body": "Production demonstrates the real browser workflow with validated-response replay. Live LM Studio or OpenAI inference is a local-development path and should not be described as the hosted runtime."
+          },
+          "evidenceRefs": ["readme-live-demo", "readme-modes", "public-adapter"],
+          "epistemicStatus": "fact"
+        }
+      ]
+    },
+    {
+      "id": "review-state-evidence",
+      "title": "Evidence from the complete Review state",
+      "blocks": [
+        {
+          "id": "review-state-context",
+          "type": "prose",
+          "content": {
+            "paragraphs": [
+              "The selected screenshot records the complete revision-reviewed state from one local browser session. It shows immutable original and revised answer snapshots, their evidence, a partially resolved comparison, and one validated next action.",
+              "Its role is limited: it supports the existence and visible composition of the Review state, not learning outcomes, performance improvements, responsive coverage, or hosted live-model availability."
+            ]
+          },
+          "evidenceRefs": ["review-screenshot", "browser-evidence"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "review-state-image",
+          "type": "image",
+          "content": {
+            "source": "/project-evidence/frl/03-revision-comparison.png",
+            "alt": "Frontend Reasoning Lab Review phase showing original and revised answers, evidence comparison, a partially resolved result, and a recommended next question.",
+            "caption": "Local browser evidence of the complete revision-reviewed state from the documented July 29, 2026 run. This image does not represent production live inference or measured learning impact.",
+            "narrativeRole": "Show the visible result of the application-owned Answer → Revise → Review workflow after a validated local-model comparison."
+          },
+          "evidenceRefs": ["review-screenshot", "browser-evidence"],
+          "epistemicStatus": "fact"
+        },
+        {
+          "id": "bounded-result",
+          "type": "callout",
+          "content": {
+            "kind": "result",
+            "title": "What the project demonstrates",
+            "body": "FRL demonstrates that live inference and validated public replay can feed the same frontend workflow while the application retains ownership of state, validation, and rendering."
+          },
+          "evidenceRefs": ["readme-scope", "readme-modes", "public-adapter-tests", "stale-response-tests", "browser-evidence"],
+          "epistemicStatus": "inference"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {"id": "readme-scope", "source": "README.md — introduction, What FRL Demonstrates, and Scope Control", "supports": ["FRL is a bounded reference workflow rather than a course platform.", "The application owns workflow and validation boundaries while AI supplies structured results."]},
+    {"id": "readme-workflow", "source": "README.md — Guided Workflow", "supports": ["The authored narrative centers on a bounded Answer → Revise → Review path followed by one recommendation."]},
+    {"id": "readme-live-demo", "source": "README.md — Live Demo", "supports": ["The public build replays validated responses while browser workflow logic runs live."]},
+    {"id": "readme-modes", "source": "README.md — Two Execution Modes, One Application Contract", "supports": ["Public production uses validated-response replay for verified inputs.", "Local development supports live LM Studio or OpenAI inference through server-owned adapters."]},
+    {"id": "readme-data-flow", "source": "README.md — State and Data Flow and Component Responsibilities", "supports": ["Selection, orchestration, reducer transitions, evaluation, and rendering are separate responsibilities."]},
+    {"id": "app-selection", "source": "src/App.tsx", "supports": ["App owns selected content and routes recommendations through the controlled selection path.", "Selecting a guided question starts a fresh practice session."]},
+    {"id": "session-hook", "source": "src/hooks/v3/usePracticeSession.ts", "supports": ["The hook coordinates adapter calls with generated request IDs and active-request checks."]},
+    {"id": "session-reducer", "source": "src/domain/v3/practiceSessionReducer.ts", "supports": ["The reducer models legal phases and keeps submitted snapshots separate from drafts.", "Responses are accepted only for the active session and request."]},
+    {"id": "stale-response-tests", "source": "tests/practiceSessionReducer.test.mjs — stale-response and start-question cases", "supports": ["Mismatched IDs have no state effect.", "Old responses remain ignored after a new question starts."]},
+    {"id": "evaluation-composition", "source": "src/lib/v3/practiceEvaluationComposition.ts", "supports": ["Development and production select different evaluation sources behind one adapter role."]},
+    {"id": "server-validation", "source": "src/server/v3/evaluation.ts and Call 1/Call 2 pipeline modules", "supports": ["Model-facing data is structurally and semantically validated before becoming a domain result."]},
+    {"id": "public-adapter", "source": "src/lib/v3/publicWalkthroughAdapter.ts", "supports": ["The public adapter accepts only the reference question and exact verified answer and revision."]},
+    {"id": "public-adapter-tests", "source": "tests/publicWalkthroughAdapter.test.mjs", "supports": ["Captured fixtures are revalidated at existing boundaries.", "Edited public inputs are rejected while live mode remains free."]},
+    {"id": "review-screenshot", "source": "docs/v3/evidence/03-revision-comparison.png", "supports": ["The documented local run visibly reached the revision-reviewed state."]},
+    {"id": "browser-evidence", "source": "docs/v3/evidence/README.md", "supports": ["The screenshots came from one sequential local browser session with validated Call 1, Call 2, and recommendation transition.", "The evidence does not prove hosted live inference, every responsive breakpoint, or learning outcomes."]}
+  ],
+  "uncertainties": [
+    "The current v0.3.2 README describes the latest release, while the retained browser evidence was captured earlier from an uncommitted feat/frl-v3 working tree based on d5489a0. The screenshot is evidence of that visible local workflow, not a fresh v0.3.2 production browser run.",
+    "The illustrative v1 reference defines the five primitives but not every nested field. Portfolio consumer compatibility still requires deterministic validation during integration."
+  ],
+  "rejectedClaims": [
+    "FRL is a complete learning platform or general-purpose question bank.",
+    "The hosted production walkthrough performs live LM Studio or OpenAI inference.",
+    "The project demonstrates measured learning improvement, model quality improvement, or performance gains.",
+    "The screenshots prove accessibility compliance, complete responsive coverage, hosted provider availability, or production failure handling."
+  ]
+}

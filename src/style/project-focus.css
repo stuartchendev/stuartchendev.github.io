@@ -1,0 +1,945 @@
+.focus-page,
+.focus-status {
+    width: min(1180px, calc(100% - 40px));
+    min-height: 65vh;
+    margin-inline: auto;
+    padding-block: clamp(32px, 6vw, 72px);
+}
+
+.focus-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    max-width: 720px;
+}
+
+.focus-page__header {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: clamp(48px, 7vw, 88px);
+    padding-bottom: clamp(28px, 4vw, 44px);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    animation: focus-mode-enter 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes focus-mode-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .focus-page__header {
+        animation: none;
+    }
+}
+
+.focus-page__header::before {
+    position: absolute;
+    z-index: -1;
+    right: -6vw;
+    bottom: 0;
+    left: -6vw;
+    height: 58%;
+    background: radial-gradient(circle at 52% 72%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%);
+    content: "";
+    pointer-events: none;
+}
+
+.focus-hero__copy {
+    max-width: 820px;
+}
+
+.focus-hero__copy h1 {
+    max-width: 19ch;
+    margin-block: 12px 20px;
+    font-size: clamp(2.35rem, 5.2vw, 4.25rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+}
+
+.focus-eyebrow {
+    margin-top: clamp(36px, 6vw, 64px);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.focus-page__summary {
+    max-width: 62ch;
+    color: color-mix(in srgb, var(--color-text) 82%, transparent);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.7;
+}
+
+.focus-hero__metadata,
+.focus-hero__facts,
+.focus-hero__tags,
+.focus-context-rail__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+}
+
+.focus-hero__metadata {
+    gap: 12px 18px;
+    margin-top: 24px;
+}
+
+.focus-hero__facts {
+    gap: 10px;
+    color: color-mix(in srgb, var(--color-text) 66%, transparent);
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.025em;
+}
+
+.focus-hero__facts li + li::before {
+    margin-right: 10px;
+    color: var(--color-accent);
+    content: "·";
+}
+
+.focus-hero__tags,
+.focus-context-rail__tags {
+    gap: 8px;
+}
+
+.focus-hero__tags li,
+.focus-context-rail__tags li {
+    padding: 5px 9px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
+    border-radius: 999px;
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.focus-hero__visual {
+    position: relative;
+    width: calc(100% + clamp(32px, 5vw, 64px));
+    aspect-ratio: 16 / 7.4;
+    margin: clamp(30px, 5vw, 56px) 0 0 calc(clamp(16px, 2.5vw, 32px) * -1);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--color-border) 58%, transparent);
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    box-shadow:
+        0 30px 80px color-mix(in srgb, var(--color-shadow) 92%, transparent),
+        inset 0 0 0 1px color-mix(in srgb, var(--color-bg) 45%, transparent);
+}
+
+.focus-hero__visual::after {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--color-bg) 16%, transparent), transparent 16%, transparent 84%, color-mix(in srgb, var(--color-bg) 16%, transparent)),
+        linear-gradient(180deg, transparent 56%, color-mix(in srgb, var(--color-bg) 76%, transparent));
+    content: "";
+    pointer-events: none;
+}
+
+.focus-hero__visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 17%;
+    opacity: 0.92;
+    transform: scale(1.025);
+}
+
+.focus-hero__visual figcaption {
+    position: absolute;
+    z-index: 1;
+    right: 18px;
+    bottom: 14px;
+    color: color-mix(in srgb, var(--color-text) 68%, transparent);
+    font-size: 0.72rem;
+}
+
+.focus-back {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.focus-back:focus-visible,
+.focus-toc a:focus-visible,
+.focus-article a:focus-visible {
+    border-radius: 4px;
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.focus-layout {
+    display: grid;
+    grid-template-columns: minmax(190px, 240px) minmax(0, 760px);
+    align-items: start;
+    justify-content: space-between;
+    gap: clamp(32px, 6vw, 80px);
+}
+
+.focus-context-rail {
+    position: sticky;
+    top: 24px;
+    padding: 20px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--color-surface) 58%, transparent);
+}
+
+.focus-context-rail__project {
+    padding-bottom: 22px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+}
+
+.focus-context-rail__label {
+    color: color-mix(in srgb, var(--color-text) 56%, transparent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.focus-context-rail__name {
+    margin-top: 7px;
+    font-size: 1.05rem;
+    font-weight: 750;
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+}
+
+.focus-context-rail__tags {
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.focus-context-rail__tags li {
+    padding: 3px 7px;
+    color: color-mix(in srgb, var(--color-text) 62%, transparent);
+    font-size: 0.68rem;
+}
+
+.focus-context-rail__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 42%, transparent);
+}
+
+.focus-context-rail__links a {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    padding: 5px 8px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 62%, transparent);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    color: var(--color-text);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.focus-toc {
+    padding-top: 22px;
+}
+
+.focus-toc__title {
+    margin: 0 0 13px;
+    color: color-mix(in srgb, var(--color-text) 52%, transparent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.focus-toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    list-style: none;
+}
+
+.focus-toc__item--depth-3 {
+    padding-left: 14px;
+    font-size: var(--text-sm);
+}
+
+.focus-toc a {
+    color: color-mix(in srgb, var(--color-text) 60%, transparent);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.focus-toc__link--numbered {
+    display: grid;
+    grid-template-columns: 2ch minmax(0, 1fr);
+    align-items: baseline;
+    gap: 8px;
+}
+
+.focus-toc__number {
+    color: color-mix(in srgb, var(--color-accent) 72%, var(--color-text));
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+}
+
+.focus-toc__item--depth-3 a {
+    color: color-mix(in srgb, var(--color-text) 52%, transparent);
+    font-size: 0.78rem;
+}
+
+.focus-context-rail__exit {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+}
+
+.focus-back--rail {
+    min-height: 36px;
+    font-size: var(--text-sm);
+}
+
+.focus-article__exit {
+    display: none;
+}
+
+.focus-article {
+    min-width: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.focus-article h2,
+.focus-article h3 {
+    scroll-margin-top: 24px;
+}
+
+.focus-article h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.focus-structured-section + .focus-structured-section {
+    margin-top: clamp(72px, 8vw, 104px);
+}
+
+.focus-structured-section__header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: end;
+    gap: 14px;
+    margin-bottom: clamp(24px, 4vw, 36px);
+}
+
+.focus-structured-section__number {
+    margin: 0 0 10px;
+    color: color-mix(in srgb, var(--color-accent) 72%, var(--color-text));
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+}
+
+.focus-structured-section__content {
+    min-width: 0;
+}
+
+.focus-prose-block {
+    max-width: 64ch;
+    color: color-mix(in srgb, var(--color-text) 82%, transparent);
+}
+
+.focus-prose-block__lead {
+    color: var(--color-text);
+    font-size: clamp(1.08rem, 1.8vw, 1.2rem);
+    line-height: 1.72;
+}
+
+.focus-prose-block--lead .focus-prose-block__lead + p {
+    margin-top: 22px;
+}
+
+.focus-article h3 {
+    margin: 48px 0 12px;
+    padding-left: 14px;
+    border-left: 3px solid color-mix(in srgb, var(--color-accent) 78%, transparent);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.focus-evidence {
+    margin: clamp(28px, 4vw, 36px) 0 clamp(40px, 5vw, 52px);
+}
+
+.focus-evidence figcaption {
+    max-width: 68ch;
+    margin: 12px 4px 0;
+    color: color-mix(in srgb, var(--color-text) 62%, transparent);
+    font-size: var(--text-sm);
+    line-height: 1.55;
+}
+
+.focus-evidence__scroll-hint {
+    display: none;
+}
+
+.focus-evidence__image-frame:focus-visible,
+.focus-dense-evidence__viewport:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.focus-evidence__image-frame {
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--color-border) 74%, transparent);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
+    box-shadow:
+        0 18px 44px color-mix(in srgb, var(--color-shadow) 62%, transparent),
+        inset 0 0 0 1px color-mix(in srgb, var(--color-bg) 42%, transparent);
+}
+
+.focus-evidence__image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.focus-evidence--overview .focus-evidence__image-frame {
+    aspect-ratio: 6 / 5;
+}
+
+.focus-evidence--revision .focus-evidence__image-frame {
+    aspect-ratio: 1440 / 1539;
+}
+
+@media (min-width: 1200px) {
+    .focus-evidence--screenshot {
+        --focus-evidence-bleed: clamp(64px, 6vw, 88px);
+
+        width: calc(100% + var(--focus-evidence-bleed));
+        margin-left: calc(var(--focus-evidence-bleed) * -1);
+    }
+}
+
+.focus-boundary-comparison {
+    padding: clamp(20px, 4vw, 32px);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+}
+
+.focus-boundary-comparison > figcaption {
+    margin: 0 0 20px;
+    color: color-mix(in srgb, var(--color-text) 74%, transparent);
+    font-weight: 600;
+}
+
+.focus-boundary-comparison__paths {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 12px;
+}
+
+.focus-boundary-path {
+    padding: 16px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 62%, transparent);
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--color-bg) 62%, transparent);
+}
+
+.focus-boundary-path--preferred {
+    border-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-border));
+}
+
+.focus-boundary-path__label {
+    margin-bottom: 12px;
+    color: color-mix(in srgb, var(--color-text) 60%, transparent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.focus-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.focus-flow__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.focus-flow__node {
+    padding: 7px 9px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--color-bg) 76%, transparent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.focus-flow__arrow {
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+}
+
+.focus-decision-evidence {
+    margin: 0 0 16px;
+    padding: 14px;
+    border-left: 1px solid color-mix(in srgb, var(--color-accent) 58%, transparent);
+    background: color-mix(in srgb, var(--color-surface) 54%, transparent);
+}
+
+.focus-trust-boundary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: clamp(18px, 3vw, 26px);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--color-surface) 58%, transparent);
+}
+
+.focus-trust-boundary__external {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 16px;
+    border: 1px dashed color-mix(in srgb, var(--color-border) 82%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--color-bg) 72%, transparent);
+}
+
+.focus-trust-boundary__eyebrow {
+    color: color-mix(in srgb, var(--color-text) 58%, transparent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.focus-trust-boundary__down-arrow {
+    padding-block: 7px;
+    color: color-mix(in srgb, var(--color-accent) 82%, var(--color-text));
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.focus-trust-boundary__owned {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 72%, var(--color-border));
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--color-bg) 68%, transparent);
+    box-shadow: inset 0 0 30px color-mix(in srgb, var(--color-accent) 4%, transparent);
+}
+
+.focus-trust-boundary__owned > .focus-trust-boundary__eyebrow {
+    display: block;
+    margin-bottom: 14px;
+    color: color-mix(in srgb, var(--color-accent) 68%, var(--color-text));
+}
+
+.focus-trust-boundary__stages {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    list-style: none;
+}
+
+.focus-trust-boundary__stages li {
+    position: relative;
+    display: grid;
+    flex: 1;
+    min-width: 0;
+    place-items: center;
+    padding: 9px 7px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 62%, transparent);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.focus-trust-boundary__stages li:not(:last-child)::after {
+    position: absolute;
+    left: calc(100% + 6px);
+    align-self: center;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+    content: "→";
+}
+
+.focus-trust-boundary__application-flow .focus-flow {
+    justify-content: center;
+}
+
+.focus-trust-boundary__application-flow .focus-flow__node {
+    border: 1px solid color-mix(in srgb, var(--color-border) 58%, transparent);
+}
+
+.focus-result-summary {
+    margin: 24px 0 32px;
+    padding: clamp(24px, 5vw, 40px);
+    border-left: 4px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+}
+
+.focus-result-summary__statement {
+    max-width: 18ch;
+    font-size: clamp(1.7rem, 4vw, 2.65rem);
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+}
+
+.focus-result-summary ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+    list-style: none;
+}
+
+.focus-result-summary li {
+    padding-top: 10px;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
+.focus-article p + p {
+    margin-top: 16px;
+}
+
+.focus-structured-block + .focus-structured-block {
+    margin-top: 24px;
+}
+
+.focus-structured-callout,
+.focus-structured-diagram,
+.focus-structured-comparison {
+    margin-block: 28px;
+    padding: clamp(18px, 3vw, 28px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 64%, transparent);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--color-surface) 68%, transparent);
+}
+
+.focus-structured-callout {
+    border-left: 4px solid var(--color-accent);
+}
+
+.focus-structured-callout__kind {
+    color: color-mix(in srgb, var(--color-accent) 76%, var(--color-text));
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.focus-structured-callout h3,
+.focus-structured-diagram__node h3 {
+    margin: 6px 0 8px;
+    padding: 0;
+    border: 0;
+}
+
+.focus-structured-diagram > figcaption,
+.focus-structured-comparison > figcaption {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.focus-structured-diagram__nodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.focus-structured-diagram__node {
+    padding: 14px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 58%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--color-bg) 66%, transparent);
+}
+
+.focus-structured-diagram__node h3 {
+    font-size: 0.92rem;
+}
+
+.focus-structured-diagram__node p,
+.focus-structured-diagram__relationships {
+    color: color-mix(in srgb, var(--color-text) 68%, transparent);
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+.focus-structured-diagram__relationships {
+    display: grid;
+    gap: 8px;
+    margin-top: 18px;
+    list-style: none;
+}
+
+.focus-structured-diagram__relationships li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 46%, transparent);
+}
+
+.focus-structured-diagram__relationships small {
+    grid-column: 1 / -1;
+    color: color-mix(in srgb, var(--color-text) 54%, transparent);
+}
+
+.focus-structured-diagram__arrow {
+    color: var(--color-accent);
+}
+
+.focus-structured-comparison__viewport {
+    overflow-x: auto;
+}
+
+.focus-structured-comparison__viewport:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.focus-structured-comparison table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.focus-structured-comparison th,
+.focus-structured-comparison td {
+    padding: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 58%, transparent);
+    vertical-align: top;
+    text-align: left;
+}
+
+.focus-structured-comparison thead th {
+    background: color-mix(in srgb, var(--color-bg) 70%, transparent);
+}
+
+.focus-structured-comparison thead span,
+.focus-structured-comparison thead small {
+    display: block;
+}
+
+.focus-structured-comparison thead small {
+    margin-top: 6px;
+    color: color-mix(in srgb, var(--color-text) 58%, transparent);
+    font-weight: 400;
+}
+
+.focus-structured-image .focus-evidence__image-frame {
+    overflow-x: auto;
+}
+
+.focus-structured-image img {
+    min-width: min(100%, 680px);
+}
+
+.focus-content-status {
+    max-width: 720px;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .focus-page,
+    .focus-status {
+        width: min(100% - 28px, 720px);
+        padding-block: 24px 48px;
+    }
+
+    .focus-page__summary,
+    .focus-article {
+        font-size: var(--text-base);
+    }
+
+    .focus-page__header {
+        margin-bottom: 44px;
+        padding-bottom: 28px;
+    }
+
+    .focus-page__header::before {
+        right: 0;
+        left: 0;
+    }
+
+    .focus-hero__copy h1 {
+        max-width: none;
+        font-size: clamp(2.25rem, 12vw, 3.25rem);
+    }
+
+    .focus-eyebrow {
+        margin-top: 28px;
+    }
+
+    .focus-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .focus-context-rail {
+        position: static;
+        padding: 16px;
+    }
+
+    .focus-context-rail__project {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 16px;
+    }
+
+    .focus-context-rail__label,
+    .focus-context-rail__name,
+    .focus-context-rail__tags {
+        grid-column: 1;
+    }
+
+    .focus-context-rail__links {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        align-content: start;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .focus-article h2 {
+        font-size: clamp(1.45rem, 7vw, 1.8rem);
+    }
+
+    .focus-structured-section + .focus-structured-section {
+        margin-top: 64px;
+    }
+
+    .focus-structured-section__header {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .focus-structured-section__number {
+        margin-bottom: 0;
+    }
+
+    .focus-hero__visual {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        margin-left: 0;
+        border-radius: 12px;
+    }
+
+    .focus-hero__visual figcaption {
+        right: 12px;
+        bottom: 10px;
+    }
+
+    .focus-boundary-comparison__paths,
+    .focus-result-summary ul {
+        grid-template-columns: 1fr;
+    }
+
+    .focus-evidence--screenshot .focus-evidence__image-frame,
+    .focus-dense-evidence__viewport {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        touch-action: pan-x pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .focus-evidence--screenshot .focus-evidence__image-frame {
+        aspect-ratio: auto;
+    }
+
+    .focus-evidence--screenshot .focus-evidence__image-frame img {
+        width: 760px;
+        max-width: none;
+    }
+
+    .focus-dense-evidence {
+        margin-bottom: 18px;
+    }
+
+    .focus-trust-boundary {
+        min-width: 680px;
+        margin-bottom: 0;
+    }
+
+    .focus-evidence__scroll-hint {
+        display: block;
+        margin: 8px 4px 0;
+        color: color-mix(in srgb, var(--color-text) 54%, transparent);
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+
+    .focus-flow {
+        align-items: flex-start;
+    }
+
+    .focus-flow__step {
+        max-width: 100%;
+    }
+
+    .focus-context-rail__exit {
+        display: none;
+    }
+
+    .focus-article__exit {
+        display: flex;
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    }
+
+    .focus-back--article {
+        min-height: 44px;
+    }
+
+    .focus-result-summary ul {
+        gap: 16px;
+    }
+}

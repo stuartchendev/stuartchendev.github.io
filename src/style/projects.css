@@ -34,6 +34,21 @@
     box-sizing: border-box;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.project__card-link {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 0;
+    color: inherit;
+}
+.project__card-link:focus-visible {
+    border-radius: 10px;
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
 .project__card h2 {
     align-self: center;
     width: fit-content;
@@ -191,6 +206,5 @@
         -webkit-line-clamp: 5;
     }
 }
-
 
 

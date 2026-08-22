@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <script>
+        var locationPath = window.location;
+        locationPath.replace(
+            locationPath.protocol + '//' + locationPath.hostname + (locationPath.port ? ':' + locationPath.port : '') +
+            '/?/' + locationPath.pathname.slice(1).split('/').map(function (segment) {
+                return segment.replace(/&/g, '~and~');
+            }).join('/') +
+            (locationPath.search ? '&' + locationPath.search.slice(1).replace(/&/g, '~and~') : '') +
+            locationPath.hash
+        );
+    </script>
+</head>
+<body></body>
+</html>

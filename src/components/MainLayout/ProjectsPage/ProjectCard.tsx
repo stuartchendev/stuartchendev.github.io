@@ -1,10 +1,13 @@
 import type { Project } from "../../../types/project";
 import type { OnSelectProject } from "../../../types/ui";
+import type {MouseEvent} from "react";
 import ProjectTagsSection from "./ProjectTagsSection";
+import {Link} from "react-router-dom";
 
 type ProjectCardProps = {
     project: Project;
-    onSelect: OnSelectProject;
+    onSelect?: OnSelectProject;
+    detailHref?: string;
 };
 type ProjectThumbnailProps ={
     thumbnailSrc: Project["thumbnailSrc"];
@@ -16,13 +19,46 @@ type ProjectYearProp=Pick<Project, "year">;
 type ProjectTitleProps = Pick<Project, "title">;
 type ProjectShortDescriptionProps = Pick<Project, "shortDescription">;
 
-function ProjectCard({project, onSelect}: ProjectCardProps) {
+function ProjectCard({project, onSelect, detailHref}: ProjectCardProps) {
     const HandleSetActiveProjectId = () => {
-        onSelect(project.id);
+        onSelect?.(project.id);
+    }
+
+    const rememberProjectsScrollPosition = (event: MouseEvent<HTMLAnchorElement>) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        window.history.replaceState({
+            ...window.history.state,
+            projectsScrollY: window.scrollY,
+        }, "");
+    };
+
+    const content = <ProjectCardContent project={project}/>;
+
+    if (detailHref) {
+        return (
+            <li className="project__card">
+                <Link
+                    className="project__card-link"
+                    to={detailHref}
+                    onClick={rememberProjectsScrollPosition}
+                >
+                    {content}
+                </Link>
+            </li>
+        );
     }
 
     return (
         <li className="project__card" onClick={HandleSetActiveProjectId}>
+            {content}
+        </li>
+    );
+}
+
+function ProjectCardContent({project}: Pick<ProjectCardProps, "project">) {
+    return (
+        <>
             <div className="project__card-visual">
                 {project.thumbnailSrc &&
                     <ProjectThumbnail thumbnailSrc={project.thumbnailSrc} thumbnailAlt={project.thumbnailAlt}
@@ -36,7 +72,7 @@ function ProjectCard({project, onSelect}: ProjectCardProps) {
             <ProjectTitle title={project.title}/>
             <ProjectShortDescription shortDescription={project.shortDescription}/>
             <ProjectTagsSection tags={project.tags}/>
-        </li>
+        </>
     );
 }
 

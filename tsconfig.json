@@ -43,6 +43,7 @@
     "skipLibCheck": true,
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true
   }
 }
