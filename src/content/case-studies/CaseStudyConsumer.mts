@@ -5,6 +5,7 @@ type SnapshotLoader = () => Promise<{default: unknown}>;
 
 const snapshotLoaders: Record<string, SnapshotLoader> = {
     "frontend-reasoning-lab": () => import("./snapshots/frontend-reasoning-lab.json"),
+    "portfolio": () => import("./snapshots/portfolio.json"),
 };
 
 export class CaseStudyConsumerError extends Error {

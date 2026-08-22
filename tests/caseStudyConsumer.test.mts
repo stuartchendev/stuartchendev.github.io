@@ -18,6 +18,20 @@ test("the FRL snapshot loads and validates", async () => {
     }
 });
 
+test("the Portfolio snapshot loads and validates", async () => {
+    const vite = await createServer({server: {middlewareMode: true, hmr: false, ws: false}, appType: "custom"});
+
+    try {
+        const consumer = await vite.ssrLoadModule("/src/content/case-studies/CaseStudyConsumer.mts");
+        const caseStudy = await consumer.loadProjectCaseStudy("portfolio");
+        assert.equal(caseStudy.schemaVersion, 1);
+        assert.equal(caseStudy.projectId, "portfolio");
+        assert.equal(caseStudy.sections.length, 4);
+    } finally {
+        await vite.close();
+    }
+});
+
 test("an unsupported block type fails validation", () => {
     assert.throws(() => validateProjectCaseStudy({
         schemaVersion: 1,

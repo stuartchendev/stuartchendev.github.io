@@ -7,11 +7,13 @@ type ProjectsListProps = {
     onSelect: OnSelectProject;
 }
 
+const focusProjectIds = new Set(["frontend-reasoning-lab", "portfolio"]);
+
 function ProjectsList({projects, onSelect}: ProjectsListProps) {
 
     return (
         <ul className={`project__list`}  id="projects">
-            {projects.map((project) => project.id === "frontend-reasoning-lab" ? (
+            {projects.map((project) => focusProjectIds.has(project.id) ? (
                 <ProjectCard
                     key={project.id}
                     project={project}
