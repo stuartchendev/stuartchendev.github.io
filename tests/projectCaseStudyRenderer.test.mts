@@ -40,3 +40,36 @@ test("the validated FRL snapshot renders all five structured block types", async
         await vite.close();
     }
 });
+
+test("the validated Forkify snapshot renders its project-specific story blocks", async () => {
+    const vite = await createServer({server: {middlewareMode: true, hmr: false, ws: false}, appType: "custom"});
+
+    try {
+        const [{default: ProjectCaseStudyRenderer}, {loadProjectCaseStudy}] = await Promise.all([
+            vite.ssrLoadModule("/src/components/ProjectFocus/ProjectCaseStudyRenderer.tsx"),
+            vite.ssrLoadModule("/src/content/case-studies/CaseStudyConsumer.mts"),
+        ]);
+        const caseStudy = await loadProjectCaseStudy("forkify");
+        const project = {
+            id: "forkify",
+            title: "Forkify",
+            shortDescription: "A recipe application extended with page-scoped data transformations.",
+            tags: ["JavaScript", "MVC"],
+            detailDescription: "A recipe application extended with page-scoped data transformations.",
+        };
+
+        const html = renderToStaticMarkup(
+            React.createElement(MemoryRouter, null, React.createElement(ProjectCaseStudyRenderer, {caseStudy, project})),
+        );
+
+        assert.match(html, /From search summaries to transformable visible-page state/);
+        assert.match(html, /Partial update versus full render/);
+        assert.match(html, /MVC was the starting point, not the extension/);
+        assert.match(html, /A page-scoped store, not a general cache/);
+        assert.match(html, /focus-structured-block--diagram/);
+        assert.match(html, /focus-structured-block--comparison/);
+        assert.match(html, /focus-structured-section__number[^>]*>04</);
+    } finally {
+        await vite.close();
+    }
+});
