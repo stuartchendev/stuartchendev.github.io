@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "portfolio",
-  "title": "Portfolio Website: Evolving a Frontend System One Boundary at a Time",
-  "summary": "A case study of moving a working personal portfolio toward typed, route-driven, data-backed presentation through bounded migrations instead of a single rewrite.",
+  "title": "Portfolio Website: Evolving Without a Rewrite",
+  "summary": "How a working personal portfolio moved toward typed, route-driven publication through bounded migrations instead of a rewrite.",
   "sections": [
     {
       "id": "bounded-modernization",
@@ -13,8 +13,8 @@
           "type": "prose",
           "content": {
             "paragraphs": [
-              "The portfolio began as an existing site that was migrated into React and TypeScript in small steps. The commit history records separate migrations for the application shell, layout sections, project interactions, navigation, and footer before temporary types were progressively replaced with explicit project and language contracts.",
-              "That migration strategy still shapes the product. Projects without a structured case study keep the existing modal detail path, while selected projects can opt into a route-driven Focus page. The two paths are migration states with different responsibilities, not a universal good-versus-bad template."
+              "The portfolio moved to React and TypeScript without replacing the working site. The shell, layout, project interactions, navigation, and footer migrated in separate steps, followed by explicit project and language types.",
+              "That approach still shapes the product. Projects without a structured case study keep the modal detail path; reviewed projects can opt into Focus. These are two migration states with different responsibilities, not a good-versus-bad comparison."
             ]
           },
           "evidenceRefs": ["readme-architecture", "typed-migration-history", "detail-path-selection"],
@@ -26,29 +26,29 @@
           "content": {
             "title": "Two detail paths during an incremental migration",
             "sides": [
-              {"id": "modal", "label": "Existing modal detail", "summary": "Keeps the established interaction for projects that have not moved to structured publication."},
-              {"id": "focus", "label": "Route-driven Focus detail", "summary": "Opts reviewed projects into a dedicated URL and validated structured content."}
+              {"id": "modal", "label": "Existing modal detail", "summary": "Keeps the established interaction for projects not yet migrated."},
+              {"id": "focus", "label": "Route-driven Focus detail", "summary": "Gives reviewed projects a dedicated URL and validated content."}
             ],
             "dimensions": [
               {
                 "label": "Identity owner",
                 "values": {
-                  "modal": "ProjectsPage stores activeProjectId for the local interaction.",
-                  "focus": "The /projects/:projectId route owns the focused project identity."
+                  "modal": "ProjectsPage stores the selected project ID.",
+                  "focus": "The route owns projectId."
                 }
               },
               {
                 "label": "Content source",
                 "values": {
-                  "modal": "A localized Project record supplies description, features, and challenges.",
-                  "focus": "A registered snapshot is validated before the shared renderer receives it."
+                  "modal": "Localized Project record.",
+                  "focus": "Validated structured snapshot."
                 }
               },
               {
                 "label": "Migration role",
                 "values": {
-                  "modal": "Preserves working behavior for remaining projects.",
-                  "focus": "Adds richer publication one reviewed project at a time."
+                  "modal": "Preserves existing projects.",
+                  "focus": "Migrates one reviewed project at a time."
                 }
               }
             ]
@@ -67,8 +67,8 @@
           "type": "prose",
           "content": {
             "paragraphs": [
-              "The application keeps mutable state close to the user decision it represents. App owns activeLanguageId because language selection changes independently. ProjectsPage owns activeProjectId for the remaining modal interaction because that value represents which project the user selected.",
-              "Localized project records and the selected modal project are derived from those identifiers instead of being mirrored into additional state. Focus pages follow the same principle at the navigation boundary: the URL supplies projectId, static project metadata is looked up from that identity, and reading metadata is derived from the validated case study."
+              "State stays close to the user decision. App owns activeLanguageId; ProjectsPage owns activeProjectId for modal selection.",
+              "The UI derives localized records, the selected project, focused project metadata, and reading time from those identifiers. It does not mirror the resulting view into more state."
             ]
           },
           "evidenceRefs": ["app-language-state", "project-selection-state", "focus-page-orchestration"],
@@ -80,15 +80,15 @@
           "content": {
             "title": "User intent flows through owned state into derived presentation",
             "nodes": [
-              {"id": "user-intent", "label": "User intent", "responsibility": "Selects a language, a modal project, or a focused project route."},
-              {"id": "owned-identity", "label": "Owned identity", "responsibility": "App, ProjectsPage, or the URL owns the smallest identifier needed for that interaction."},
-              {"id": "project-data", "label": "Project data", "responsibility": "Localized project records and validated snapshots remain data rather than duplicated UI state."},
-              {"id": "derived-view", "label": "Derived view", "responsibility": "Components derive selected content, metadata, and presentation from identity plus data."}
+              {"id": "user-intent", "label": "User intent", "responsibility": "Chooses a language, modal project, or Focus route."},
+              {"id": "owned-identity", "label": "Owned identity", "responsibility": "Stores only the identifier for that interaction."},
+              {"id": "project-data", "label": "Project data", "responsibility": "Keeps metadata and snapshots outside UI state."},
+              {"id": "derived-view", "label": "Derived view", "responsibility": "Builds presentation from identity and data."}
             ],
             "relationships": [
-              {"from": "user-intent", "to": "owned-identity", "label": "updates or navigates"},
+              {"from": "user-intent", "to": "owned-identity", "label": "sets"},
               {"from": "owned-identity", "to": "project-data", "label": "selects"},
-              {"from": "project-data", "to": "derived-view", "label": "supplies content"}
+              {"from": "project-data", "to": "derived-view", "label": "feeds"}
             ]
           },
           "evidenceRefs": ["app-language-state", "project-selection-state", "localized-project-data", "focus-page-orchestration"],
@@ -105,8 +105,8 @@
           "type": "prose",
           "content": {
             "paragraphs": [
-              "Project-list loading is modeled as a discriminated state with idle or loading, success, and error variants. Each variant controls which data and error values are legal, while ProjectsStateView renders loading or retryable error feedback from that state.",
-              "The async hook increments a request identifier for each run and ignores results from older requests. Retry reuses the same run function, so a repeated attempt returns through the same loading and success-or-error transitions instead of creating a separate recovery path."
+              "Project loading uses a discriminated state: idle or loading, success, or error. Each state permits only its matching data and error values.",
+              "useAsync assigns every run an ID and ignores older results. Retry uses the same transition path instead of creating a separate recovery flow."
             ]
           },
           "evidenceRefs": ["async-state-hook", "projects-state-view", "projects-async-composition"],
@@ -118,7 +118,7 @@
           "content": {
             "kind": "constraint",
             "title": "The delay and failure are deliberate simulations",
-            "body": "fakeFetchProjects exercises loading, error, retry, language changes, and stale-response handling, but it is not evidence of a production API or remote data service."
+            "body": "fakeFetchProjects exercises loading, error, retry, language changes, and stale-response handling. It is not a production API."
           },
           "evidenceRefs": ["projects-async-composition"],
           "epistemicStatus": "fact"
@@ -127,15 +127,15 @@
     },
     {
       "id": "publication-boundary",
-      "title": "Publish richer stories behind explicit boundaries",
+      "title": "Separate content from presentation",
       "blocks": [
         {
           "id": "publication-boundary-explanation",
           "type": "prose",
           "content": {
             "paragraphs": [
-              "Project metadata remains the source for card and hero facts, while a Portfolio-local snapshot represents the reviewed case-study publication. The consumer owns snapshot loading and schema validation; ProjectFocusPage owns route resolution and UI states; the renderer receives validated content and owns presentation.",
-              "Because section order and block selection live in the snapshot, the Portfolio story can use its own four-part structure without turning the FRL narrative into a template. The Portfolio integration adds project-specific content and registration while the existing contract, reading metadata, TOC, and renderer remain shared."
+              "Project metadata supplies card and hero facts. The Portfolio snapshot supplies reviewed case-study content. The consumer validates it, the page orchestrates route and UI states, and the renderer presents it.",
+              "Section order lives in the snapshot, so Portfolio can use four sections without copying FRL. The contract, reading metadata, TOC, and renderer stay shared."
             ]
           },
           "evidenceRefs": ["structured-contract", "case-study-consumer", "focus-page-orchestration", "structured-renderer"],
@@ -147,17 +147,17 @@
           "content": {
             "title": "Reviewed evidence becomes presentation without crossing ownership boundaries",
             "nodes": [
-              {"id": "project-evidence", "label": "Project facts and evidence", "responsibility": "Supports bounded claims about the repository and its behavior."},
-              {"id": "publication-snapshot", "label": "Portfolio snapshot", "responsibility": "Represents reviewed section order, blocks, evidence references, and uncertainty metadata."},
-              {"id": "consumer", "label": "Consumer", "responsibility": "Loads the registered snapshot and validates the data boundary."},
-              {"id": "page", "label": "Focus page", "responsibility": "Orchestrates route identity and loading, error, and success states."},
-              {"id": "renderer", "label": "Renderer", "responsibility": "Derives the TOC and presents the validated sections and blocks."}
+              {"id": "project-evidence", "label": "Project facts and evidence", "responsibility": "Supports bounded claims."},
+              {"id": "publication-snapshot", "label": "Portfolio snapshot", "responsibility": "Stores reviewed sections, blocks, and review metadata."},
+              {"id": "consumer", "label": "Consumer", "responsibility": "Loads and validates registered content."},
+              {"id": "page", "label": "Focus page", "responsibility": "Owns route and content states."},
+              {"id": "renderer", "label": "Renderer", "responsibility": "Builds the TOC and presentation."}
             ],
             "relationships": [
-              {"from": "project-evidence", "to": "publication-snapshot", "label": "supports reviewed content"},
-              {"from": "publication-snapshot", "to": "consumer", "label": "is loaded and validated"},
+              {"from": "project-evidence", "to": "publication-snapshot", "label": "supports"},
+              {"from": "publication-snapshot", "to": "consumer", "label": "is loaded by"},
               {"from": "consumer", "to": "page", "label": "returns validated data"},
-              {"from": "page", "to": "renderer", "label": "passes content for presentation"}
+              {"from": "page", "to": "renderer", "label": "passes content"}
             ]
           },
           "evidenceRefs": ["structured-contract", "case-study-consumer", "focus-page-orchestration", "structured-renderer"],
@@ -169,7 +169,7 @@
           "content": {
             "kind": "result",
             "title": "The reusable unit is presentation, not story order",
-            "body": "Portfolio and FRL share routing, validation, reading metadata, TOC behavior, responsive presentation, and primitives while retaining project-specific narrative structure."
+            "body": "Portfolio and FRL share the presentation system, not a required narrative shape."
           },
           "evidenceRefs": ["portfolio-snapshot", "frl-snapshot", "structured-renderer"],
           "epistemicStatus": "fact"
