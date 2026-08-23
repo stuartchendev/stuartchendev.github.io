@@ -8,6 +8,7 @@ import type {Project} from "../../../types/project.ts";
 import type {LanguageId} from "../../../types/i18n";
 import {useAsync} from "../../../playground/AsyncMessageHook";
 import ProjectsStateView from "./ProjectsStateView";
+import {findVisibleProject, getVisibleProjects} from "./projectVisibility";
 
 type ProjectsPageProps = {
     activeLanguageId: LanguageId; // "en" | "zh-Tw" | "ja";
@@ -28,7 +29,11 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
     );
 
     useEffect(() => {
-        localStorage.setItem('projectId', String(activeProjectId));
+        if (activeProjectId) {
+            localStorage.setItem("projectId", activeProjectId);
+        } else {
+            localStorage.removeItem("projectId");
+        }
     }, [activeProjectId]);
 
     const task = useCallback(() => fakeFetchProjects({activeLanguageId}), [activeLanguageId]);
@@ -54,12 +59,20 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
 
     // Stored data (non-UI state) because it comes from external data
     // and now becomes activeLanguageId derived state
-    const projects = state.data;
+    const projects = state.data ?? [];
+    const visibleProjects = isSuccess ? getVisibleProjects(projects) : [];
+
+    useEffect(() => {
+        if (!isSuccess || !activeProjectId) return;
+        if (!findVisibleProject(projects, activeProjectId)) {
+            setActiveProjectId(null);
+        }
+    }, [activeProjectId, isSuccess, projects]);
 
     // This is derived because it can be calculated from activeProjectId
     const selectedProject: Project | null =
         isSuccess && activeProjectId
-        ? projects.find((p) => p.id === activeProjectId) ?? null
+        ? findVisibleProject(projects, activeProjectId)
         : null;
 
     // onClose purpose to clear activeProjectId
@@ -76,7 +89,7 @@ function ProjectsPage({activeLanguageId}: ProjectsPageProps) {
          )}
 
          {isSuccess && <>
-             <ProjectsList projects={projects} onSelect={setActiveProjectId}/>
+             <ProjectsList projects={visibleProjects} onSelect={setActiveProjectId}/>
              {selectedProject &&
                  <ProjectDetailView
                      displayMode={DEV_DISPLAY_VIEW_TYPE}
