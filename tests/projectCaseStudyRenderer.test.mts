@@ -73,3 +73,37 @@ test("the validated Forkify snapshot renders its project-specific story blocks",
         await vite.close();
     }
 });
+
+test("the validated Smart Garage Door snapshot renders its bounded integration story", async () => {
+    const vite = await createServer({server: {middlewareMode: true, hmr: false, ws: false}, appType: "custom"});
+
+    try {
+        const [{default: ProjectCaseStudyRenderer}, {loadProjectCaseStudy}] = await Promise.all([
+            vite.ssrLoadModule("/src/components/ProjectFocus/ProjectCaseStudyRenderer.tsx"),
+            vite.ssrLoadModule("/src/content/case-studies/CaseStudyConsumer.mts"),
+        ]);
+        const caseStudy = await loadProjectCaseStudy("smart-garage-door-system");
+        const project = {
+            id: "smart-garage-door-system",
+            title: "Smart Garage Door System",
+            shortDescription: "A team-built IoT graduation project.",
+            tags: ["Graduation Project", "Smart Home", "MQTT Pub/Sub"],
+            detailDescription: "A bounded integration case study.",
+        };
+
+        const html = renderToStaticMarkup(
+            React.createElement(MemoryRouter, null, React.createElement(ProjectCaseStudyRenderer, {caseStudy, project})),
+        );
+
+        assert.match(html, /My responsibility was communication and integration/);
+        assert.match(html, /The broker routes; the controller acts/);
+        assert.match(html, /Command and device-state flow/);
+        assert.match(html, /Prototype implementation versus a redesign today/);
+        assert.match(html, /focus-structured-block--diagram/);
+        assert.match(html, /focus-structured-block--comparison/);
+        assert.match(html, /focus-structured-section__number[^>]*>04</);
+        assert.doesNotMatch(html, /focus-structured-block--image/);
+    } finally {
+        await vite.close();
+    }
+});

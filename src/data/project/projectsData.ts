@@ -142,33 +142,34 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "smart-garage-door-system",
             "title": "Smart Garage Door System",
-            "shortDescription": "A smart garage door system using MQTT, focused on system integration and real-time communication.",
+            "shortDescription": "A five-person IoT capstone connecting an Android app, Mosquitto, and a Raspberry Pi-controlled garage-door remote.",
             "tags": [
+                "Graduation Project",
+                "Smart Home",
                 "MQTT Pub/Sub",
                 "System Integration",
-                "Linux Server Setup",
-                "Distributed Communication",
                 "Android Client",
-                "Device Proximity Detection"
+                "Raspberry Pi"
             ],
             "thumbnailSrc": graduateThumb,
-            "thumbnailAlt": "Graduate Project Preview",
+            "thumbnailAlt": "Smart Garage Door System graduation project poster",
+            "thumbnailCaption": "Smart Garage Door System graduation project poster",
             "image": [],
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
-            "detailDescription": "A smart garage door system built with an MQTT-based communication model to demonstrate event-driven system design, device coordination, and reliable message handling between a mobile client and a Linux-based server.",
+            "detailDescription": "I owned the MQTT communication layer and later shared Android-side integration work for a team-built garage-door prototype.",
             "challenges": [
-                "Designing a reliable event-driven communication flow using MQTT",
-                "Ensuring accurate and stable proximity detection from the mobile device",
-                "Coordinating message handling between multiple system components (client, server, device)",
-                "Maintaining system reliability under asynchronous and network-dependent conditions"
+                "Defining publish/subscribe responsibilities across the app, broker, and device controller",
+                "Coordinating Android-side messaging and location work after implementation ownership became shared",
+                "Testing a self-hosted Mosquitto broker across network-dependent components",
+                "Bounding a student prototype without presenting incomplete or unverified behavior as finished"
             ],
             "features": [
-                "Automatic door unlocking based on mobile device proximity detection",
-                "MQTT-based publish/subscribe communication between client and server",
-                "Linux server handling message routing and device coordination",
-                "Real-time communication flow between mobile application and door system"
+                "Manual and proximity-based commands published through MQTT",
+                "Mosquitto message routing between Android and Raspberry Pi",
+                "Team-built Raspberry Pi bridge triggering the existing garage-door remote signal",
+                "Device-state feedback returned to the Android application"
             ]
         }
     ],
@@ -306,34 +307,35 @@ export const projectsData: Record<LanguageId, Project[]> = {
         },
         {
             "id": "smart-garage-door-system",
-            "title": "智慧車庫門系統",
-            "shortDescription": "使用 MQTT 通訊，當使用者接近時自動解鎖車庫門的智慧門禁系統。",
+            "title": "智慧鐵捲門系統",
+            "shortDescription": "五人畢業專題，透過 MQTT 串接 Android、Mosquitto 與由 Raspberry Pi 控制的鐵捲門遙控器。",
             "tags": [
+                "畢業專題",
+                "智慧家庭",
                 "MQTT Pub/Sub",
                 "System Integration",
-                "Linux Server Setup",
-                "Distributed Communication",
                 "Android Client",
-                "Device Proximity Detection"
+                "Raspberry Pi"
             ],
             "thumbnailSrc": graduateThumb,
-            "thumbnailAlt": "Graduate Project Preview",
+            "thumbnailAlt": "智慧鐵捲門系統畢業專題海報",
+            "thumbnailCaption": "智慧鐵捲門系統畢業專題海報",
             "image": ["images/GP.png"],
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
-            "detailDescription": "一套使用 MQTT 通訊模型打造的智慧車庫門系統，用來展示 event-driven 系統設計、裝置協作，以及行動端與 Linux 伺服器之間可靠的訊息處理流程。",
+            "detailDescription": "我主要負責 MQTT 通訊層，後期也共同處理與 MQTT 相關的 Android 整合，完成團隊協作的鐵捲門 prototype。",
             "challenges": [
-                "使用 MQTT 設計可靠的 event-driven 通訊流程",
-                "確保行動裝置的接近偵測準確且穩定",
-                "協調 client、server、device 等多個系統元件之間的訊息處理",
-                "在非同步與網路條件影響下維持系統可靠性"
+                "釐清 App、Broker 與裝置控制端各自的 publish/subscribe 責任",
+                "在 Android 實作改為共同分工後協調訊息與定位功能",
+                "測試跨越多個網路相依元件的自架 Mosquitto Broker",
+                "誠實界定學生 prototype，不把未完成或未驗證的行為包裝成正式功能"
             ],
             "features": [
-                "根據行動裝置接近偵測自動解鎖車庫門",
-                "以 MQTT publish/subscribe 模型進行 client 與 server 間通訊",
-                "由 Linux 伺服器負責訊息路由與裝置協調",
-                "行動應用與門禁裝置之間的即時通訊流程"
+                "手動與依距離判斷的控制指令透過 MQTT 發送",
+                "Mosquitto 在 Android 與 Raspberry Pi 之間負責訊息路由",
+                "團隊製作的 Raspberry Pi bridge 觸發既有鐵捲門遙控器訊號",
+                "裝置狀態回傳至 Android 應用程式"
             ]
         }
     ],
@@ -467,33 +469,34 @@ export const projectsData: Record<LanguageId, Project[]> = {
         {
             "id": "smart-garage-door-system",
             "title": "スマートガレージドアシステム",
-            "shortDescription": "ユーザーが近づくと自動でドアを解錠する、MQTT ベース通信のスマートガレージドアシステムです。",
+            "shortDescription": "Android、Mosquitto、Raspberry Piで既存のガレージドア用リモコン信号を連携した、5人チームのIoT卒業制作です。",
             "tags": [
+                "卒業制作",
+                "スマートホーム",
                 "MQTT Pub/Sub",
                 "System Integration",
-                "Linux Server Setup",
-                "Distributed Communication",
                 "Android Client",
-                "Device Proximity Detection"
+                "Raspberry Pi"
             ],
             "thumbnailSrc": graduateThumb,
-            "thumbnailAlt": "Graduate Project Preview",
+            "thumbnailAlt": "スマートガレージドアシステム卒業制作ポスター",
+            "thumbnailCaption": "スマートガレージドアシステム卒業制作ポスター",
             "image": [],
             "year": "2023 Q4",
             "githubLink": "",
             "demoLink": "",
-            "detailDescription": "MQTT ベースの通信モデルで構築したスマートガレージドアシステムで、event-driven なシステム設計、デバイス間の協調、モバイルクライアントと Linux サーバー間の信頼できるメッセージ処理を示しています。",
+            "detailDescription": "MQTT通信レイヤーを担当し、後半はMQTTと関係するAndroid側の実装と統合作業も分担した、チーム制作のプロトタイプです。",
             "challenges": [
-                "MQTT を用いて信頼できる event-driven 通信フローを設計すること",
-                "モバイル端末の近接検知を正確かつ安定して行うこと",
-                "client・server・device など複数コンポーネント間のメッセージ処理を協調させること",
-                "非同期かつネットワーク依存の条件下でシステム信頼性を維持すること"
+                "App、Broker、デバイス制御側のpublish/subscribe責任を整理すること",
+                "Android実装が共同作業になった後、メッセージングと位置情報機能を調整すること",
+                "ネットワークに依存する複数コンポーネントで自前のMosquitto Brokerをテストすること",
+                "未完成または未検証の挙動を完成機能として扱わず、学生プロトタイプの範囲を明確にすること"
             ],
             "features": [
-                "モバイル端末の近接検知による自動ドア解錠",
-                "client と server 間の MQTT publish/subscribe 通信",
-                "Linux サーバーによるメッセージルーティングとデバイス協調",
-                "モバイルアプリとドア装置間のリアルタイム通信フロー"
+                "手動操作と距離判定による制御コマンドをMQTTで送信",
+                "AndroidとRaspberry Piの間をMosquittoがメッセージルーティング",
+                "チーム制作のRaspberry Pi bridgeが既存のリモコン信号を起動",
+                "デバイス状態をAndroidアプリへフィードバック"
             ]
         }
     ]

@@ -89,7 +89,7 @@ function ProjectFocusPage({activeLanguageId}: ProjectFocusPageProps) {
                 {project.thumbnailSrc && (
                     <figure className="focus-hero__visual">
                         <img src={project.thumbnailSrc} alt={project.thumbnailAlt ?? `${project.title} interface preview`}/>
-                        <figcaption>{project.title} interface preview</figcaption>
+                        <figcaption>{project.thumbnailCaption ?? `${project.title} interface preview`}</figcaption>
                     </figure>
                 )}
             </div>

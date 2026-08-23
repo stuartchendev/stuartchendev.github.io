@@ -6,6 +6,8 @@ type SnapshotLoader = () => Promise<{default: unknown}>;
 const snapshotLoaders: Record<string, SnapshotLoader> = {
     "frontend-reasoning-lab": () => import("./snapshots/frontend-reasoning-lab.json"),
     "forkify": () => import("./snapshots/forkify.json"),
+    "smart-garage-door-system": () =>
+        import("./snapshots/smart-garage-door-system.json"),
     "portfolio": () => import("./snapshots/portfolio.json"),
 };
 

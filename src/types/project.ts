@@ -7,6 +7,7 @@ export interface Project {
     // for project card thumbnail
     thumbnailSrc?: string;
     thumbnailAlt?: string;
+    thumbnailCaption?: string;
     image?: string[];
     year?: string;
     githubLink?: string;

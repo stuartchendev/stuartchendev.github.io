@@ -7,7 +7,12 @@ type ProjectsListProps = {
     onSelect: OnSelectProject;
 }
 
-const focusProjectIds = new Set(["frontend-reasoning-lab", "forkify", "portfolio"]);
+const focusProjectIds = new Set([
+    "frontend-reasoning-lab",
+    "forkify",
+    "portfolio",
+    "smart-garage-door-system",
+]);
 
 function ProjectsList({projects, onSelect}: ProjectsListProps) {
 

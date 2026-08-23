@@ -46,6 +46,20 @@ test("the Forkify snapshot loads and validates", async () => {
     }
 });
 
+test("the Smart Garage Door snapshot loads and validates", async () => {
+    const vite = await createServer({server: {middlewareMode: true, hmr: false, ws: false}, appType: "custom"});
+
+    try {
+        const consumer = await vite.ssrLoadModule("/src/content/case-studies/CaseStudyConsumer.mts");
+        const caseStudy = await consumer.loadProjectCaseStudy("smart-garage-door-system");
+        assert.equal(caseStudy.schemaVersion, 1);
+        assert.equal(caseStudy.projectId, "smart-garage-door-system");
+        assert.equal(caseStudy.sections.length, 4);
+    } finally {
+        await vite.close();
+    }
+});
+
 test("an unsupported block type fails validation", () => {
     assert.throws(() => validateProjectCaseStudy({
         schemaVersion: 1,
