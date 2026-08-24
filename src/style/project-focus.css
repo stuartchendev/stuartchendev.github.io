@@ -824,24 +824,7 @@
     }
 
     .focus-context-rail__project {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        column-gap: 16px;
-    }
-
-    .focus-context-rail__label,
-    .focus-context-rail__name,
-    .focus-context-rail__tags {
-        grid-column: 1;
-    }
-
-    .focus-context-rail__links {
-        grid-column: 2;
-        grid-row: 1 / span 3;
-        align-content: start;
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 0;
+        display: block;
     }
 
     .focus-article h2 {

@@ -66,7 +66,7 @@ function ProjectCardContent({project}: Pick<ProjectCardProps, "project">) {
                 }
                 <div className="project__card-header">
                     <ProjectYear year={project.year}/>
-                    <span className="project__card-affordance">View details ↗</span>
+                    <span className="project__card-affordance">View Case Study ↗</span>
                 </div>
             </div>
             <ProjectTitle title={project.title}/>
