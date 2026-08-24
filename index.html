@@ -2,7 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-Bc1QhTGj.svg" />
+    <script>
+      (function (locationPath) {
+        if (locationPath.search.startsWith('?/')) {
+          var restoredPath = locationPath.search
+            .slice(2)
+            .split('&')
+            .map(function (segment) { return segment.replace(/~and~/g, '&'); })
+            .join('?');
+          window.history.replaceState(null, '', '/' + restoredPath + locationPath.hash);
+        }
+      }(window.location));
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-CgAVr0vU.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +24,10 @@
     />
 
     <title>StuartChen.dev</title>
-    <script type="module" crossorigin src="/assets/index-MzqMwvUc.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-aUgBC9lB.css">
+    <script type="module" crossorigin src="/assets/index-DlXlsw-I.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DPgGo0TD.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
